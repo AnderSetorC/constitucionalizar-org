@@ -40,12 +40,3 @@ temp/
 *.tmp
 *.bak
 *.swp
-
-# Arquivos do site oficial (baixados para referência - NÃO incluir no deploy)
-constitucionalizar.org.html
-constitucionalizar.org_files/
-landing-page.txt
-trailer-bg.svg
-hRAy6TYC6eDyX1v81761841971.webp
-"bandeira (1).jpg"
-"bandeira (2).jpg"
