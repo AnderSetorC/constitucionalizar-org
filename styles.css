@@ -61,9 +61,9 @@
 
 .watermark-img {
     position: absolute;
-    opacity: 0.20;
+    opacity: 0.35;
     border-radius: 8px;
-    filter: blur(0.5px);
+    filter: blur(0.3px);
     will-change: transform;
     z-index: 1;
 }
@@ -127,8 +127,8 @@ section,
 .visual-section,
 .pricing,
 .final-cta {
-    background-color: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(1px);
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(1.5px);
 }
 
 html {
@@ -231,7 +231,7 @@ body {
    ============================================ */
 .hero {
     padding: 60px 20px;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.92);
     text-align: center;
 }
 
@@ -302,7 +302,7 @@ body {
    ============================================ */
 .visual-section {
     padding: 60px 20px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(245, 245, 245, 0.85) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(245, 245, 245, 0.92) 100%);
 }
 
 .image-frame {
@@ -406,11 +406,11 @@ body {
 .principles,
 .why-join {
     padding: var(--padding-section);
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.92);
 }
 
 .why-join {
-    background: rgba(245, 245, 245, 0.85);
+    background: rgba(245, 245, 245, 0.92);
 }
 
 .section-title {
@@ -494,7 +494,7 @@ body {
    ============================================ */
 .pricing {
     padding: 70px 20px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(245, 245, 245, 0.85) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(245, 245, 245, 0.92) 100%);
     text-align: center;
 }
 
@@ -629,7 +629,7 @@ body {
    ============================================ */
 .final-cta {
     padding: 60px 20px;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.92);
     text-align: center;
 }
 
@@ -731,13 +731,13 @@ body {
     .watermark-1 {
         width: 260px;
         height: 175px;
-        opacity: 0.12;
+        opacity: 0.28;
     }
 
     .watermark-2 {
         width: 280px;
         height: 185px;
-        opacity: 0.12;
+        opacity: 0.28;
     }
 
     .section-title {
@@ -834,13 +834,13 @@ body {
     .watermark-1 {
         width: 200px;
         height: 135px;
-        opacity: 0.10;
+        opacity: 0.25;
     }
 
     .watermark-2 {
         width: 210px;
         height: 140px;
-        opacity: 0.10;
+        opacity: 0.25;
     }
 
     .section-title {
