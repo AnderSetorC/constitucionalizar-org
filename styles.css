@@ -61,66 +61,67 @@
 
 .watermark-img {
     position: absolute;
-    opacity: 0.08;
+    opacity: 0.05;
     border-radius: 8px;
-    filter: blur(0.5px);
+    filter: blur(1px);
+    will-change: transform;
 }
 
 .watermark-1 {
-    top: 18%;
-    right: -2%;
-    width: 280px;
-    height: 180px;
+    top: 12%;
+    right: -5%;
+    width: 320px;
+    height: 220px;
     object-fit: cover;
-    transform: rotate(-8deg);
-    animation: floatWatermark 20s ease-in-out infinite;
+    transform: rotate(-12deg);
+    animation: floatWatermark1 20s ease-in-out infinite;
 }
 
 .watermark-2 {
-    bottom: 8%;
-    left: -3%;
-    width: 300px;
-    height: 200px;
+    bottom: 5%;
+    left: -5%;
+    width: 340px;
+    height: 230px;
     object-fit: cover;
-    transform: rotate(10deg);
-    animation: floatWatermark 25s ease-in-out infinite reverse;
+    transform: rotate(15deg);
+    animation: floatWatermark2 25s ease-in-out infinite;
 }
 
-@keyframes floatWatermark {
+@keyframes floatWatermark1 {
     0%, 100% {
-        transform: rotate(-8deg) translate(0, 0);
+        transform: rotate(-12deg) translate(0, 0);
     }
     50% {
-        transform: rotate(-6deg) translate(15px, -15px);
+        transform: rotate(-10deg) translate(15px, -15px);
     }
 }
 
-/* Esconde a marca d'água em seções coloridas (verde, amarelo, etc.) */
-.urgency,
-.transformation,
-.footer {
-    position: relative;
+@keyframes floatWatermark2 {
+    0%, 100% {
+        transform: rotate(15deg) translate(0, 0);
+    }
+    50% {
+        transform: rotate(13deg) translate(-15px, -15px);
+    }
 }
 
-.urgency::before,
-.transformation::before,
-.footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit;
-    z-index: -1;
-}
-
-/* Garante que o conteúdo fique acima da marca d'água */
+/* Garante que o conteúdo fique acima da marca d'água com contraste */
 .header,
 section,
 .footer {
     position: relative;
     z-index: 1;
+}
+
+/* Adiciona fundo semi-transparente em seções com texto para garantir contraste */
+.hero,
+.principles,
+.why-join,
+.visual-section,
+.pricing,
+.final-cta {
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(0.5px);
 }
 
 html {
@@ -223,7 +224,7 @@ body {
    ============================================ */
 .hero {
     padding: 60px 20px;
-    background: var(--branco);
+    background: rgba(255, 255, 255, 0.92);
     text-align: center;
 }
 
@@ -294,7 +295,7 @@ body {
    ============================================ */
 .visual-section {
     padding: 60px 20px;
-    background: linear-gradient(180deg, var(--branco) 0%, var(--cinza-claro) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(245, 245, 245, 0.92) 100%);
 }
 
 .image-frame {
@@ -398,11 +399,11 @@ body {
 .principles,
 .why-join {
     padding: var(--padding-section);
-    background: var(--branco);
+    background: rgba(255, 255, 255, 0.92);
 }
 
 .why-join {
-    background: var(--cinza-claro);
+    background: rgba(245, 245, 245, 0.92);
 }
 
 .section-title {
@@ -486,7 +487,7 @@ body {
    ============================================ */
 .pricing {
     padding: 70px 20px;
-    background: linear-gradient(180deg, var(--branco) 0%, var(--cinza-claro) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(245, 245, 245, 0.92) 100%);
     text-align: center;
 }
 
@@ -621,7 +622,7 @@ body {
    ============================================ */
 .final-cta {
     padding: 60px 20px;
-    background: var(--branco);
+    background: rgba(255, 255, 255, 0.92);
     text-align: center;
 }
 
@@ -721,15 +722,15 @@ body {
     }
 
     .watermark-1 {
-        width: 200px;
-        height: 130px;
-        opacity: 0.07;
+        width: 220px;
+        height: 150px;
+        opacity: 0.04;
     }
 
     .watermark-2 {
-        width: 220px;
-        height: 145px;
-        opacity: 0.07;
+        width: 240px;
+        height: 165px;
+        opacity: 0.04;
     }
 
     .section-title {
@@ -823,15 +824,15 @@ body {
     }
 
     .watermark-1 {
-        width: 140px;
-        height: 90px;
-        opacity: 0.06;
+        width: 160px;
+        height: 110px;
+        opacity: 0.03;
     }
 
     .watermark-2 {
-        width: 150px;
-        height: 100px;
-        opacity: 0.06;
+        width: 170px;
+        height: 115px;
+        opacity: 0.03;
     }
 
     .section-title {
