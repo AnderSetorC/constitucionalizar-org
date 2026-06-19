@@ -1,0 +1,929 @@
+/* ============================================
+   ASSOCIAÇÃO CONSTITUCIONALIZAR - LANDING PAGE
+   Cores do Brasil: Verde e Amarelo
+   ============================================ */
+
+:root {
+    /* Cores do Brasil */
+    --brasil-verde: #009C3B;
+    --brasil-verde-escuro: #006827;
+    --brasil-verde-claro: #00A94F;
+    --brasil-amarelo: #FFDF00;
+    --brasil-amarelo-escuro: #C9A800;
+    --brasil-azul: #002776;
+
+    /* Cores neutras */
+    --branco: #FFFFFF;
+    --cinza-claro: #F5F5F5;
+    --cinza-medio: #E0E0E0;
+    --cinza-escuro: #333333;
+    --preto: #1A1A1A;
+
+    /* Tipografia */
+    --fonte-principal: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+    /* Espaçamentos */
+    --padding-section: 60px 20px;
+    --padding-mobile: 40px 15px;
+    --container-max: 1200px;
+
+    /* Sombras */
+    --sombra-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --sombra-card-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --sombra-botao: 0 4px 15px rgba(0, 156, 59, 0.3);
+    --sombra-botao-hover: 0 6px 20px rgba(0, 156, 59, 0.4);
+
+    /* Bordas */
+    --border-radius: 12px;
+    --border-radius-grande: 20px;
+}
+
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   MARCA D'ÁGUA DA BANDEIRA DO BRASIL (FUNDOS BRANCOS)
+   ============================================ */
+.watermark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.watermark-img {
+    position: absolute;
+    opacity: 0.08;
+    border-radius: 8px;
+    filter: blur(0.5px);
+}
+
+.watermark-1 {
+    top: 18%;
+    right: -2%;
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+    transform: rotate(-8deg);
+    animation: floatWatermark 20s ease-in-out infinite;
+}
+
+.watermark-2 {
+    bottom: 8%;
+    left: -3%;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    transform: rotate(10deg);
+    animation: floatWatermark 25s ease-in-out infinite reverse;
+}
+
+@keyframes floatWatermark {
+    0%, 100% {
+        transform: rotate(-8deg) translate(0, 0);
+    }
+    50% {
+        transform: rotate(-6deg) translate(15px, -15px);
+    }
+}
+
+/* Esconde a marca d'água em seções coloridas (verde, amarelo, etc.) */
+.urgency,
+.transformation,
+.footer {
+    position: relative;
+}
+
+.urgency::before,
+.transformation::before,
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    z-index: -1;
+}
+
+/* Garante que o conteúdo fique acima da marca d'água */
+.header,
+section,
+.footer {
+    position: relative;
+    z-index: 1;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+    color: var(--cinza-escuro);
+    background-color: var(--branco);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+    background: linear-gradient(135deg, var(--brasil-verde) 0%, var(--brasil-verde-escuro) 100%);
+    color: var(--branco);
+    padding: 40px 20px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 223, 0, 0.1);
+    border-radius: 50%;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 223, 0, 0.08);
+    border-radius: 50%;
+}
+
+.logo-wrapper {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid var(--brasil-amarelo);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    background-color: var(--branco);
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.header-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+.header-subtitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--brasil-amarelo);
+    position: relative;
+    z-index: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+    padding: 60px 20px;
+    background: var(--branco);
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brasil-verde-escuro);
+    margin-bottom: 30px;
+    line-height: 1.3;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-text {
+    font-size: 1.15rem;
+    color: var(--cinza-escuro);
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+.hero-text strong {
+    color: var(--brasil-verde-escuro);
+}
+
+.highlight {
+    background: linear-gradient(180deg, transparent 60%, var(--brasil-amarelo) 60%);
+    padding: 0 4px;
+    font-weight: 700;
+}
+
+/* ============================================
+   HERO VISUAL - ILUSTRAÇÃO DO TRAILER
+   ============================================ */
+.hero-visual {
+    margin-top: 50px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trailer-illustration {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 8px 20px rgba(0, 104, 39, 0.15));
+}
+
+.trailer-anim {
+    animation: trailerMove 4s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes trailerMove {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* ============================================
+   SEÇÃO VISUAL - IMAGEM REAL
+   ============================================ */
+.visual-section {
+    padding: 60px 20px;
+    background: linear-gradient(180deg, var(--branco) 0%, var(--cinza-claro) 100%);
+}
+
+.image-frame {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: var(--border-radius-grande);
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 104, 39, 0.25);
+    border: 5px solid var(--brasil-amarelo);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-frame:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 104, 39, 0.35);
+}
+
+.real-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(0deg, rgba(0, 104, 39, 0.95) 0%, rgba(0, 104, 39, 0.7) 70%, transparent 100%);
+    padding: 50px 30px 30px;
+    color: var(--branco);
+}
+
+.image-caption {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* ============================================
+   TRANSFORMATION
+   ============================================ */
+.transformation {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, var(--brasil-amarelo) 0%, #FFE94D 100%);
+    text-align: center;
+    position: relative;
+}
+
+.transformation::before,
+.transformation::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: var(--branco);
+}
+
+.transformation::before {
+    top: -15px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+}
+
+.transformation::after {
+    bottom: -15px;
+    clip-path: polygon(0 0, 100% 100%, 100% 100%, 0 100%);
+}
+
+.transform-text {
+    font-size: 1.15rem;
+    color: var(--brasil-verde-escuro);
+    margin-bottom: 15px;
+    font-weight: 500;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.transform-text strong {
+    font-weight: 700;
+}
+
+.transform-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--brasil-verde-escuro);
+    margin-top: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   PRINCÍPIOS / CHECK LIST
+   ============================================ */
+.principles,
+.why-join {
+    padding: var(--padding-section);
+    background: var(--branco);
+}
+
+.why-join {
+    background: var(--cinza-claro);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--brasil-verde-escuro);
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.check-list {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.check-list li {
+    font-size: 1.1rem;
+    color: var(--cinza-escuro);
+    padding: 15px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    border-bottom: 1px solid var(--cinza-medio);
+}
+
+.check-list li:last-child {
+    border-bottom: none;
+}
+
+.check-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--brasil-verde);
+    color: var(--branco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(0, 156, 59, 0.3);
+}
+
+/* ============================================
+   URGENCY
+   ============================================ */
+.urgency {
+    padding: 60px 20px;
+    background: var(--brasil-verde-escuro);
+    color: var(--branco);
+    text-align: center;
+}
+
+.urgency-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--brasil-amarelo);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.urgency-text {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.urgency-text strong {
+    color: var(--brasil-amarelo);
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+/* ============================================
+   PRICING
+   ============================================ */
+.pricing {
+    padding: 70px 20px;
+    background: linear-gradient(180deg, var(--branco) 0%, var(--cinza-claro) 100%);
+    text-align: center;
+}
+
+.pricing-card {
+    max-width: 450px;
+    margin: 0 auto;
+    background: var(--branco);
+    border-radius: var(--border-radius-grande);
+    padding: 40px 30px;
+    box-shadow: var(--sombra-card);
+    border: 3px solid var(--brasil-verde);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-card-hover);
+}
+
+.pricing-badge {
+    display: inline-block;
+    background: var(--brasil-amarelo);
+    color: var(--brasil-verde-escuro);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.pricing-amount {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: var(--brasil-verde-escuro);
+    margin-bottom: 5px;
+}
+
+.currency {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.price {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.cents {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.pricing-period {
+    font-size: 1rem;
+    color: var(--cinza-escuro);
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.pricing-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--brasil-verde-escuro);
+    margin-bottom: 15px;
+}
+
+.pricing-description {
+    font-size: 1rem;
+    color: var(--cinza-escuro);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* ============================================
+   BOTÕES CTA
+   ============================================ */
+.cta-button {
+    display: inline-block;
+    padding: 16px 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    min-width: 220px;
+    border: none;
+}
+
+.cta-primary {
+    background: linear-gradient(135deg, var(--brasil-verde) 0%, var(--brasil-verde-claro) 100%);
+    color: var(--branco);
+    box-shadow: var(--sombra-botao);
+}
+
+.cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-botao-hover);
+    background: linear-gradient(135deg, var(--brasil-verde-claro) 0%, var(--brasil-verde) 100%);
+}
+
+.cta-primary:active {
+    transform: translateY(0);
+}
+
+.cta-secondary {
+    background: var(--branco);
+    color: var(--brasil-verde-escuro);
+    border: 3px solid var(--brasil-verde);
+    box-shadow: 0 4px 15px rgba(0, 156, 59, 0.15);
+}
+
+.cta-secondary:hover {
+    background: var(--brasil-amarelo);
+    color: var(--brasil-verde-escuro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 223, 0, 0.4);
+}
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+.final-cta {
+    padding: 60px 20px;
+    background: var(--branco);
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    padding: 40px 20px;
+    background: var(--brasil-verde-escuro);
+    color: var(--branco);
+    text-align: center;
+}
+
+.footer-text {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer-domain {
+    margin-bottom: 20px;
+}
+
+.footer-domain a {
+    color: var(--brasil-amarelo);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer-domain a:hover {
+    color: var(--branco);
+    text-decoration: underline;
+}
+
+.footer-credits {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+/* Tablets e telas médias */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 1.4rem;
+    }
+
+    .header-subtitle {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+
+    .logo {
+        width: 110px;
+        height: 110px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-text {
+        font-size: 1.05rem;
+    }
+
+    .hero-visual {
+        margin-top: 35px;
+    }
+
+    .real-image {
+        height: 380px;
+    }
+
+    .image-caption {
+        font-size: 1.15rem;
+    }
+
+    .image-overlay {
+        padding: 40px 25px 25px;
+    }
+
+    .watermark-1 {
+        width: 200px;
+        height: 130px;
+        opacity: 0.07;
+    }
+
+    .watermark-2 {
+        width: 220px;
+        height: 145px;
+        opacity: 0.07;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .transform-title {
+        font-size: 1.5rem;
+    }
+
+    .urgency-title {
+        font-size: 1.6rem;
+    }
+
+    .urgency-text {
+        font-size: 1.05rem;
+    }
+
+    .pricing-card {
+        padding: 30px 20px;
+    }
+
+    .price {
+        font-size: 4rem;
+    }
+
+    .cta-button {
+        padding: 14px 25px;
+        font-size: 0.9rem;
+        min-width: 200px;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+    .header {
+        padding: 30px 15px 40px;
+    }
+
+    .header-title {
+        font-size: 1.2rem;
+        letter-spacing: 0.5px;
+    }
+
+    .header-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .logo {
+        width: 90px;
+        height: 90px;
+        border-width: 3px;
+    }
+
+    .hero,
+    .transformation,
+    .principles,
+    .why-join,
+    .urgency,
+    .pricing,
+    .final-cta {
+        padding: var(--padding-mobile);
+    }
+
+    .hero-title {
+        font-size: 1.3rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .hero-visual {
+        margin-top: 30px;
+    }
+
+    .real-image {
+        height: 280px;
+    }
+
+    .image-overlay {
+        padding: 35px 20px 20px;
+    }
+
+    .image-caption {
+        font-size: 1.05rem;
+    }
+
+    .image-frame {
+        border-width: 3px;
+    }
+
+    .watermark-1 {
+        width: 140px;
+        height: 90px;
+        opacity: 0.06;
+    }
+
+    .watermark-2 {
+        width: 150px;
+        height: 100px;
+        opacity: 0.06;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .check-list li {
+        font-size: 1rem;
+        padding: 12px 0;
+        gap: 12px;
+    }
+
+    .check-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+    }
+
+    .urgency-title {
+        font-size: 1.4rem;
+    }
+
+    .pricing-card {
+        padding: 25px 15px;
+    }
+
+    .price {
+        font-size: 3.5rem;
+    }
+
+    .currency,
+    .cents {
+        font-size: 1.5rem;
+    }
+
+    .pricing-title {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+        min-width: 100%;
+        letter-spacing: 1px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Animações suaves */
+@media (prefers-reduced-motion: no-preference) {
+    .pricing-card,
+    .cta-button,
+    .logo {
+        animation: fadeInUp 0.6s ease-out;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Acessibilidade - foco visível */
+.cta-button:focus-visible {
+    outline: 3px solid var(--brasil-amarelo);
+    outline-offset: 3px;
+}
+
+/* Impressão */
+@media print {
+    .header,
+    .urgency,
+    .pricing,
+    .final-cta,
+    .footer {
+        background: var(--branco) !important;
+        color: var(--preto) !important;
+    }
+
+    .cta-button {
+        border: 2px solid var(--preto) !important;
+        color: var(--preto) !important;
+        background: var(--branco) !important;
+    }
+}
