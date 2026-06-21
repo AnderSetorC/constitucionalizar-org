@@ -628,89 +628,54 @@ body {
     line-height: 1.6;
 }
 
-.social-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto 40px;
-}
-
-.social-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 28px 20px;
-    background: var(--branco);
-    border: 2px solid var(--cinza-medio);
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    color: var(--brasil-verde-escuro);
-    transition: transform 0.25s ease, border-color 0.25s ease,
-                box-shadow 0.25s ease, background-color 0.25s ease;
-    box-shadow: var(--sombra-card);
-}
-
-.social-card:hover,
-.social-card:focus-visible {
-    transform: translateY(-4px);
-    border-color: var(--brasil-verde);
-    background-color: var(--brasil-verde);
-    color: var(--branco);
-    box-shadow: var(--sombra-card-hover);
-    outline: none;
-}
-
-.social-icon {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.25s ease;
-}
-
-.social-card:hover .social-icon,
-.social-card:focus-visible .social-icon {
-    transform: scale(1.1);
-}
-
-.social-name {
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-.social-all-link {
+.social-button {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    color: var(--brasil-verde-escuro);
+    justify-content: center;
+    gap: 14px;
+    padding: 18px 36px;
+    background: linear-gradient(135deg, var(--brasil-verde) 0%, var(--brasil-verde-claro) 100%);
+    color: var(--branco);
     text-decoration: none;
-    font-weight: 700;
     font-size: 1rem;
-    padding: 10px 20px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     border-radius: 50px;
-    border: 2px solid var(--brasil-verde);
-    transition: all 0.25s ease;
+    box-shadow: var(--sombra-botao);
+    transition: transform 0.25s ease, box-shadow 0.25s ease,
+                background 0.25s ease;
+    text-transform: uppercase;
 }
 
-.social-all-link:hover,
-.social-all-link:focus-visible {
-    background: var(--brasil-amarelo);
-    color: var(--brasil-verde-escuro);
-    transform: translateX(4px);
-    outline: none;
+.social-button:hover,
+.social-button:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-botao-hover);
+    background: linear-gradient(135deg, var(--brasil-verde-claro) 0%, var(--brasil-verde) 100%);
+    outline: 3px solid var(--brasil-amarelo);
+    outline-offset: 3px;
 }
 
-.social-arrow {
-    width: 18px;
-    height: 18px;
+.social-button:active {
+    transform: translateY(0);
+}
+
+.social-button-icon,
+.social-button-arrow {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
     transition: transform 0.25s ease;
 }
 
-.social-all-link:hover .social-arrow,
-.social-all-link:focus-visible .social-arrow {
-    transform: translateX(4px);
+.social-button-arrow {
+    width: 20px;
+    height: 20px;
+}
+
+.social-button:hover .social-button-arrow,
+.social-button:focus-visible .social-button-arrow {
+    transform: translateX(5px);
 }
 
 /* ============================================
@@ -1024,22 +989,17 @@ body {
         margin-bottom: 30px;
     }
 
-    .social-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    .social-card {
-        padding: 22px 12px;
-    }
-
-    .social-icon {
-        width: 32px;
-        height: 32px;
-    }
-
-    .social-name {
+    .social-button {
+        padding: 16px 24px;
         font-size: 0.9rem;
+        letter-spacing: 1px;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .social-button-text {
+        flex: 1;
+        text-align: center;
     }
 
     .whatsapp-float {
