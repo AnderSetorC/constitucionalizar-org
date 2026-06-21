@@ -11,7 +11,10 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.constitucionalizar.org.br">
     <title>Associação Constitucionalizar - Pelo Direito de Ir e Vir</title>
-    <link rel="icon" type="image/png" href="logo certo 12-03.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="48x48" href="favicon-48.png">
     <link rel="stylesheet" href="styles.css">
     <!-- Google Ads Tag (substitua AW-XXXXXXXXX pelo seu ID) -->
     <!--
@@ -35,7 +38,21 @@
     <header class="header">
         <div class="container">
             <div class="logo-wrapper">
-                <img src="logo certo 12-03.png" alt="Logo Associação Constitucionalizar" class="logo">
+                <picture>
+                    <source type="image/avif"
+                            srcset="logo-256.avif 1x, logo-512.avif 2x"
+                            sizes="240px">
+                    <source type="image/webp"
+                            srcset="logo-256.webp 1x, logo-512.webp 2x"
+                            sizes="240px">
+                    <img src="logo-512.webp"
+                         width="240"
+                         height="240"
+                         alt="Logo da Associação Constitucionalizar — selo institucional"
+                         class="logo"
+                         decoding="async"
+                         fetchpriority="high">
+                </picture>
             </div>
             <h1 class="header-title">ASSOCIAÇÃO CONSTITUCIONALIZAR</h1>
             <p class="header-subtitle">Pelo Direito de Ir e Vir</p>

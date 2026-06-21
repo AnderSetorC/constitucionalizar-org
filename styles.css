@@ -267,37 +267,6 @@ body {
 }
 
 /* ============================================
-   HERO VISUAL - ILUSTRAÇÃO DO TRAILER
-   ============================================ */
-.hero-visual {
-    margin-top: 50px;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.trailer-illustration {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 8px 20px rgba(0, 104, 39, 0.15));
-}
-
-.trailer-anim {
-    animation: trailerMove 4s ease-in-out infinite;
-    transform-origin: center;
-}
-
-@keyframes trailerMove {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-3px);
-    }
-}
-
-/* ============================================
    SEÇÃO VISUAL - IMAGEM REAL
    ============================================ */
 .visual-section {
@@ -712,10 +681,6 @@ body {
         font-size: 1.05rem;
     }
 
-    .hero-visual {
-        margin-top: 35px;
-    }
-
     .real-image {
         height: 380px;
     }
@@ -809,10 +774,6 @@ body {
 
     .hero-text {
         font-size: 1rem;
-    }
-
-    .hero-visual {
-        margin-top: 30px;
     }
 
     .real-image {
