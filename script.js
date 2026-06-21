@@ -108,3 +108,223 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ============================================
+// E-BOOK - Validação e gate de download
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('ebookForm');
+    if (!form) return;
+
+    const nameInput = document.getElementById('ebookName');
+    const whatsappInput = document.getElementById('ebookWhatsapp');
+    const emailInput = document.getElementById('ebookEmail');
+    const consentInput = document.getElementById('ebookConsent');
+    const submitBtn = document.getElementById('ebookSubmit');
+    const downloadBlock = document.getElementById('ebookDownload');
+
+    const nameError = document.getElementById('ebookNameError');
+    const whatsappError = document.getElementById('ebookWhatsappError');
+    const emailError = document.getElementById('ebookEmailError');
+    const consentError = document.getElementById('ebookConsentError');
+
+    // ---- Validadores ----
+
+    function validateName(value) {
+        const trimmed = value.trim();
+        if (!trimmed) return 'Informe seu nome completo.';
+        if (trimmed.length < 3) return 'Nome muito curto.';
+        const parts = trimmed.split(/\s+/);
+        if (parts.length < 2) return 'Informe nome e sobrenome.';
+        return '';
+    }
+
+    function validateWhatsapp(value) {
+        // Aceita varios formatos; so importa os digitos
+        const digits = value.replace(/\D/g, '');
+        if (!digits) return 'Informe seu WhatsApp.';
+        if (digits.length < 10) return 'WhatsApp incompleto.';
+        if (digits.length > 13) return 'WhatsApp invalido.';
+        // DDD brasileiro: 11 a 99 (na pratica 11-99; 10/20 nao existem)
+        const ddd = digits.length === 11 ? digits.slice(0, 2) : digits.slice(0, 2);
+        if (!/^([1-9][1-9])$/.test(ddd)) {
+            return 'DDD invalido.';
+        }
+        // Celular com 9 (11 digitos) ou fixo (10 digitos)
+        if (digits.length === 11 && digits[2] !== '9') {
+            return 'Para celular, o 3o digito deve ser 9.';
+        }
+        return '';
+    }
+
+    function validateEmail(value) {
+        const trimmed = value.trim();
+        if (!trimmed) return 'Informe seu e-mail.';
+        // Regex RFC basico - cobre 99% dos casos reais
+        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!re.test(trimmed)) return 'E-mail invalido.';
+        return '';
+    }
+
+    function validateConsent(checked) {
+        if (!checked) return 'Voce precisa aceitar os termos para continuar.';
+        return '';
+    }
+
+    function setFieldError(input, errorEl, message) {
+        errorEl.textContent = message;
+        if (message) {
+            input.classList.add('input-error');
+            input.classList.remove('input-valid');
+            input.setAttribute('aria-invalid', 'true');
+        } else if (input.value.trim()) {
+            input.classList.remove('input-error');
+            input.classList.add('input-valid');
+            input.removeAttribute('aria-invalid');
+        } else {
+            input.classList.remove('input-error', 'input-valid');
+            input.removeAttribute('aria-invalid');
+        }
+    }
+
+    function isFormValid() {
+        return !validateName(nameInput.value)
+            && !validateWhatsapp(whatsappInput.value)
+            && !validateEmail(emailInput.value)
+            && !validateConsent(consentInput.checked);
+    }
+
+    function updateSubmitState() {
+        submitBtn.disabled = !isFormValid();
+    }
+
+    // ---- Mascara de WhatsApp ----
+    function maskWhatsapp(value) {
+        const digits = value.replace(/\D/g, '').slice(0, 11);
+        if (digits.length === 0) return '';
+        if (digits.length <= 2) return `(${digits}`;
+        if (digits.length <= 6) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+        if (digits.length <= 10) {
+            // Fixo: (14) 3232-1234
+            return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+        }
+        // Celular: (14) 99999-9999
+        return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+    }
+
+    // ---- Listeners ----
+
+    nameInput.addEventListener('input', function() {
+        setFieldError(nameInput, nameError, validateName(this.value));
+        updateSubmitState();
+    });
+
+    nameInput.addEventListener('blur', function() {
+        setFieldError(nameInput, nameError, validateName(this.value));
+    });
+
+    whatsappInput.addEventListener('input', function() {
+        const cursor = this.selectionStart;
+        const before = this.value;
+        const masked = maskWhatsapp(this.value);
+        this.value = masked;
+        // Reposiciona o cursor de forma simples
+        const after = this.value;
+        const diff = after.length - before.length;
+        try {
+            this.setSelectionRange(cursor + diff, cursor + diff);
+        } catch (e) {
+            // ignora se o campo perdeu foco
+        }
+        setFieldError(whatsappInput, whatsappError, validateWhatsapp(this.value));
+        updateSubmitState();
+    });
+
+    whatsappInput.addEventListener('blur', function() {
+        setFieldError(whatsappInput, whatsappError, validateWhatsapp(this.value));
+    });
+
+    emailInput.addEventListener('input', function() {
+        setFieldError(emailInput, emailError, validateEmail(this.value));
+        updateSubmitState();
+    });
+
+    emailInput.addEventListener('blur', function() {
+        setFieldError(emailInput, emailError, validateEmail(this.value));
+    });
+
+    consentInput.addEventListener('change', function() {
+        setFieldError(consentInput, consentError, validateConsent(this.checked));
+        updateSubmitState();
+    });
+
+    // ---- Submit ----
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Validacao final
+        const nameErr = validateName(nameInput.value);
+        const whatsappErr = validateWhatsapp(whatsappInput.value);
+        const emailErr = validateEmail(emailInput.value);
+        const consentErr = validateConsent(consentInput.checked);
+
+        setFieldError(nameInput, nameError, nameErr);
+        setFieldError(whatsappInput, whatsappError, whatsappErr);
+        setFieldError(emailInput, emailError, emailErr);
+        setFieldError(consentInput, consentError, consentErr);
+
+        if (nameErr || whatsappErr || emailErr || consentErr) {
+            // Foca no primeiro campo com erro
+            if (nameErr) nameInput.focus();
+            else if (whatsappErr) whatsappInput.focus();
+            else if (emailErr) emailInput.focus();
+            else if (consentErr) consentInput.focus();
+            return;
+        }
+
+        // Sucesso: dispara eventos de tracking
+        const leadData = {
+            name: nameInput.value.trim(),
+            whatsapp: whatsappInput.value.trim(),
+            email: emailInput.value.trim()
+        };
+
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'ebook_lead', {
+                'event_category': 'lead',
+                'event_label': 'Pílulas da Constituição',
+                'value': 1
+            });
+            gtag('event', 'generate_lead', {
+                'currency': 'BRL',
+                'value': 30
+            });
+        }
+
+        console.log('E-book lead captured:', leadData);
+
+        // Esconde o formulario e mostra o bloco de download
+        form.hidden = true;
+        downloadBlock.hidden = false;
+        downloadBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    // Link "termos de uso" - apenas rola ate o formulario
+    const termsLink = document.getElementById('ebookTermsLink');
+    if (termsLink) {
+        termsLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Como nao temos uma pagina de termos, alertamos os termos resumidos
+            alert('Termos de uso e distribuicao:\n\n' +
+                '- Este e-book (Pílulas da Constituicao) e fornecido gratuitamente pela Associacao Constitucionalizar.\n' +
+                '- O uso e EXCLUSIVAMENTE para conhecimento pessoal.\n' +
+                '- E PROIBIDA a venda, total ou parcial.\n' +
+                '- E PROIBIDA a reproducao, redistribuicao ou modificacao sem autorizacao expressa.\n' +
+                '- O conteudo possui direitos autorais da Associacao Constitucionalizar.');
+        });
+    }
+
+    // Estado inicial
+    updateSubmitState();
+});

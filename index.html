@@ -134,6 +134,121 @@
         </div>
     </section>
 
+    <!-- Seção do E-book - Pílulas da Constituição -->
+    <section class="ebook-section" id="ebook">
+        <div class="container">
+            <div class="ebook-content">
+                <h2 class="ebook-title">Conhecimento também é cidadania</h2>
+                <p class="ebook-lead">
+                    Acreditamos que uma sociedade mais justa começa pelo conhecimento dos direitos e deveres de cada cidadão.
+                </p>
+                <p class="ebook-text">
+                    Por isso, a Constitucionalizar disponibiliza gratuitamente o e-book
+                    <strong>Pílulas da Constituição</strong>, uma obra criada para apresentar a Constituição Federal em linguagem simples, acessível e objetiva.
+                </p>
+                <p class="ebook-highlight">
+                    Porque conhecer seus direitos é o primeiro passo para defendê-los.
+                </p>
+
+                <form class="ebook-form" id="ebookForm" novalidate>
+                    <div class="form-row">
+                        <label class="form-field">
+                            <span class="form-label">Nome completo</span>
+                            <input type="text"
+                                   id="ebookName"
+                                   name="name"
+                                   class="form-input"
+                                   placeholder="Seu nome completo"
+                                   autocomplete="name"
+                                   required
+                                   aria-required="true">
+                            <span class="form-error" id="ebookNameError" role="alert"></span>
+                        </label>
+                    </div>
+
+                    <div class="form-row form-row-split">
+                        <label class="form-field">
+                            <span class="form-label">WhatsApp</span>
+                            <input type="tel"
+                                   id="ebookWhatsapp"
+                                   name="whatsapp"
+                                   class="form-input"
+                                   placeholder="(14) 99999-9999"
+                                   inputmode="numeric"
+                                   autocomplete="tel"
+                                   maxlength="16"
+                                   required
+                                   aria-required="true">
+                            <span class="form-error" id="ebookWhatsappError" role="alert"></span>
+                        </label>
+
+                        <label class="form-field">
+                            <span class="form-label">E-mail</span>
+                            <input type="email"
+                                   id="ebookEmail"
+                                   name="email"
+                                   class="form-input"
+                                   placeholder="seuemail@exemplo.com"
+                                   autocomplete="email"
+                                   required
+                                   aria-required="true">
+                            <span class="form-error" id="ebookEmailError" role="alert"></span>
+                        </label>
+                    </div>
+
+                    <label class="form-consent">
+                        <input type="checkbox"
+                               id="ebookConsent"
+                               name="consent"
+                               class="form-checkbox"
+                               required
+                               aria-required="true">
+                        <span class="form-consent-text">
+                            Li e concordo com os
+                            <a href="#ebook-terms" class="form-consent-link" id="ebookTermsLink">termos de uso e distribuição</a>:
+                            este e-book é destinado exclusivamente para conhecimento pessoal. É
+                            <strong>proibida a venda e a reprodução</strong> total ou parcial.
+                        </span>
+                    </label>
+                    <span class="form-error" id="ebookConsentError" role="alert"></span>
+
+                    <button type="submit"
+                            class="ebook-submit cta-button"
+                            id="ebookSubmit"
+                            disabled>
+                        LIBERAR DOWNLOAD DO E-BOOK
+                    </button>
+
+                    <p class="form-privacy">
+                        Ao enviar, você concorda com o uso dos seus dados para receber o e-book e
+                        conteúdos relacionados à cidadania. Você pode cancelar o recebimento a qualquer momento.
+                    </p>
+                </form>
+
+                <!-- Link de download: liberado apos validacao -->
+                <div class="ebook-download" id="ebookDownload" hidden>
+                    <p class="ebook-download-success">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ebook-check-icon">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Cadastro realizado com sucesso!
+                    </p>
+                    <a href="https://drive.google.com/drive/folders/1KQ2qlHzksQoOMpgnPBIo3pvkyYpaK0G8?usp=sharing"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="cta-button cta-primary"
+                       id="ebookDownloadLink">
+                        BAIXAR E-BOOK GRATUITAMENTE
+                    </a>
+                    <p class="ebook-download-note">
+                        <span class="ebook-badge">EM BREVE</span>
+                        Link provisório — o link definitivo será enviado para o seu e-mail.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção de Preço e CTA -->
     <section class="pricing" id="pricing">
         <div class="container">

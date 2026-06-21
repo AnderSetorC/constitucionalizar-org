@@ -459,6 +459,273 @@ body {
 }
 
 /* ============================================
+   E-BOOK - PÍLULAS DA CONSTITUIÇÃO
+   ============================================ */
+.ebook-section {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(245, 245, 245, 0.92) 100%);
+    text-align: center;
+}
+
+.ebook-content {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.ebook-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--brasil-verde-escuro);
+    margin-bottom: 25px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ebook-lead {
+    font-size: 1.2rem;
+    color: var(--cinza-escuro);
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.ebook-text {
+    font-size: 1.05rem;
+    color: var(--cinza-escuro);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.ebook-text strong {
+    color: var(--brasil-verde-escuro);
+    font-weight: 700;
+}
+
+.ebook-highlight {
+    font-size: 1.15rem;
+    color: var(--brasil-verde-escuro);
+    font-weight: 700;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Formulário */
+.ebook-form {
+    background: var(--branco);
+    border: 3px solid var(--brasil-verde);
+    border-radius: var(--border-radius-grande);
+    padding: 35px 30px;
+    box-shadow: var(--sombra-card);
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.form-row {
+    margin-bottom: 18px;
+}
+
+.form-row-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--brasil-verde-escuro);
+    letter-spacing: 0.3px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--cinza-escuro);
+    background: var(--branco);
+    border: 2px solid var(--cinza-medio);
+    border-radius: var(--border-radius);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: #999;
+}
+
+.form-input:hover {
+    border-color: #b0b0b0;
+}
+
+.form-input:focus {
+    border-color: var(--brasil-verde);
+    box-shadow: 0 0 0 3px rgba(0, 156, 59, 0.15);
+}
+
+.form-input.input-error {
+    border-color: #D32F2F;
+    background: #FFFAFA;
+}
+
+.form-input.input-error:focus {
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.15);
+}
+
+.form-input.input-valid {
+    border-color: var(--brasil-verde);
+}
+
+.form-error {
+    display: block;
+    min-height: 18px;
+    font-size: 0.85rem;
+    color: #D32F2F;
+    font-weight: 600;
+    padding-left: 2px;
+}
+
+.form-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 22px 0 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.form-checkbox {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--brasil-verde);
+}
+
+.form-consent-text {
+    font-size: 0.9rem;
+    color: var(--cinza-escuro);
+    line-height: 1.5;
+}
+
+.form-consent-link {
+    color: var(--brasil-verde-escuro);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.form-consent-link:hover,
+.form-consent-link:focus-visible {
+    color: var(--brasil-verde);
+}
+
+.ebook-submit {
+    width: 100%;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #B0B0B0 0%, #999 100%);
+    color: var(--branco);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.ebook-submit:not(:disabled) {
+    background: linear-gradient(135deg, var(--brasil-verde) 0%, var(--brasil-verde-claro) 100%);
+    cursor: pointer;
+    box-shadow: var(--sombra-botao);
+}
+
+.ebook-submit:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-botao-hover);
+}
+
+.ebook-submit:not(:disabled):active {
+    transform: translateY(0);
+}
+
+.form-privacy {
+    font-size: 0.8rem;
+    color: #777;
+    line-height: 1.5;
+    margin-top: 16px;
+    text-align: center;
+}
+
+/* Bloco de download (liberado após validação) */
+.ebook-download {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--branco);
+    border: 3px solid var(--brasil-amarelo);
+    border-radius: var(--border-radius-grande);
+    box-shadow: var(--sombra-card-hover);
+    animation: ebookReveal 0.5s ease-out;
+}
+
+@keyframes ebookReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ebook-download-success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--brasil-verde-escuro);
+    margin-bottom: 20px;
+}
+
+.ebook-check-icon {
+    width: 26px;
+    height: 26px;
+    color: var(--brasil-verde);
+    background: rgba(0, 156, 59, 0.12);
+    border-radius: 50%;
+    padding: 4px;
+    box-sizing: content-box;
+}
+
+.ebook-download-note {
+    margin-top: 16px;
+    font-size: 0.85rem;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.ebook-badge {
+    display: inline-block;
+    background: var(--brasil-amarelo);
+    color: var(--brasil-verde-escuro);
+    font-weight: 800;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+/* ============================================
    PRICING
    ============================================ */
 .pricing {
@@ -860,6 +1127,27 @@ body {
         padding: 14px 25px;
         font-size: 0.9rem;
         min-width: 200px;
+    }
+
+    .ebook-section {
+        padding: 60px 20px;
+    }
+
+    .ebook-title {
+        font-size: 1.7rem;
+    }
+
+    .ebook-lead {
+        font-size: 1.05rem;
+    }
+
+    .ebook-form {
+        padding: 25px 22px;
+    }
+
+    .form-row-split {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 }
 
