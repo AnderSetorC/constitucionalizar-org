@@ -1038,6 +1038,18 @@ body {
     text-decoration: underline;
 }
 
+.footer-cnpj {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.footer-cnpj strong {
+    color: var(--branco);
+    font-weight: 600;
+}
+
 .footer-credits {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.8);
