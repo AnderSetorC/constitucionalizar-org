@@ -126,7 +126,8 @@ section,
 .why-join,
 .visual-section,
 .pricing,
-.final-cta {
+.final-cta,
+.donation-section {
     background-color: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(1.5px);
 }
@@ -1006,6 +1007,45 @@ body {
 }
 
 /* ============================================
+   SEÇÃO DE DOAÇÃO
+   ============================================ */
+.donation-section {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.donation-text {
+    font-size: 1.1rem;
+    color: var(--cinza-escuro);
+    margin-bottom: 18px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+.donation-text strong {
+    color: var(--brasil-verde-escuro);
+    font-weight: 700;
+}
+
+.donation-highlight {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--brasil-verde-escuro);
+    background: linear-gradient(180deg, transparent 60%, var(--brasil-amarelo) 60%);
+    padding: 0 6px;
+    display: inline-block;
+    margin: 10px auto 35px;
+    max-width: 760px;
+    line-height: 1.6;
+}
+
+.donation-section .cta-primary {
+    margin-top: 10px;
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 .footer {
@@ -1287,6 +1327,19 @@ body {
     .social-subtitle {
         font-size: 1rem;
         margin-bottom: 30px;
+    }
+
+    .donation-section {
+        padding: 50px 15px;
+    }
+
+    .donation-text {
+        font-size: 1rem;
+    }
+
+    .donation-highlight {
+        font-size: 1.05rem;
+        margin-bottom: 25px;
     }
 
     .social-button {
