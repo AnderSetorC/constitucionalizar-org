@@ -40,3 +40,27 @@ temp/
 *.tmp
 *.bak
 *.swp
+
+# Imagens nao otimizadas na raiz (otimizar e versionar webp/avif via assets/)
+# Use a pasta assets/images/<categoria>/ para imagens do projeto.
+# Permitido: AVIF/WebP (ja otimizados) e imagens em assets/ (ja organizadas).
+# Bloqueado: PNG/JPG/GIF soltos na raiz (devem ser otimizados primeiro).
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+# Imagens otimizadas (AVIF/WebP) sao permitidas em qualquer lugar
+!*.avif
+!*.webp
+!*.svg
+# Re-inclui imagens dentro de assets/ em qualquer profundidade
+!assets/**/*.png
+!assets/**/*.jpg
+!assets/**/*.jpeg
+!assets/**/*.gif
+!assets/**/*.webp
+!assets/**/*.avif
+!assets/**/*.svg
+!assets/**/*.ico
