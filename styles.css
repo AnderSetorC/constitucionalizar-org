@@ -1015,13 +1015,14 @@ body {
 }
 
 .donation-image-frame {
-    max-width: 320px;
+    max-width: 480px;
     margin: 0 auto 35px;
     border-radius: var(--border-radius-grande);
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 104, 39, 0.25);
     border: 4px solid var(--brasil-amarelo);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--brasil-verde);
 }
 
 .donation-image-frame:hover {
@@ -1029,10 +1030,9 @@ body {
     box-shadow: 0 15px 40px rgba(0, 104, 39, 0.35);
 }
 
-.donation-image {
+.donation-svg {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: auto;
     display: block;
 }
 
@@ -1360,12 +1360,8 @@ body {
     }
 
     .donation-image-frame {
-        max-width: 260px;
+        max-width: 320px;
         margin-bottom: 25px;
-    }
-
-    .donation-image {
-        height: 140px;
     }
 
     .donation-content {
