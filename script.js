@@ -55,7 +55,7 @@ function initScrollAnimations() {
 
     // Elementos a serem animados
     const animatedElements = document.querySelectorAll(
-        '.check-list li, .pricing-card, .transform-text, .transform-title, .donation-text, .donation-highlight'
+        '.check-list li, .pricing-card, .transform-text, .transform-title, .donation-content, .donation-image-frame, .donation-cta-wrapper'
     );
 
     animatedElements.forEach(el => {
