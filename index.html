@@ -291,83 +291,17 @@
             <h2 class="section-title">Você também pode fazer parte desta mudança</h2>
 
             <div class="donation-image-frame">
-                <svg class="donation-svg" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mãos se ajudando com a bandeira do Brasil de fundo">
-                    <!-- Fundo gradiente Brasil -->
-                    <defs>
-                        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#009C3B"/>
-                            <stop offset="100%" stop-color="#006827"/>
-                        </linearGradient>
-                        <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="#FFDF00"/>
-                            <stop offset="100%" stop-color="#C9A800"/>
-                        </radialGradient>
-                        <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#F5C9A0"/>
-                            <stop offset="100%" stop-color="#D9A675"/>
-                        </linearGradient>
-                        <linearGradient id="skinGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#C18A5E"/>
-                            <stop offset="100%" stop-color="#8B5A3C"/>
-                        </linearGradient>
-                    </defs>
-
-                    <!-- Fundo da bandeira estilizada -->
-                    <rect width="600" height="360" fill="url(#bgGrad)"/>
-                    <!-- Losango amarelo -->
-                    <polygon points="300,30 570,180 300,330 30,180" fill="#FFDF00" opacity="0.95"/>
-                    <!-- Círculo azul -->
-                    <circle cx="300" cy="180" r="90" fill="#002776"/>
-                    <!-- Faixa branca -->
-                    <path d="M 220 180 Q 300 160 380 180 Q 300 200 220 180 Z" fill="#FFFFFF"/>
-
-                    <!-- Coração central -->
-                    <g transform="translate(300 180)">
-                        <path d="M 0 15 C -25 -10 -45 -5 -45 -25 C -45 -42 -25 -50 -10 -38 C -5 -33 0 -25 0 -20 C 0 -25 5 -33 10 -38 C 25 -50 45 -42 45 -25 C 45 -5 25 -10 0 15 Z"
-                              fill="#FF1744"
-                              stroke="#FFFFFF"
-                              stroke-width="2"
-                              opacity="0.95"/>
-                        <!-- Brilho no coração -->
-                        <ellipse cx="-15" cy="-30" rx="6" ry="8" fill="#FFFFFF" opacity="0.5"/>
-                    </g>
-
-                    <!-- Mão esquerda (mais clara) -->
-                    <g transform="translate(120 240)">
-                        <!-- Braço -->
-                        <rect x="-20" y="40" width="80" height="60" rx="20" fill="url(#skinGrad)"/>
-                        <!-- Palma -->
-                        <ellipse cx="40" cy="55" rx="50" ry="35" fill="url(#skinGrad)"/>
-                        <!-- Dedos -->
-                        <ellipse cx="80" cy="40" rx="12" ry="20" fill="url(#skinGrad)" transform="rotate(20 80 40)"/>
-                        <ellipse cx="90" cy="55" rx="11" ry="18" fill="url(#skinGrad)" transform="rotate(35 90 55)"/>
-                        <ellipse cx="92" cy="72" rx="10" ry="16" fill="url(#skinGrad)" transform="rotate(55 92 72)"/>
-                        <!-- Polegar -->
-                        <ellipse cx="55" cy="25" rx="14" ry="20" fill="url(#skinGrad)" transform="rotate(-30 55 25)"/>
-                    </g>
-
-                    <!-- Mão direita (mais escura, representando diversidade) -->
-                    <g transform="translate(480 240)">
-                        <!-- Braço -->
-                        <rect x="-60" y="40" width="80" height="60" rx="20" fill="url(#skinGrad2)"/>
-                        <!-- Palma -->
-                        <ellipse cx="-40" cy="55" rx="50" ry="35" fill="url(#skinGrad2)"/>
-                        <!-- Dedos -->
-                        <ellipse cx="-80" cy="40" rx="12" ry="20" fill="url(#skinGrad2)" transform="rotate(-20 -80 40)"/>
-                        <ellipse cx="-90" cy="55" rx="11" ry="18" fill="url(#skinGrad2)" transform="rotate(-35 -90 55)"/>
-                        <ellipse cx="-92" cy="72" rx="10" ry="16" fill="url(#skinGrad2)" transform="rotate(-55 -92 72)"/>
-                        <!-- Polegar -->
-                        <ellipse cx="-55" cy="25" rx="14" ry="20" fill="url(#skinGrad2)" transform="rotate(30 -55 25)"/>
-                    </g>
-
-                    <!-- Estrelas brancas decorativas -->
-                    <g fill="#FFFFFF" opacity="0.8">
-                        <polygon points="80,80 84,90 95,90 86,97 89,108 80,101 71,108 74,97 65,90 76,90"/>
-                        <polygon points="520,80 524,90 535,90 526,97 529,108 520,101 511,108 514,97 505,90 516,90"/>
-                        <polygon points="100,300 103,308 112,308 105,313 108,322 100,317 92,322 95,313 88,308 97,308"/>
-                        <polygon points="500,300 503,308 512,308 505,313 508,322 500,317 492,322 495,313 488,308 497,308"/>
-                    </g>
-                </svg>
+                <picture>
+                    <source type="image/avif" srcset="assets/images/donation/doacao.avif">
+                    <source type="image/webp" srcset="assets/images/donation/doacao.webp">
+                    <img src="assets/images/donation/doacao.jpg"
+                         width="1200"
+                         height="800"
+                         alt="Mãos se unindo em círculo sob a bandeira do Brasil ao pôr do sol - simbolizando a força coletiva da causa"
+                         class="donation-image"
+                         loading="lazy"
+                         decoding="async">
+                </picture>
             </div>
 
             <div class="donation-content">
