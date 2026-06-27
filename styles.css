@@ -1043,15 +1043,17 @@ body {
 .donation-content {
     max-width: 760px;
     margin: 0 auto 35px;
+    text-align: left;
 }
 
 .donation-lead {
-    font-size: 1.15rem;
-    color: var(--cinza-escuro);
-    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--brasil-verde-escuro);
+    text-align: left;
     max-width: 760px;
     margin: 0 auto 25px;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .donation-check-list {
@@ -1063,7 +1065,7 @@ body {
     color: var(--cinza-escuro);
     margin-bottom: 18px;
     line-height: 1.7;
-    text-align: center;
+    text-align: left;
 }
 
 .donation-text:last-child {
