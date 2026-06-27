@@ -876,6 +876,11 @@ body {
     margin: 0 auto;
 }
 
+.ebook-action-buttons {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
 /* ============================================
    REDES SOCIAIS
    ============================================ */
