@@ -1047,13 +1047,13 @@ body {
 }
 
 .donation-lead {
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: var(--brasil-verde-escuro);
     text-align: left;
     max-width: 760px;
     margin: 0 auto 25px;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .donation-check-list {
