@@ -1054,9 +1054,6 @@ body {
     max-width: 760px;
     margin: 0 auto 25px;
     line-height: 1.4;
-    background: linear-gradient(180deg, transparent 60%, var(--brasil-amarelo) 60%);
-    padding: 4px 6px;
-    display: block;
 }
 
 .donation-check-list {
