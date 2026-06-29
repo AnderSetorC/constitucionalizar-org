@@ -1109,6 +1109,7 @@ body {
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(1.5px);
     text-align: center;
+    overflow: hidden;
 }
 
 .projects-carousel {
@@ -1116,11 +1117,16 @@ body {
     max-width: 580px;
     margin: 0 auto;
     padding: 0 50px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .projects-viewport {
     overflow: hidden;
     border-radius: var(--border-radius-grande);
+    width: 100%;
+    max-width: 100%;
+    touch-action: pan-y;
 }
 
 .projects-track {
@@ -1129,13 +1135,17 @@ body {
     margin: 0;
     padding: 0;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
 }
 
 .projects-slide {
     flex: 0 0 100%;
-    min-width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
     padding: 0 4px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .project-card {
