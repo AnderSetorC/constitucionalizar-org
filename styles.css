@@ -127,7 +127,8 @@ section,
 .visual-section,
 .pricing,
 .final-cta,
-.donation-section {
+.donation-section,
+.projects-section {
     background-color: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(1.5px);
 }
@@ -1098,6 +1099,294 @@ body {
     text-transform: none;
     letter-spacing: 0.5px;
     opacity: 0.95;
+}
+
+/* ============================================
+   PROJECTS — CARROSSEL (BASE)
+   ============================================ */
+.projects-section {
+    padding: var(--padding-section);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(1.5px);
+    text-align: center;
+}
+
+.projects-carousel {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 56px;
+}
+
+.projects-viewport {
+    overflow: hidden;
+    border-radius: var(--border-radius-grande);
+}
+
+.projects-track {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    padding: 0 4px;
+    box-sizing: border-box;
+}
+
+.project-card {
+    background: var(--branco);
+    border-radius: var(--border-radius-grande);
+    overflow: hidden;
+    box-shadow: var(--sombra-card);
+    border: 3px solid var(--brasil-verde);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-card-hover);
+}
+
+.project-card-media {
+    aspect-ratio: 16 / 10;
+    background: var(--cinza-claro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.project-card-body {
+    padding: 22px 22px 26px;
+    text-align: left;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--brasil-verde-escuro);
+    margin-bottom: 10px;
+}
+
+.project-card-desc {
+    font-size: 0.98rem;
+    line-height: 1.55;
+    color: var(--cinza-escuro);
+    margin-bottom: 14px;
+    flex: 1;
+}
+
+.project-card-note {
+    font-size: 0.82rem;
+    color: #777;
+    font-style: italic;
+    padding-top: 12px;
+    border-top: 1px dashed var(--cinza-medio);
+    margin: 0;
+}
+
+/* ============================================
+   PROJECTS — CONTROLES (SETAS + DOTS)
+   ============================================ */
+.projects-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--branco);
+    border: 2px solid var(--brasil-verde);
+    color: var(--brasil-verde-escuro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, background 0.2s ease;
+    z-index: 3;
+    padding: 0;
+}
+
+.projects-arrow:hover {
+    background: var(--brasil-amarelo);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.projects-arrow:focus-visible {
+    outline: 3px solid var(--brasil-amarelo);
+    outline-offset: 3px;
+}
+
+.projects-arrow svg {
+    width: 20px;
+    height: 20px;
+}
+
+.projects-arrow-prev {
+    left: 0;
+}
+
+.projects-arrow-next {
+    right: 0;
+}
+
+.projects-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.projects-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0;
+}
+
+.projects-dots li {
+    margin: 0;
+}
+
+.projects-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--cinza-medio);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease, width 0.2s ease, transform 0.2s ease;
+}
+
+.projects-dot:hover {
+    background: var(--brasil-amarelo);
+    transform: scale(1.2);
+}
+
+.projects-dot:focus-visible {
+    outline: 2px solid var(--brasil-amarelo);
+    outline-offset: 3px;
+}
+
+.projects-dot[aria-selected="true"] {
+    background: var(--brasil-verde);
+    width: 28px;
+    border-radius: 5px;
+}
+
+/* ============================================
+   PROJECTS — RESPONSIVO
+   ============================================ */
+@media (max-width: 768px) {
+    .projects-carousel {
+        padding: 0 52px;
+    }
+
+    .project-card-title {
+        font-size: 1.2rem;
+    }
+
+    .project-card-body {
+        padding: 18px 18px 22px;
+    }
+
+    .project-card-desc {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-section {
+        padding: var(--padding-mobile);
+    }
+
+    .projects-carousel {
+        padding: 0;
+    }
+
+    .project-card-media {
+        aspect-ratio: 4 / 3;
+    }
+
+    .project-card-title {
+        font-size: 1.1rem;
+    }
+
+    .project-card-body {
+        padding: 16px 16px 20px;
+    }
+
+    .project-card-desc {
+        font-size: 0.92rem;
+        margin-bottom: 12px;
+    }
+
+    .project-card-note {
+        font-size: 0.78rem;
+    }
+
+    .projects-arrow {
+        display: none;
+    }
+
+    .projects-dots {
+        margin-top: 18px;
+        gap: 6px;
+    }
+
+    .projects-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .projects-dot[aria-selected="true"] {
+        width: 22px;
+        border-radius: 4px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .projects-track {
+        transition: none;
+    }
+
+    .project-card,
+    .project-card:hover {
+        transform: none;
+    }
+
+    .projects-arrow:hover {
+        transform: translateY(-50%);
+    }
+
+    .projects-dot:hover {
+        transform: none;
+    }
 }
 
 /* ============================================
