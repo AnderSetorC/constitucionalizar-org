@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Tracking de cliques nos CTAs (Google Ads conversion tracking)
     initCTATracking();
+
+    // Carrossel de projetos
+    initProjectsCarousel();
 });
 
 function initSmoothScroll() {
@@ -90,6 +93,174 @@ function initCTATracking() {
 
             console.log('CTA Click:', buttonText, buttonHref);
         });
+    });
+}
+
+function initProjectsCarousel() {
+    const root = document.querySelector('[data-projects-carousel]');
+    if (!root) return;
+
+    const track = root.querySelector('.projects-track');
+    const slides = Array.from(root.querySelectorAll('.projects-slide'));
+    const dots = Array.from(root.querySelectorAll('.projects-dot'));
+    const prevBtn = root.querySelector('.projects-arrow-prev');
+    const nextBtn = root.querySelector('.projects-arrow-next');
+    const viewport = root.querySelector('.projects-viewport');
+    const status = document.getElementById('projectsStatus');
+    const total = slides.length;
+    if (!track || total === 0) return;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const INTERVAL_MS = 5000;
+    const SWIPE_THRESHOLD = 50;
+
+    let currentIndex = 0;
+    let autoTimer = null;
+
+    function announce(message) {
+        if (!status) return;
+        status.textContent = '';
+        setTimeout(() => { status.textContent = message; }, 50);
+    }
+
+    function goTo(index, options = {}) {
+        const { announceChange = true, fromUser = false } = options;
+        const next = ((index % total) + total) % total;
+        currentIndex = next;
+        track.style.transform = 'translateX(-' + (next * 100) + '%)';
+
+        slides.forEach((slide, i) => {
+            const isActive = i === next;
+            if (isActive) {
+                slide.removeAttribute('aria-hidden');
+                slide.removeAttribute('inert');
+            } else {
+                slide.setAttribute('aria-hidden', 'true');
+                slide.setAttribute('inert', '');
+            }
+        });
+
+        dots.forEach((dot, i) => {
+            dot.setAttribute('aria-selected', i === next ? 'true' : 'false');
+        });
+
+        if (announceChange) {
+            const title = slides[next].querySelector('.project-card-title');
+            const titleText = title ? title.textContent.trim() : '';
+            announce('Projeto ' + (next + 1) + ' de ' + total + ': ' + titleText);
+        }
+
+        if (fromUser) startAuto();
+    }
+
+    function startAuto() {
+        stopAuto();
+        if (reducedMotion.matches) return;
+        autoTimer = setInterval(() => {
+            if (document.hidden) return;
+            goTo(currentIndex + 1, { announceChange: true });
+        }, INTERVAL_MS);
+    }
+
+    function stopAuto() {
+        if (autoTimer) {
+            clearInterval(autoTimer);
+            autoTimer = null;
+        }
+    }
+
+    // Sincroniza estado inicial
+    goTo(0, { announceChange: false });
+
+    // Auto-play inicia (respeitando prefers-reduced-motion)
+    startAuto();
+
+    // Pausa em hover/foco
+    root.addEventListener('mouseenter', stopAuto);
+    root.addEventListener('mouseleave', startAuto);
+    root.addEventListener('focusin', stopAuto);
+    root.addEventListener('focusout', startAuto);
+
+    // Pausa quando aba fica oculta
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAuto();
+        } else {
+            startAuto();
+        }
+    });
+
+    // Setas
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => goTo(currentIndex - 1, { fromUser: true }));
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => goTo(currentIndex + 1, { fromUser: true }));
+    }
+
+    // Dots
+    dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+            const target = parseInt(dot.getAttribute('data-go-to') || '0', 10);
+            goTo(target, { fromUser: true });
+        });
+    });
+
+    // Teclado (setas quando foco está no carrossel)
+    root.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            goTo(currentIndex - 1, { fromUser: true });
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            goTo(currentIndex + 1, { fromUser: true });
+        }
+    });
+
+    // Touch swipe (mobile)
+    if (viewport) {
+        let startX = 0;
+        let startY = 0;
+        let tracking = false;
+
+        viewport.addEventListener('pointerdown', (e) => {
+            if (e.pointerType !== 'touch') return;
+            startX = e.clientX;
+            startY = e.clientY;
+            tracking = true;
+        });
+
+        viewport.addEventListener('pointerup', (e) => {
+            if (!tracking) return;
+            tracking = false;
+            const deltaX = e.clientX - startX;
+            const deltaY = e.clientY - startY;
+            if (Math.abs(deltaX) > SWIPE_THRESHOLD && Math.abs(deltaX) > Math.abs(deltaY)) {
+                goTo(currentIndex + (deltaX < 0 ? 1 : -1), { fromUser: true });
+            }
+        });
+
+        viewport.addEventListener('pointercancel', () => { tracking = false; });
+    }
+
+    // Listener para mudanças em tempo real em prefers-reduced-motion
+    if (typeof reducedMotion.addEventListener === 'function') {
+        reducedMotion.addEventListener('change', () => {
+            if (reducedMotion.matches) {
+                stopAuto();
+            } else {
+                startAuto();
+            }
+        });
+    }
+
+    // Reaplica transform em resize (debounce leve)
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+        }, 150);
     });
 }
 
