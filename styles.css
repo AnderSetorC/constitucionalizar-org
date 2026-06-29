@@ -1156,19 +1156,26 @@ body {
 }
 
 .project-card-media {
-    aspect-ratio: 16 / 10;
     background: var(--cinza-claro);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 16px;
+}
+
+.project-card-media picture {
+    display: block;
+    width: 100%;
 }
 
 .project-card-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
     display: block;
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: contain;
+    margin: 0 auto;
 }
 
 .project-card-body {
@@ -1330,7 +1337,11 @@ body {
     }
 
     .project-card-media {
-        aspect-ratio: 4 / 3;
+        padding: 10px;
+    }
+
+    .project-card-media img {
+        max-height: 240px;
     }
 
     .project-card-title {
