@@ -1611,7 +1611,10 @@ body {
     .why-join,
     .urgency,
     .pricing,
-    .final-cta {
+    .final-cta,
+    .ebook-section,
+    .social-section,
+    .pricing-final {
         padding: var(--padding-mobile);
     }
 
@@ -1640,23 +1643,24 @@ body {
     }
 
     .watermark-1 {
-        width: 200px;
-        height: 135px;
-        opacity: 0.25;
+        width: 180px;
+        height: 120px;
+        opacity: 0.22;
     }
 
     .watermark-2 {
-        width: 210px;
-        height: 140px;
-        opacity: 0.25;
+        width: 180px;
+        height: 120px;
+        opacity: 0.22;
     }
 
     .section-title {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
+        letter-spacing: 0.5px;
     }
 
     .check-list li {
-        font-size: 1rem;
+        font-size: 0.95rem;
         padding: 12px 0;
         gap: 12px;
     }
@@ -1668,7 +1672,11 @@ body {
     }
 
     .urgency-title {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
+    }
+
+    .urgency-text {
+        font-size: 1.15rem;
     }
 
     .pricing-card {
@@ -1700,10 +1708,6 @@ body {
         gap: 15px;
     }
 
-    .social-section {
-        padding: var(--padding-mobile);
-    }
-
     .social-subtitle {
         font-size: 1rem;
         margin-bottom: 30px;
@@ -1726,6 +1730,36 @@ body {
         font-size: 1rem;
     }
 
+    .donation-lead {
+        font-size: 1.25rem;
+        line-height: 1.35;
+    }
+
+    .donation-cta-sub {
+        font-size: 0.78rem;
+    }
+
+    .ebook-section {
+        padding: var(--padding-mobile);
+    }
+
+    .ebook-title {
+        font-size: 1.45rem;
+    }
+
+    .ebook-lead {
+        font-size: 0.98rem;
+    }
+
+    .ebook-form {
+        padding: 22px 18px;
+    }
+
+    .form-row-split {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
     .social-button {
         padding: 16px 24px;
         font-size: 0.9rem;
@@ -1737,6 +1771,23 @@ body {
     .social-button-text {
         flex: 1;
         text-align: center;
+    }
+
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .footer-text {
+        font-size: 1rem;
+    }
+
+    .footer-cnpj {
+        font-size: 0.88rem;
+    }
+
+    .footer-credits {
+        font-size: 0.82rem;
+        padding: 0 5px;
     }
 
     .whatsapp-float {
@@ -1751,8 +1802,6 @@ body {
         height: 28px;
     }
 }
-
-/* Animações suaves */
 
 /* Animações suaves */
 @media (prefers-reduced-motion: no-preference) {
