@@ -1078,6 +1078,10 @@ body {
     margin-bottom: 0;
 }
 
+.donation-text-center {
+    text-align: center;
+}
+
 .donation-text strong {
     color: var(--brasil-verde-escuro);
     font-weight: 700;
