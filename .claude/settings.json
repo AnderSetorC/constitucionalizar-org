@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python \"optimize_projects.py\")",
+      "Bash(cd \"c:\\\\Work\\\\projetos\\\\constitucionalizar-org\" && rm \"optimize_projects.py\" && rm temp/*.png temp/*.docx && ls assets/images/projects/ && ls temp/)",
+      "Bash(cp /c/Work/projetos/constitucionalizar-org/assets/images/logo/*.avif /c/Work/projetos/constitucionalizar-org/associar-app/public/assets/images/logo/)",
+      "Bash(cp /c/Work/projetos/constitucionalizar-org/assets/images/logo/*.webp /c/Work/projetos/constitucionalizar-org/associar-app/public/assets/images/logo/)",
+      "Bash(cp /c/Work/projetos/constitucionalizar-org/assets/images/watermark/*.jpg /c/Work/projetos/constitucionalizar-org/associar-app/public/assets/images/watermark/)",
+      "Bash(cp /c/Work/projetos/constitucionalizar-org/assets/favicon/* /c/Work/projetos/constitucionalizar-org/associar-app/public/assets/favicon/)",
+      "Bash(curl -s -o /dev/null -w \"Status: %{http_code}\\\\n\" http://localhost:3000/formulario)"
+    ],
+    "additionalDirectories": [
+      "C:\\Work\\projetos\\constitucionalizar-org\\temp",
+      "C:\\Work\\projetos"
+    ]
+  }
+}
