@@ -274,6 +274,30 @@ body {
 }
 
 /* ============================================
+   CHAMADA DE IMPACTO PÓS-HERO
+   ============================================ */
+.rally-call {
+    padding: 30px 20px;
+    background: linear-gradient(135deg, var(--brasil-verde) 0%, var(--brasil-verde-escuro) 100%);
+    text-align: center;
+}
+
+.rally-text {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--branco);
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rally-accent {
+    color: var(--brasil-amarelo);
+}
+
+/* ============================================
    SEÇÃO VISUAL - IMAGEM REAL
    ============================================ */
 .visual-section {
@@ -1631,6 +1655,14 @@ body {
 
     .hero-text {
         font-size: 1rem;
+    }
+
+    .rally-call {
+        padding: 24px 15px;
+    }
+
+    .rally-text {
+        font-size: 1.1rem;
     }
 
     .real-image {
