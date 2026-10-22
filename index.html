@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
     <link rel="apple-touch-icon" sizes="48x48" href="assets/favicon/favicon-48.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=8">
     <!-- Google Ads Tag (substitua AW-XXXXXXXXX pelo seu ID) -->
     <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
@@ -27,146 +27,387 @@
     </script>
     -->
 </head>
-<body>
-    <!-- Marca d'água da Bandeira do Brasil nos fundos brancos -->
-    <div class="watermark" aria-hidden="true">
-        <img src="assets/images/watermark/bandeira-brasil.jpg" alt="" class="watermark-img watermark-1">
-        <img src="assets/images/watermark/bandeira-brasil.jpg" alt="" class="watermark-img watermark-2">
-    </div>
-
-    <!-- Cabeçalho com Logo -->
-    <header class="header">
-        <div class="container">
-            <div class="logo-wrapper">
-                <picture>
-                    <source type="image/avif"
-                            srcset="assets/images/logo/logo-256.avif 1x, assets/images/logo/logo-512.avif 2x"
-                            sizes="240px">
-                    <source type="image/webp"
-                            srcset="assets/images/logo/logo-256.webp 1x, assets/images/logo/logo-512.webp 2x"
-                            sizes="240px">
-                    <img src="assets/images/logo/logo-512.webp"
-                         width="240"
-                         height="240"
-                         alt="Logo da Associação Constitucionalizar — selo institucional"
-                         class="logo"
-                         decoding="async"
-                         fetchpriority="high">
-                </picture>
-            </div>
-            <h1 class="header-title">ASSOCIAÇÃO CONSTITUCIONALIZAR</h1>
-            <p class="header-subtitle">Pelo Direito de Ir e Vir</p>
-        </div>
-    </header>
-
-    <!-- Chamada de impacto pré-hero -->
-    <section class="rally-call">
-        <div class="container">
-            <p class="rally-text">
-                Chega de reclamar só pela internet!<br>
-                <span class="rally-accent">Chega de indignação sem reação!</span>
-            </p>
-        </div>
-    </section>
-
-    <!-- Seção Principal - Chamada -->
-    <section class="hero">
-        <div class="container">
-            <h2 class="hero-title">Você sabia que dezenas de cidades estão proibindo estacionamento, circulação e dificultando a permanência de motorhomes no Brasil?</h2>
-            <p class="hero-text">
-                Defendemos <strong>motocampistas, campistas, turistas</strong> e todos aqueles que acreditam na liberdade de ir e vir.
-            </p>
-            <p class="hero-text">
-                <strong>O desrespeito ao direito de um cidadão é uma ameaça ao direito de todos.</strong>
-            </p>
-            <p class="hero-text">
-                Nossa luta não é apenas sobre motorhomes, campings ou viagens.<br>
-                <strong class="highlight">Nossa luta é sobre cidadania.</strong>
-            </p>
-        </div>
-    </section>
-
-    <!-- Seção Visual - Motorhome na Praia -->
-    <section class="visual-section">
-        <div class="container">
-            <div class="image-frame">
-                <img
-                    src="assets/images/banner/motor-home.jpg"
-                    alt="Motorhomes ao pôr do sol na praia - liberdade de ir e vir"
-                    class="real-image"
-                    loading="lazy">
-                <div class="image-overlay">
-                    <p class="image-caption">Liberdade de ir e vir é um direito de todos</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Transformação -->
-    <section class="transformation">
-        <div class="container">
-            <p class="transform-text">Quando um cidadão perde um direito, <strong>todos perdem um pouco de liberdade</strong>.</p>
-            <p class="transform-text">Por isso, transformamos <strong>indignação individual</strong> em <strong>força coletiva</strong>.</p>
-            <h3 class="transform-title">Juntos somos mais fortes!</h3>
-        </div>
-    </section>
-
-    <!-- Seção Princípios -->
-    <section class="principles">
-        <div class="container">
-            <ul class="check-list">
-                <li><span class="check-icon">✓</span> A defesa de um direito fortalece todos os direitos.</li>
-                <li><span class="check-icon">✓</span> A injustiça contra um cidadão afeta toda a sociedade.</li>
-                <li><span class="check-icon">✓</span> Defender um cidadão é proteger toda a sociedade.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Seção Por que se Associar -->
-    <section class="why-join">
-        <div class="container">
-            <h2 class="section-title">Por que se associar?</h2>
-            <ul class="check-list">
-                <li><span class="check-icon">✓</span> Fortalecer uma causa que beneficia toda a sociedade.</li>
-                <li><span class="check-icon">✓</span> Apoiar ações coletivas em defesa da liberdade e da cidadania.</li>
-                <li><span class="check-icon">✓</span> Somar sua voz a milhares de pessoas que acreditam no respeito à Constituição.</li>
-                <li><span class="check-icon">✓</span> Contribuir para mudanças concretas e permanentes.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Seção de Urgência -->
-    <section class="urgency">
-        <div class="container">
-            <h2 class="urgency-title">FAÇA PARTE DA SOLUÇÃO</h2>
-            <p class="urgency-text">POR APENAS R$ 1,00 REAL POR DIA</p>
-        </div>
-    </section>
-
-    <!-- Seção de Preço e CTA -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="pricing-card">
-                <div class="pricing-badge">PLANO MENSAL</div>
-                <div class="pricing-amount">
-                    <span class="currency">R$</span>
-                    <span class="price">30</span>
-                    <span class="cents">,00</span>
-                </div>
-                <p class="pricing-period">por mês</p>
-                <h3 class="pricing-title">Associe-se a Constitucionalizar</h3>
-                <p class="pricing-description">
-                    Ajude a defender direitos hoje, para não precisar defendê-los sozinho amanhã.
-                </p>
-                <a href="https://www.constitucionalizar.org.br/#section-planos" class="cta-button cta-primary" target="_blank" rel="noopener">
-                    ASSOCIAR-SE AGORA
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção do E-book - Pílulas da Constituição -->
-    <section class="ebook-section" id="ebook">
+<body><a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header">
+<div class="container header-inner"><a href="#" aria-label="Constitucionalizar — início"><img class="logo" src="assets/images/logo/logo-256.webp" width="88" height="88" alt="Associação Constitucionalizar"></a>
+<div class="header-actions">
+<details class="menu"><summary>MENU <span aria-hidden="true">☰</span></summary>
+<nav aria-label="Menu principal"><a href="#historia">Nossa história</a><a href="#atuacao">Nossa atuação</a><a href="#associados">Por que precisamos de você</a><a href="#como-atuaremos">Como atuaremos</a><a href="#quem-somos">Quem somos</a><a href="#projetos">Nossos projetos</a><a href="#contato">Contato</a>
+</nav>
+</details><a class="cta-button cta-primary" href="https://www.constitucionalizar.org.br/#section-planos" target="_blank" rel="noopener noreferrer">ASSOCIE-SE <span aria-hidden="true">↗</span></a><a class="cta-button cta-secondary" href="https://loja.infinitepay.io/constitucionalizar" target="_blank" rel="noopener noreferrer">FAÇA UMA DOAÇÃO <span aria-hidden="true">↗</span></a>
+</div>
+</div>
+</header>
+<main id="conteudo">
+<section class="hero">
+<div class="container hero-inner"><img src="assets/images/logo/logo-256.webp" alt="" width="100" height="100">
+<p class="hero-kicker">Chega de reclamar só pela internet!<br>Chega de indignação sem reação!</p>
+<h1><span>Ajude-nos a provocar um</span> TSUNAMI DE AÇÕES JUDICIAIS</h1>
+<p>para lutar pelo nosso direito constitucional de Ir e Vir e garantir o exercício do direito à propriedade e sua função social.</p><a class="cta-button cta-primary" href="https://www.constitucionalizar.org.br/#section-planos" target="_blank" rel="noopener noreferrer">QUERO FAZER PARTE DA SOLUÇÃO <span aria-hidden="true">↗</span></a>
+</div>
+</section>
+<section class="questions" id="perguntas">
+<div class="container">
+<h2>TRÊS PERGUNTAS QUE LEVAREMOS AO PODER JUDICIÁRIO</h2>
+<ol>
+<li><span>01</span>
+<p>Motorcampistas, campistas e turistas têm direito de ir e vir no Brasil ou só têm o dever de pagar taxas, impostos e multas?</p>
+</li>
+<li><span>02</span>
+<p>O acesso às praias é livre e franco, como prevê a Lei nº 7.661/1988, ou pode ser condicionado ao pagamento de taxas?</p>
+</li>
+<li><span>03</span>
+<p>A autonomia municipal pode aniquilar direitos e princípios assegurados pela Constituição em uma análise de ponderação?</p>
+</li>
+</ol>
+</div>
+</section>
+<section class="story-section" id="historia">
+<div class="container split">
+<div class="section-copy">
+<p class="eyebrow">02 <span></span>
+</p>
+<h2>Como tudo começou</h2>
+<h3>Processo contra o Detran</h3>
+<p>Nossa luta começou quando tentamos documentar nosso motorhome, a Elis Regina. Precisamos processar o Detran/SP para cumprir esse dever. Conquistamos a documentação e R$ 5.000,00 por danos morais.</p>
+<p class="case-number">📄 Processo nº 0013197-08.2020.8.26.0071</p>
+<h3>Declaração de Inconstitucionalidade de lei do Guarujá</h3>
+<p>Em janeiro de 2024, recebemos uma multa de R$ 8.900,00 no Guarujá/SP, mesmo amparadas por Mandado de Segurança. Levamos o caso ao Ministério Público, que ajuizou uma ADI contra a Lei Complementar nº 291/2021. Em novembro de 2025, o TJSP declarou a legislação inconstitucional.</p>
+<p class="case-number">📄 Mandado de Segurança nº 1000286-02.2023.8.26.0536📄 ADI nº 2126901-42.2024.8.26.0000</p>
+<p>Porém, nada é tão ruim que não possa piorar: Guarujá aprovou outra lei, prevendo Taxa de Turismo para todos os tipos de veículos, não apenas motorhomes. Também vamos lutar contra essa nova lei!</p>
+<h3>Setembro de 2026 — Mais uma vitória para nossa Elis Regina!</h3>
+<p>A caminho de Bertioga/SP, para o casamento dos amigos Má e Carlos, do @Favela&#x27;s Motorhome, nossa Elis sofreu uma tentativa de homicídio por envenenamento com diesel.</p>
+<p>Nossa Elis só bebe gasolina e álcool — Por sinal, bebe mais que a gente e Zeca Pagodinho juntos!</p>
+<p>Processamos o posto: VR$ 3.000,00 por danos morais e R$ 1.460,00 por danos materiais!</p>
+<p class="case-number">📄 Processo nº 4000481-65.2026.8.26.0071/SP</p>
+</div>
+<div class="image-placeholder" data-image-slot="historia" role="img" aria-label="Espaço reservado: História da Elis Regina e conquistas judiciais"><span aria-hidden="true">▧</span><small>História da Elis Regina e conquistas judiciais</small>
+</div>
+</div>
+</section>
+<section class="story-section" id="tentativas">
+<div class="container split">
+<div class="section-copy">
+<p class="eyebrow">03 <span></span>
+</p>
+<h2>O que já tentamos?</h2>
+<p>Antes de formalizar a Constitucionalizar, Gizele buscou <strong>soluções administrativas</strong> nos Ministérios Públicos sobre <strong>Guarujá/SP, Saquarema/RJ, Guarapari/ES, São Tomé das Letras/MG e Mucugê/BA</strong>, sem soluções abrangentes além da <strong>ADI de Guarujá</strong>.</p>
+<p>Em Guarapari, a situação piorou: Criaram <strong>“barreiras sanitárias” contra a entrada de turistas transportando alimentos</strong>.</p>
+<p><strong>Durante a ação de Guarujá</strong>, buscou apoio para sustentação oral: <strong>a Defensoria Estadual alegou que o MP já atuava; as OABs de Bauru e Guarujá não responderam; e uma associação de campismo informou que atuava no Legislativo.</strong></p>
+<p>O problema é <strong>nacional e recorrente</strong>: restrições ao direito de ir e vir, à propriedade e sua função social avançam <strong>sem resistência coordenada. Isso precisa mudar!</strong></p>
+</div>
+<div class="image-placeholder" data-image-slot="tentativas" role="img" aria-label="Espaço reservado: Cidades, restrições e tentativas de diálogo"><span aria-hidden="true">▧</span><small>Cidades, restrições e tentativas de diálogo</small>
+</div>
+</div>
+</section>
+<section class="story-section" id="atuacao">
+<div class="container split">
+<div class="section-copy">
+<p class="eyebrow">04 <span></span>
+</p>
+<h2>Nossa atuação nacional</h2>
+<p>Após formalizar a Constitucionalizar, encaminhamos dois requerimentos ao MPF (Procuradoria Federal dos Direitos dos Cidadãos) e à Defensoria Pública da União, buscando soluções nacionais e definitivas para:</p>
+<h3>1. Restrições à circulação</h3>
+<p>Normas de 18 municípios que restringem a circulação de campistas e motorcampistas.</p>
+<h3>2. Taxas de turismo</h3>
+<p>Cobranças pelo ingresso ou circulação de veículos em 10 municípios praianos.</p>
+<h3>3. Atendimento no SUS para motorcampistas itinerantes</h3>
+<p>Também relatamos à PFDC dificuldades de motorcampistas itinerantes para receber atendimento pelo SUS sem comprovante de residência.</p>
+</div>
+<div class="image-placeholder" data-image-slot="atuacao" role="img" aria-label="Espaço reservado: Mapa do Brasil e atuação nacional"><span aria-hidden="true">▧</span><small>Mapa do Brasil e atuação nacional</small>
+</div>
+</div>
+</section>
+<section class="story-section" id="respostas">
+<div class="container split">
+<div class="section-copy">
+<p class="eyebrow">05 <span></span>
+</p>
+<h2>Respostas institucionais</h2>
+<p>O MPF arquivou as demandas sobre restrições a motorhomes, alegando particularidades das normas municipais, e encaminhou a análise das taxas de turismo aos órgãos locais.</p>
+<p>A DPU também arquivou as demandas, considerando-as questões individuais fora de sua atuação.</p>
+<p>Nossa preocupação é que essa análise fragmentada perpetue a insegurança jurídica, permitindo novas restrições nos mais de 5.500 municípios do país.</p>
+<p>Buscamos o reconhecimento da dimensão nacional do problema e uma solução que enfrente suas causas, não apenas seus efeitos.</p>
+</div>
+<div class="image-placeholder" data-image-slot="respostas" role="img" aria-label="Espaço reservado: MPF, DPU e respostas institucionais"><span aria-hidden="true">▧</span><small>MPF, DPU e respostas institucionais</small>
+</div>
+</div>
+</section>
+<section class="story-section" id="associados">
+<div class="container split">
+<div class="section-copy">
+<p class="eyebrow">07 <span></span>
+</p>
+<h2>Por que precisamos de associados?</h2>
+<p>Não precisamos de associados para comprar bolsas, sapatos ou viagens, nem apenas para manter a Constitucionalizar funcionando. Manter a associação pequena é barato. Custa cerca de R$ 1.000,00 mensais, valor que podemos pagar sozinhas, sem nenhum problema. Mas, isso não basta: Precisamos de associados para realizar projetos grandes!</p>
+<p>Precisamos crescer, fortalecer nossa representatividade nacional e contratar um escritório jurídico altamente qualificado e multidisciplinar capaz de enfrentar os municípios que restringem nossos direitos em igualdade de condições - Isso não vai custar barato.</p>
+<p>Essa causa não é só nossa. Nos voluntariamos para lutar por essa causa, mas precisamos de apoio. Sozinhas não vamos sair de onde estamos.</p>
+<p>Não precisamos de milhões de seguidores. Precisamos de apenas 2.000 associados contribuindo com R$ 30,00 por mês. Tenham certeza que esses recursos serão investidos de forma transparente em nossa causa.</p>
+<p>Temos certeza: Poucas pessoas, unidas por uma pequena contribuição, podem viabilizar grandes mudanças para muita gente.</p>
+<p>NOSSA META: 2.000 ASSOCIADOS</p>
+<p>Contribuição: R$ 30,00 por mês</p>
+<p>FAÇA PARTE DA SOLUÇÃO</p>
+</div>
+<div class="image-placeholder" data-image-slot="associados" role="img" aria-label="Espaço reservado: União de associados em defesa da cidadania"><span aria-hidden="true">▧</span><small>União de associados em defesa da cidadania</small>
+</div>
+</div>
+</section>
+<section class="goal" id="meta">
+<div class="container goal-inner">
+<div>
+<p class="eyebrow">NOSSA META</p>
+<h2>2.000 ASSOCIADOS</h2>
+<p>Contribuição: <strong>R$ 30,00</strong> por mês</p>
+</div><a class="cta-button cta-primary" href="https://www.constitucionalizar.org.br/#section-planos" target="_blank" rel="noopener noreferrer">FAÇA PARTE DA SOLUÇÃO <span aria-hidden="true">↗</span></a>
+</div>
+</section>
+<section class="membership" id="perfil-associados">
+<div class="container">
+<div class="membership-heading">
+<p class="eyebrow">08 <span></span>
+</p>
+<h2>Qual o tipo de associados que precisamos?</h2>
+<p class="highlight">A CONSTITUCIONALIZAR PODE NÃO SER PARA VOCÊ!</p>
+</div>
+<p>A Constituição Federal diz que ninguém poderá ser compelido a associar-se ou a permanecer associado (Art. 5º, XX).</p>
+<p>Precisamos de associados que:</p>
+<ul class="principle-list">
+<li><span class="number">01</span>
+<p>Entendam que o compromisso com a Constituição e a democracia é como um casamento: deve ser honrado na saúde e na doença, na riqueza e na pobreza, na alegria e na tristeza — não apenas quando convém ou coincide com suas convicções pessoais.</p>
+</li>
+<li><span class="number">02</span>
+<p>Respeitem as decisões judiciais, inclusive desfavoráveis, e compreendam que a nossa caminhada pode ser longa.</p>
+</li>
+<li><span class="number">03</span>
+<p>Entendam que público nem sempre significa gratuito. Não existe almoço grátis! Defendemos campings públicos, cuja decisão sobre gratuidade cabe exclusivamente ao município.</p>
+</li>
+<li><span class="number">04</span>
+<p>Respeitem a regulamentação legítima do acampamento, desde que as restrições não confundam acampamento em via pública com restrições indevidas à circulação, ao estacionamento e à parada. As ruas pertencem a todos e nós também temos o direito legítimo de ir e vir!</p>
+</li>
+<li><span class="number">05</span>
+<p>Percebam o campismo como uma alternativa rica de lazer que deve estar acessível para crianças, jovens, adultos e idosos. Se não respeitar esses princípios, por favor, não se associe.</p>
+</li>
+</ul>
+<div class="pledge">
+<p>Nós fizemos a escolha de defender os direitos de todos, associados ou não. Não podemos garantir resultados, mas garantimos que:</p>
+<p>NINGUÉM NA FACE DA TERRA VAI LUTAR MAIS DO QUE A GENTE POR ESSA CAUSA!</p>
+</div>
+<p>Aproveitamos para registrar nossos agradecimentos ao @Alf (00) e @Magrão (Turma de Taubaté/SP), que tem nos ajudado desde o primeiro passo dessa caminhada!</p>
+</div>
+</section>
+<section class="action-section" id="como-atuaremos">
+<div class="container">
+<p class="eyebrow">09 <span></span>
+</p>
+<h2>Como <em>atuaremos?</em>
+</h2>
+<div class="action-grid">
+<article class="action-card"><span class="number">01</span>
+<div>
+<h3>Benefícios aos associados</h3>
+<p>Parcerias com campings, descontos em produtos e serviços, sorteios e outras vantagens exclusivas para quem faz parte.</p>
+</div>
+</article>
+<article class="action-card"><span class="number">02</span>
+<div>
+<h3>Poder Judiciário</h3>
+<p>Ajuizaremos ações coletivas e individuais relacionadas às nossas causas, buscando enfrentar as restrições de forma ampla e contribuir para a formação de jurisprudência que fortaleça a segurança jurídica.</p>
+</div>
+</article>
+<article class="action-card"><span class="number">03</span>
+<div>
+<h3>Atuação Extrajudicial</h3>
+<p>Manteremos uma atuação extrajudicial complementar, com encaminhamentos ao Ministério Público Federal, à Defensoria Pública e a outros órgãos competentes, sempre que essa estratégia puder contribuir para a solução dos problemas.</p>
+</div>
+</article>
+<article class="action-card"><span class="number">04</span>
+<div>
+<h3>Poder Executivo e Poder Legislativo</h3>
+<p>Diálogo com os Poderes Executivo e Legislativo para propor e aprimorar políticas públicas, leis, regulamentações e infraestrutura voltadas ao turismo e ao exercício dos direitos constitucionais.</p>
+</div>
+</article>
+<article class="action-card"><span class="number">05</span>
+<div>
+<h3>Sociedade Civil</h3>
+<p>Conscientização, informação e diálogo com cidadãos, motorcampistas, campistas, associações de moradores e demais organizações da sociedade civil, fortalecendo nossa rede de participação e cooperação em todo o país.</p>
+</div>
+</article>
+<article class="action-card"><span class="number">06</span>
+<div>
+<h3>Atuação Nacional e Integrada</h3>
+<p>Trabalharemos de forma coordenada para enfrentar as causas dos problemas, e não apenas seus efeitos, buscando soluções amplas, gerais e definitivas.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<aside class="cta-band">
+<div class="container">
+<div>
+<h2>Faça parte da solução</h2>
+<p>Não quer se associar, mas pode ajudar?</p>
+</div>
+<div class="button-group"><a class="cta-button cta-primary" href="https://www.constitucionalizar.org.br/#section-planos" target="_blank" rel="noopener noreferrer">ASSOCIE-SE AGORA <span aria-hidden="true">↗</span></a><a class="cta-button cta-secondary" href="https://loja.infinitepay.io/constitucionalizar" target="_blank" rel="noopener noreferrer">FAÇA UMA DOAÇÃO <span aria-hidden="true">↗</span></a>
+</div>
+</div>
+</aside>
+<section class="story-section" id="quem-somos">
+<div class="container split">
+<div class="section-copy">
+<p class="eyebrow">11 <span></span>
+</p>
+<h2>Quem somos</h2>
+<p>Gizele, Silvana e Lívia são os rostos e as vozes da Constitucionalizar.</p>
+<p>Casadas há oito anos, Gizele e Silvana viajam com a Elis Regina, uma Renault Trafic 1988 que às vezes prefere a primeira classe do guincho da Porto Seguro! Lívia, sobrinha das duas, representa os turistas sem motorhome.</p>
+<p>Todas temos profissão e renda próprias: Gizele é servidora pública; Silvana, podóloga, enfermeira e aposentada; Lívia, assistente social e empreendedora.</p>
+<p>Não criamos a Constitucionalizar para viver dos problemas. Queremos soluções amplas, gerais e definitivas.</p>
+<p>Hoje, trabalhamos voluntariamente. Quando a associação estiver estruturada, nossa remuneração será de um salário mínimo por fundadora a cada 1.000 associados — dois salários mínimos para cada uma ao atingirmos a meta de 2.000 associados.</p>
+<p>Valor modesto diante da responsabilidade assumida, da grandeza da missão e das dificuldades que enfrentaremos.</p>
+</div>
+<div class="image-placeholder" data-image-slot="quem-somos" role="img" aria-label="Espaço reservado: Gizele, Silvana, Lívia e a Elis Regina"><span aria-hidden="true">▧</span><small>Gizele, Silvana, Lívia e a Elis Regina</small>
+</div>
+</div>
+</section>
+<section class="institution" id="associacao">
+<div class="container narrow">
+<p class="eyebrow">12 <span></span>
+</p>
+<h2>Associação Constitucionalizar</h2>
+<p>A Constitucionalizar acredita que mais que um hobby, mais que uma terapia, o campismo precisa ser visto como uma cultura, porque a cultura cria mercado; o mercado gera dinheiro; o dinheiro cria oportunidades; as oportunidades geram negócios; os negócios constroem empresas; as empresas criam empregos; os empregos contribuem para a estabilidade social; e a estabilidade social transforma o mundo em um lugar melhor para todos.</p>
+<h3 class="institution-title">NOSSA MISSÃO</h3>
+<p>Contribuir para transformar a cidadania no laço que une o povo — um valor maior do que todo o dinheiro do mundo pode comprar.</p>
+<h3 class="institution-title">NOSSA VISÃO</h3>
+<p>Contribuir para fazer da cidadania o ar que cada brasileiro respira: desde que nasce até o último suspiro.</p>
+<h3 class="institution-title">NOSSOS VALORES — TETO</h3>
+<p class="value">T — TRABALHO</p>
+<p class="value">E — ÉTICA</p>
+<p class="value">T — TRANSPARÊNCIA</p>
+<p class="value">O — OBSTINAÇÃO</p>
+<h3 class="institution-title">NOSSO LEMA</h3>
+<p>Leia a Constituição - Cumpra seus deveres - Exija seus direitos</p>
+<h3 class="institution-title">NOSSA CONVIÇÃO</h3>
+<p>A cidadania é um instrumento de sobrevivência em um mundo cada vez mais dominado por mercado financeiro, gigantes da tecnologia, inteligência artificial e robôs fissurados em distrair o povo com o novo pão e circo, que tem o objetivo real de acumular mais dinheiro e mais poder nas mãos de um seleto grupo de humanos.</p>
+<p>No atual planeta Terra, cidadania não é luxo. É necessidade!</p>
+</div>
+</section>
+<section class="projects-section" id="projetos">
+<div class="container">
+<p class="eyebrow">NOSSAS INICIATIVAS <span></span>
+</p>
+<h2>Conheça nossos projetos</h2>
+<div class="projects-grid">
+<article class="project-card">
+                                <div class="project-card-media">
+                                    <picture>
+                                        <source type="image/avif" srcset="assets/images/projects/viaje-100-limites.avif">
+                                        <source type="image/webp" srcset="assets/images/projects/viaje-100-limites.webp">
+                                        <img src="assets/images/projects/viaje-100-limites.jpg"
+                                             width="1200" height="1200"
+                                             alt="Logotipo do projeto Viaje 100 Limites - mapa do Brasil com estrada e motorhome"
+                                             loading="lazy" decoding="async">
+                                    </picture>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">Viaje 100 Limites</h3>
+                                    <p class="project-card-desc">Mais liberdade, segurança e turismo para todos.</p>
+                                    <p class="project-card-note">*Retomaremos ao atingirmos 100 associados.</p>
+                                </div>
+                            </article>
+<article class="project-card">
+                                <div class="project-card-media">
+                                    <picture>
+                                        <source type="image/avif" srcset="assets/images/projects/adesivo-institucional.avif">
+                                        <source type="image/webp" srcset="assets/images/projects/adesivo-institucional.webp">
+                                        <img src="assets/images/projects/adesivo-institucional.jpg"
+                                             width="1200" height="441"
+                                             alt="Adesivo institucional da Constitucionalizar com lema 'Leia a Constituição, cumpra seus deveres, exija seus direitos'"
+                                             loading="lazy" decoding="async">
+                                    </picture>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">Adesivo Institucional</h3>
+                                    <p class="project-card-desc">Levando a Constituição para o dia a dia dos brasileiros. Porque cidadania começa pelo conhecimento da Constituição.</p>
+                                    <p class="project-card-note">*Iniciaremos ao atingirmos 100 associados. Grátis para associados e pago para não associados.</p>
+                                </div>
+                            </article>
+<article class="project-card">
+                                <div class="project-card-media">
+                                    <picture>
+                                        <source type="image/avif" srcset="assets/images/projects/pilulas-da-constituicao.avif">
+                                        <source type="image/webp" srcset="assets/images/projects/pilulas-da-constituicao.webp">
+                                        <img src="assets/images/projects/pilulas-da-constituicao.jpg"
+                                             width="811" height="1200"
+                                             alt="Capa do e-book Pílulas da Constituição - edição sobre o que é a Constituição"
+                                             loading="lazy" decoding="async">
+                                    </picture>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">Pílulas da Constituição</h3>
+                                    <p class="project-card-desc">Constituição Federal em linguagem simples. Aprenda seus direitos de forma clara e acessível.</p>
+                                    <p class="project-card-note">*Publicação quinzenal gratuita em pdf para associados e não associados. Lançamento em vídeo ao atingirmos 100 associados.</p>
+                                </div>
+                            </article>
+<article class="project-card">
+                                <div class="project-card-media">
+                                    <picture>
+                                        <source type="image/avif" srcset="assets/images/projects/mapa-do-bem.avif">
+                                        <source type="image/webp" srcset="assets/images/projects/mapa-do-bem.webp">
+                                        <img src="assets/images/projects/mapa-do-bem.jpg"
+                                             width="1200" height="800"
+                                             alt="Logotipo do projeto Mapa do Bem - mapa do Brasil em cores da bandeira com coração"
+                                             loading="lazy" decoding="async">
+                                    </picture>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">Mapa do Bem</h3>
+                                    <p class="project-card-desc">Conectando quem quer ajudar a quem precisa. Fortalecendo projetos sociais em todo o Brasil.</p>
+                                    <p class="project-card-note">*Iniciaremos execução própria se ou quando atingirmos 2000 associados, caso não consigamos parcerias públicas.</p>
+                                </div>
+                            </article>
+<article class="project-card">
+                                <div class="project-card-media">
+                                    <picture>
+                                        <source type="image/avif" srcset="assets/images/projects/mapa-dinamico-do-turismo.avif">
+                                        <source type="image/webp" srcset="assets/images/projects/mapa-dinamico-do-turismo.webp">
+                                        <img src="assets/images/projects/mapa-dinamico-do-turismo.jpg"
+                                             width="1200" height="1200"
+                                             alt="Logotipo do projeto Mapa Dinâmico do Turismo - mapa com pin de localização e ícones de viagem"
+                                             loading="lazy" decoding="async">
+                                    </picture>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">Mapa Dinâmico do Turismo</h3>
+                                    <p class="project-card-desc">Informações turísticas oficiais integradas em um só lugar.</p>
+                                    <p class="project-card-note">*Retomaremos execução própria ao atingirmos 100 associados, caso não consigamos parcerias públicas.</p>
+                                </div>
+                            </article>
+<article class="project-card">
+                                <div class="project-card-media">
+                                    <picture>
+                                        <source type="image/avif" srcset="assets/images/projects/central-da-cidadania.avif">
+                                        <source type="image/webp" srcset="assets/images/projects/central-da-cidadania.webp">
+                                        <img src="assets/images/projects/central-da-cidadania.jpg"
+                                             width="333" height="260"
+                                             alt="Logotipo do projeto Central da Cidadania - letra C em verde, azul e amarelo com os valores trabalho, ética, persistência e transparência"
+                                             loading="lazy" decoding="async">
+                                    </picture>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">Central da Cidadania</h3>
+                                    <p class="project-card-desc">Planejamento, atuação e transparência em defesa dos direitos coletivos. Um projeto da Associação Constitucionalizar. O conceito está sólido: a Central mostra a atuação institucional; o Kanban mostra o andamento; e a Mesa de Trabalho apresenta os detalhes e preserva o histórico. Agora já temos uma base clara para, no próximo passo, definir a identidade visual e criar a arte.</p>
+                                    <p class="project-card-note">*Trabalho · Ética · Persistência · Transparência.</p>
+                                </div>
+                            </article>
+</div>
+</div>
+</section>
+<section class="progress-section" id="acompanhe">
+<div class="container">
+<h2>Acompanhe nossa atuação</h2>
+<p>Conheça nossas ações, conquistas e novidades.</p><a class="text-link" href="https://bio.bob.app.br/constitucionalizar-org" target="_blank" rel="noopener noreferrer">ACOMPANHAR NOSSOS CANAIS ↗</a>
+</div>
+</section>
+<section class="ebook-section" id="ebook">
         <div class="container">
             <div class="ebook-content">
                 <h2 class="ebook-title">Conhecimento também é cidadania</h2>
@@ -236,7 +477,7 @@
                                aria-required="true">
                         <span class="form-consent-text">
                             Li e concordo com os
-                            <a href="#ebook-terms" class="form-consent-link" id="ebookTermsLink">termos de uso e distribuição</a>:
+                            <a href="#ebookForm" class="form-consent-link" id="ebookTermsLink">termos de uso e distribuição</a>:
                             este e-book é destinado exclusivamente para conhecimento pessoal. É
                             <strong>proibida a venda e a reprodução</strong> total ou parcial.
                         </span>
@@ -289,285 +530,41 @@
             </div>
         </div>
     </section>
-
-    <!-- Seção de Preço e CTA -->
-    <!-- Seção de Ações Finais -->
-    <!-- Seção de Doação -->
-    <section class="donation-section" id="doacao">
-        <div class="container">
-            <h2 class="section-title">Você também pode fazer parte desta mudança</h2>
-
-            <div class="donation-image-frame">
-                <picture>
-                    <source type="image/avif" srcset="assets/images/donation/doacao.avif">
-                    <source type="image/webp" srcset="assets/images/donation/doacao.webp">
-                    <img src="assets/images/donation/doacao.jpg"
-                         width="1200"
-                         height="800"
-                         alt="Mãos se unindo em círculo sob a bandeira do Brasil ao pôr do sol - simbolizando a força coletiva da causa"
-                         class="donation-image"
-                         loading="lazy"
-                         decoding="async">
-                </picture>
-            </div>
-
-            <p class="donation-lead">Mesmo que você não seja motorcampista, campista<br>ou turista, pode apoiar a Constitucionalizar:</p>
-
-            <div class="donation-content">
-                <ul class="check-list donation-check-list">
-                    <li><span class="check-icon">✓</span> Defesa da liberdade de ir e vir.</li>
-                    <li><span class="check-icon">✓</span> Defesa da cidadania e dos direitos fundamentais.</li>
-                    <li><span class="check-icon">✓</span> Educação constitucional gratuita para toda a sociedade.</li>
-                    <li><span class="check-icon">✓</span> Desenvolvimento de projetos de interesse público.</li>
-                </ul>
-                <p class="donation-text donation-text-center">
-                    <strong class="donation-highlight">Sua doação fortalece essa causa e ajuda a transformar projetos em realidade</strong>
-                </p>
-            </div>
-
-            <div class="donation-cta-wrapper">
-                <a href="https://loja.infinitepay.io/constitucionalizar" class="cta-button cta-primary" target="_blank" rel="noopener">
-                    Apoiar a Constitucionalizar<br>
-                    <span class="donation-cta-sub">Escolha o valor e a forma de apoiar</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção de Projetos - Carrossel automático -->
-    <section class="projects-section" id="projetos" aria-roledescription="carousel" aria-label="Conheça nossos projetos">
-        <div class="container">
-            <h2 class="section-title">Conheça nossos projetos</h2>
-
-            <div class="projects-carousel" data-projects-carousel>
-                <button class="projects-arrow projects-arrow-prev" type="button" aria-label="Projeto anterior" aria-controls="projectsTrack">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </button>
-
-                <div class="projects-viewport">
-                    <ul class="projects-track" id="projectsTrack">
-                        <li class="projects-slide" role="group" aria-roledescription="slide" aria-label="1 de 6">
-                            <article class="project-card">
-                                <div class="project-card-media">
-                                    <picture>
-                                        <source type="image/avif" srcset="assets/images/projects/viaje-100-limites.avif">
-                                        <source type="image/webp" srcset="assets/images/projects/viaje-100-limites.webp">
-                                        <img src="assets/images/projects/viaje-100-limites.jpg"
-                                             width="1200" height="1200"
-                                             alt="Logotipo do projeto Viaje 100 Limites - mapa do Brasil com estrada e motorhome"
-                                             loading="lazy" decoding="async">
-                                    </picture>
-                                </div>
-                                <div class="project-card-body">
-                                    <h3 class="project-card-title">Viaje 100 Limites</h3>
-                                    <p class="project-card-desc">Mais liberdade, segurança e turismo para todos.</p>
-                                    <p class="project-card-note">*Retomaremos ao atingirmos 100 associados.</p>
-                                </div>
-                            </article>
-                        </li>
-
-                        <li class="projects-slide" role="group" aria-roledescription="slide" aria-label="2 de 6" aria-hidden="true" inert>
-                            <article class="project-card">
-                                <div class="project-card-media">
-                                    <picture>
-                                        <source type="image/avif" srcset="assets/images/projects/adesivo-institucional.avif">
-                                        <source type="image/webp" srcset="assets/images/projects/adesivo-institucional.webp">
-                                        <img src="assets/images/projects/adesivo-institucional.jpg"
-                                             width="1200" height="441"
-                                             alt="Adesivo institucional da Constitucionalizar com lema 'Leia a Constituição, cumpra seus deveres, exija seus direitos'"
-                                             loading="lazy" decoding="async">
-                                    </picture>
-                                </div>
-                                <div class="project-card-body">
-                                    <h3 class="project-card-title">Adesivo Institucional</h3>
-                                    <p class="project-card-desc">Levando a Constituição para o dia a dia dos brasileiros. Porque cidadania começa pelo conhecimento da Constituição.</p>
-                                    <p class="project-card-note">*Iniciaremos ao atingirmos 100 associados. Grátis para associados e pago para não associados.</p>
-                                </div>
-                            </article>
-                        </li>
-
-                        <li class="projects-slide" role="group" aria-roledescription="slide" aria-label="3 de 6" aria-hidden="true" inert>
-                            <article class="project-card">
-                                <div class="project-card-media">
-                                    <picture>
-                                        <source type="image/avif" srcset="assets/images/projects/pilulas-da-constituicao.avif">
-                                        <source type="image/webp" srcset="assets/images/projects/pilulas-da-constituicao.webp">
-                                        <img src="assets/images/projects/pilulas-da-constituicao.jpg"
-                                             width="811" height="1200"
-                                             alt="Capa do e-book Pílulas da Constituição - edição sobre o que é a Constituição"
-                                             loading="lazy" decoding="async">
-                                    </picture>
-                                </div>
-                                <div class="project-card-body">
-                                    <h3 class="project-card-title">Pílulas da Constituição</h3>
-                                    <p class="project-card-desc">Constituição Federal em linguagem simples. Aprenda seus direitos de forma clara e acessível.</p>
-                                    <p class="project-card-note">*Publicação quinzenal gratuita em pdf para associados e não associados. Lançamento em vídeo ao atingirmos 100 associados.</p>
-                                </div>
-                            </article>
-                        </li>
-
-                        <li class="projects-slide" role="group" aria-roledescription="slide" aria-label="4 de 6" aria-hidden="true" inert>
-                            <article class="project-card">
-                                <div class="project-card-media">
-                                    <picture>
-                                        <source type="image/avif" srcset="assets/images/projects/mapa-do-bem.avif">
-                                        <source type="image/webp" srcset="assets/images/projects/mapa-do-bem.webp">
-                                        <img src="assets/images/projects/mapa-do-bem.jpg"
-                                             width="1200" height="800"
-                                             alt="Logotipo do projeto Mapa do Bem - mapa do Brasil em cores da bandeira com coração"
-                                             loading="lazy" decoding="async">
-                                    </picture>
-                                </div>
-                                <div class="project-card-body">
-                                    <h3 class="project-card-title">Mapa do Bem</h3>
-                                    <p class="project-card-desc">Conectando quem quer ajudar a quem precisa. Fortalecendo projetos sociais em todo o Brasil.</p>
-                                    <p class="project-card-note">*Iniciaremos execução própria se ou quando atingirmos 2000 associados, caso não consigamos parcerias públicas.</p>
-                                </div>
-                            </article>
-                        </li>
-
-                        <li class="projects-slide" role="group" aria-roledescription="slide" aria-label="5 de 6" aria-hidden="true" inert>
-                            <article class="project-card">
-                                <div class="project-card-media">
-                                    <picture>
-                                        <source type="image/avif" srcset="assets/images/projects/mapa-dinamico-do-turismo.avif">
-                                        <source type="image/webp" srcset="assets/images/projects/mapa-dinamico-do-turismo.webp">
-                                        <img src="assets/images/projects/mapa-dinamico-do-turismo.jpg"
-                                             width="1200" height="1200"
-                                             alt="Logotipo do projeto Mapa Dinâmico do Turismo - mapa com pin de localização e ícones de viagem"
-                                             loading="lazy" decoding="async">
-                                    </picture>
-                                </div>
-                                <div class="project-card-body">
-                                    <h3 class="project-card-title">Mapa Dinâmico do Turismo</h3>
-                                    <p class="project-card-desc">Informações turísticas oficiais integradas em um só lugar.</p>
-                                    <p class="project-card-note">*Retomaremos execução própria ao atingirmos 100 associados, caso não consigamos parcerias públicas.</p>
-                                </div>
-                            </article>
-                        </li>
-
-                        <li class="projects-slide" role="group" aria-roledescription="slide" aria-label="6 de 6" aria-hidden="true" inert>
-                            <article class="project-card">
-                                <div class="project-card-media">
-                                    <picture>
-                                        <source type="image/avif" srcset="assets/images/projects/central-da-cidadania.avif">
-                                        <source type="image/webp" srcset="assets/images/projects/central-da-cidadania.webp">
-                                        <img src="assets/images/projects/central-da-cidadania.jpg"
-                                             width="333" height="260"
-                                             alt="Logotipo do projeto Central da Cidadania - letra C em verde, azul e amarelo com os valores trabalho, ética, persistência e transparência"
-                                             loading="lazy" decoding="async">
-                                    </picture>
-                                </div>
-                                <div class="project-card-body">
-                                    <h3 class="project-card-title">Central da Cidadania</h3>
-                                    <p class="project-card-desc">Planejamento, atuação e transparência em defesa dos direitos coletivos. Um projeto da Associação Constitucionalizar. O conceito está sólido: a Central mostra a atuação institucional; o Kanban mostra o andamento; e a Mesa de Trabalho apresenta os detalhes e preserva o histórico. Agora já temos uma base clara para, no próximo passo, definir a identidade visual e criar a arte.</p>
-                                    <p class="project-card-note">*Trabalho · Ética · Persistência · Transparência.</p>
-                                </div>
-                            </article>
-                        </li>
-                    </ul>
-                </div>
-
-                <button class="projects-arrow projects-arrow-next" type="button" aria-label="Próximo projeto" aria-controls="projectsTrack">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
-
-                <div class="projects-status" id="projectsStatus" role="status" aria-live="polite" aria-atomic="true"></div>
-
-                <ol class="projects-dots" role="tablist" aria-label="Selecionar projeto">
-                    <li><button class="projects-dot" type="button" role="tab" aria-selected="true" aria-controls="projectsTrack" aria-label="Ir para o projeto 1: Viaje 100 Limites" data-go-to="0"></button></li>
-                    <li><button class="projects-dot" type="button" role="tab" aria-selected="false" aria-controls="projectsTrack" aria-label="Ir para o projeto 2: Adesivo Institucional" data-go-to="1"></button></li>
-                    <li><button class="projects-dot" type="button" role="tab" aria-selected="false" aria-controls="projectsTrack" aria-label="Ir para o projeto 3: Pílulas da Constituição" data-go-to="2"></button></li>
-                    <li><button class="projects-dot" type="button" role="tab" aria-selected="false" aria-controls="projectsTrack" aria-label="Ir para o projeto 4: Mapa do Bem" data-go-to="3"></button></li>
-                    <li><button class="projects-dot" type="button" role="tab" aria-selected="false" aria-controls="projectsTrack" aria-label="Ir para o projeto 5: Mapa Dinâmico do Turismo" data-go-to="4"></button></li>
-                    <li><button class="projects-dot" type="button" role="tab" aria-selected="false" aria-controls="projectsTrack" aria-label="Ir para o projeto 6: Central da Cidadania" data-go-to="5"></button></li>
-                </ol>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção de Redes Sociais -->
-    <section class="social-section">
-        <div class="container">
-            <h2 class="section-title">Acesse todas nossas redes sociais</h2>
-            <p class="social-subtitle">Siga a Constitucionalizar e fique por dentro das ações, conquistas e novidades</p>
-
-            <a href="https://bio.bob.app.br/constitucionalizar-org"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="social-button">
-                <svg class="social-button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <circle cx="18" cy="5" r="3"></circle>
-                    <circle cx="6" cy="12" r="3"></circle>
-                    <circle cx="18" cy="19" r="3"></circle>
-                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                </svg>
-                <span class="social-button-text">ACESSAR TODAS AS REDES SOCIAIS</span>
-                <svg class="social-button-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </a>
-        </div>
-    </section>
-
-    <!-- Seção de Preço - Repetição final (CTA de fechamento) -->
-    <section class="pricing" id="pricing-final">
-        <div class="container">
-            <div class="pricing-card">
-                <div class="pricing-badge">PLANO MENSAL</div>
-                <div class="pricing-amount">
-                    <span class="currency">R$</span>
-                    <span class="price">30</span>
-                    <span class="cents">,00</span>
-                </div>
-                <p class="pricing-period">por mês</p>
-                <h3 class="pricing-title">Associe-se a Constitucionalizar</h3>
-                <p class="pricing-description">
-                    Ajude a defender direitos hoje, para não precisar defendê-los sozinho amanhã.
-                </p>
-                <a href="https://www.constitucionalizar.org.br/#section-planos" class="cta-button cta-primary" target="_blank" rel="noopener">
-                    ASSOCIAR-SE AGORA
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Botão Flutuante WhatsApp -->
-    <a href="https://wa.me/551430420622?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20Associa%C3%A7%C3%A3o%20Constitucionalizar."
-       class="whatsapp-float"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Falar no WhatsApp da Constitucionalizar">
-        <svg class="whatsapp-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-            <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.41.713 4.65 1.937 6.553L4 29l7.713-1.892A11.94 11.94 0 0 0 16.001 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm0 21.6c-1.85 0-3.564-.5-5.034-1.367l-.36-.214-3.728.914.93-3.625-.235-.373A9.575 9.575 0 0 1 6.4 15c0-5.302 4.298-9.6 9.6-9.6s9.6 4.298 9.6 9.6-4.297 9.6-9.6 9.6zm5.413-7.188c-.297-.149-1.756-.866-2.027-.965-.272-.099-.47-.149-.667.149-.198.297-.765.965-.939 1.162-.173.198-.346.223-.643.075-.297-.149-1.253-.462-2.387-1.473-.882-.787-1.479-1.76-1.652-2.057-.173-.297-.018-.458.13-.606.134-.133.297-.346.446-.52.149-.173.198-.297.297-.495.099-.198.05-.371-.025-.52-.075-.149-.667-1.609-.915-2.204-.241-.578-.486-.5-.667-.51-.173-.009-.371-.011-.57-.011-.198 0-.52.074-.792.371-.272.297-1.039 1.016-1.039 2.479s1.064 2.876 1.213 3.073c.149.198 2.095 3.2 5.077 4.487.71.306 1.263.488 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.756-.718 2.003-1.411.247-.693.247-1.288.173-1.412-.075-.124-.272-.198-.57-.347z"/>
-        </svg>
-        <span class="whatsapp-pulse" aria-hidden="true"></span>
-    </a>
-
-    <!-- Rodapé -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer-text">
-                <strong>Associação Constitucionalizar</strong> - Pelo Direito de Ir e Vir
-            </p>
-            <p class="footer-domain">
-                <a href="https://www.constitucionalizar.org.br" target="_blank" rel="noopener">constitucionalizar.org.br</a>
-            </p>
-            <p class="footer-cnpj">
-                CNPJ: <strong>66.183.479/0001-57</strong>
-            </p>
-            <p class="footer-credits">
-                "Porque o desrespeito ao direito de um cidadão é uma ameaça ao direito de todos."
-            </p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<section class="related-section">
+<div class="container">
+<h2>Acesse também</h2>
+<div class="related-links">
+<button type="button" disabled data-link-slot="cada-200-associados">O que faremos a cada 200 associados</button>
+<button type="button" disabled data-link-slot="associometro">Associômetro</button>
+<button type="button" disabled data-link-slot="cidades-restricoes">Cidades que restringem motorhomes</button>
+<button type="button" disabled data-link-slot="vantagens">Vantagens para associados</button>
+<button type="button" disabled data-link-slot="decisoes">Vote e participe das decisões</button>
+<button type="button" disabled data-link-slot="biblioteca">Biblioteca da cidadania</button>
+<button type="button" disabled data-link-slot="videoteca">Videoteca da cidadania</button>
+<button type="button" disabled data-link-slot="transparencia">Transparência financeira</button>
+<button type="button" disabled data-link-slot="planejamento">Planejamento e gestão</button>
+</div>
+</div>
+</section>
+</main>
+<footer id="contato">
+<div class="footer-motto">
+<div class="container"><strong>A defesa de um direito fortalece todos os direitos.</strong>
+<p>A injustiça contra um cidadão afeta toda a sociedade. Defender um cidadão é proteger toda a sociedade.</p>
+</div>
+</div>
+<div class="container footer-inner">
+<div><strong>Associação Constitucionalizar</strong>
+<p>Pelo Direito de Ir e Vir</p>
+<p>CNPJ: 66.183.479/0001-57</p>
+</div>
+<div class="footer-contact"><a href="https://wa.me/551430420622" target="_blank" rel="noopener noreferrer">WhatsApp: (14) 3042-0622</a><a href="mailto:contato@constitucionalizar.org.br">contato@constitucionalizar.org.br</a><a href="https://www.constitucionalizar.org.br" target="_blank" rel="noopener noreferrer">constitucionalizar.org.br</a></div>
+<div class="footer-social"><strong>Acompanhe nossas redes sociais</strong><div class="social-icons" aria-label="Redes sociais">
+<button class="social-icon youtube" type="button" disabled data-link-slot="youtube" aria-label="YouTube — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="5" width="30" height="22" rx="7" fill="currentColor"/><path d="m13 11 9 5-9 5z" fill="#fff"/></svg></button>
+<button class="social-icon facebook" type="button" disabled data-link-slot="facebook" aria-label="Facebook — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="currentColor"/><path d="M18 30V18h4l.6-5H18v-2c0-1.5.5-2.5 2.5-2.5H23V4.2c-.8-.1-2-.2-3.6-.2-3.7 0-6.4 2.3-6.4 6.5V13H9v5h4v12z" fill="#fff"/></svg></button>
+<button class="social-icon instagram" type="button" disabled data-link-slot="instagram" aria-label="Instagram — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="instagram-gradient" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ffca41"/><stop offset=".5" stop-color="#ee2776"/><stop offset="1" stop-color="#773ce6"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="8" fill="url(#instagram-gradient)"/><rect x="7" y="7" width="18" height="18" rx="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="16" cy="16" r="4.5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="22" cy="10" r="1.5" fill="#fff"/></svg></button>
+<a class="social-icon whatsapp" href="https://wa.me/551430420622" target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="7" fill="currentColor"/><path d="M8 25l1.4-5A10 10 0 1 1 13 24z" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M12 10c-3 2 2 10 7 11 2 0 3-3 2-3l-3-1-1 1c-2-1-4-3-4-4l1-1z" fill="#fff"/></svg></a>
+</div><a class="social-hub" href="https://bio.bob.app.br/constitucionalizar-org" target="_blank" rel="noopener noreferrer">Todas as redes ↗</a></div>
+<img src="assets/images/logo/logo-256.webp" alt="Constitucionalizar" width="88" height="88" loading="lazy">
+</div>
+</footer><script src="script.js?v=8"></script></body></html>

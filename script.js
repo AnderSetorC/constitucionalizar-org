@@ -455,12 +455,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Sucesso: dispara eventos de tracking
-        const leadData = {
-            name: nameInput.value.trim(),
-            whatsapp: whatsappInput.value.trim(),
-            email: emailInput.value.trim()
-        };
-
         if (typeof gtag !== 'undefined') {
             gtag('event', 'ebook_lead', {
                 'event_category': 'lead',
@@ -473,7 +467,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        console.log('E-book lead captured:', leadData);
+
 
         // Esconde o formulario e mostra o bloco de download
         form.hidden = true;
@@ -498,4 +492,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Estado inicial
     updateSubmitState();
+});
+// Fecha o menu após navegar e ao clicar fora dele.
+document.addEventListener('click', (event) => {
+    const menu = document.querySelector('.menu');
+    if (menu && (!menu.contains(event.target) || event.target.closest('nav a'))) menu.open = false;
+});
+document.addEventListener('keydown', (event) => {
+    const menu = document.querySelector('.menu');
+    if (event.key === 'Escape' && menu && menu.open) {
+        menu.open = false;
+        menu.querySelector('summary').focus();
+    }
 });
