@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vantagens para associados da Associação Constitucionalizar: mais do que descontos, uma luta por soluções definitivas para motorcampistas, campistas e turistas.">
+    <meta name="keywords" content="vantagens associados, constitucionalizar, seguros, rastreadores, direito de ir e vir, motorhomes">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Vantagens para Associados — Associação Constitucionalizar">
+    <meta property="og:description" content="Mais do que descontos, uma luta por soluções definitivas! Conheça o que a Constitucionalizar oferece a seus associados.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.constitucionalizar.org.br/vantagens">
+    <title>Vantagens para Associados — Associação Constitucionalizar</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="48x48" href="assets/favicon/favicon-48.png">
+    <link rel="stylesheet" href="styles.css?v=8">
+    <style>
+        /* ── Estilos específicos: vantagens.html ── */
+
+        /* Hero da página interna */
+        .page-hero {
+            background: var(--green);
+            color: #fff;
+            padding: 52px 0 60px;
+            text-align: center;
+        }
+        .page-hero-eyebrow {
+            font-size: 13px;
+            font-weight: 750;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 16px;
+        }
+        .page-hero h1 {
+            color: #fff;
+            font-size: clamp(32px, 4.8vw, 58px);
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+            margin: 0 0 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        .page-hero p {
+            font-size: clamp(16px, 1.9vw, 21px);
+            color: #ffffffcc;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 600;
+        }
+
+        /* Caixa de alerta */
+        .warning-box {
+            background: #fff8e1;
+            border-left: 6px solid #e6a400;
+            border-radius: 8px;
+            padding: 28px 32px;
+        }
+        .warning-box .warning-icon {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .warning-box p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        .warning-box p.warning-main {
+            font-weight: 800;
+            font-size: 17px;
+            color: #6b4400;
+            text-transform: uppercase;
+            letter-spacing: .3px;
+            margin-bottom: 12px;
+        }
+        .warning-box p.warning-sub {
+            font-weight: 400;
+            color: var(--muted);
+        }
+
+        /* Destaque principal: maior benefício */
+        .main-benefit {
+            padding: 64px 0;
+            background: var(--deep);
+            color: #fff;
+            text-align: center;
+        }
+        .main-benefit h2 {
+            color: var(--yellow);
+            font-size: clamp(26px, 3.4vw, 46px);
+            margin-bottom: 18px;
+            letter-spacing: -1px;
+            line-height: 1.15;
+        }
+        .main-benefit p {
+            font-size: clamp(16px, 1.8vw, 20px);
+            color: #ffffffcc;
+            max-width: 740px;
+            margin: 0 auto;
+        }
+
+        /* Seção: perguntas jurídicas (variante desta página) */
+        .questions-v {
+            background: #087144;
+            padding: 56px 0 64px;
+            color: #fff;
+        }
+        .questions-v h2 {
+            font-size: clamp(20px, 2.3vw, 30px);
+            letter-spacing: -.5px;
+            margin-bottom: 30px;
+        }
+        .questions-v ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 14px;
+        }
+        .questions-v li {
+            background: #fff;
+            color: var(--ink);
+            border-radius: 8px;
+            display: flex;
+            gap: 22px;
+            align-items: flex-start;
+            padding: 22px 28px;
+        }
+        .questions-v li > .q-num {
+            font-size: 24px;
+            font-weight: 800;
+            color: #087144;
+            flex: 0 0 36px;
+            padding-top: 3px;
+            line-height: 1;
+        }
+        .questions-v li .q-body h3 {
+            font-size: 17px;
+            font-weight: 800;
+            margin: 0 0 6px;
+        }
+        .questions-v li .q-body p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--muted);
+        }
+
+        /* Cards de benefícios complementares */
+        .benefits-intro {
+            background: #e8f2e4;
+            border-radius: 8px;
+            padding: 20px 26px;
+            margin-bottom: 36px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--ink);
+        }
+        .benefits-intro strong {
+            color: var(--green);
+        }
+        .benefit-cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+        .benefit-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 26px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .benefit-card-icon {
+            font-size: 34px;
+            line-height: 1;
+        }
+        .benefit-card h3 {
+            font-size: 19px;
+            margin: 0;
+            color: var(--green);
+        }
+        .benefit-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 0;
+            color: var(--muted);
+            flex: 1;
+        }
+        .benefit-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--green);
+            background: #e8f2e4;
+            padding: 4px 10px;
+            border-radius: 20px;
+            align-self: flex-start;
+        }
+
+        /* Lista numerada: por que 1.400 */
+        .threshold-list {
+            list-style: none;
+            padding: 0;
+            margin: 32px 0 0;
+            display: grid;
+            gap: 18px;
+        }
+        .threshold-list li {
+            display: flex;
+            gap: 24px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 26px 28px;
+            align-items: flex-start;
+        }
+        .t-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--green);
+            color: #fff;
+            font-size: 20px;
+            font-weight: 850;
+        }
+        .t-body h3 {
+            font-size: 17px;
+            font-weight: 800;
+            margin: 0 0 8px;
+        }
+        .t-body p {
+            font-size: 15px;
+            line-height: 1.65;
+            margin: 0;
+            color: var(--muted);
+        }
+
+        /* Caixa: escritório multidisciplinar */
+        .legal-box {
+            background: var(--deep);
+            color: #fff;
+            border-radius: 10px;
+            padding: 36px 40px;
+            margin-top: 36px;
+        }
+        .legal-box h3 {
+            color: var(--yellow);
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+        .legal-box p {
+            font-size: 15px;
+            line-height: 1.75;
+            margin-bottom: 14px;
+            color: #ffffffcc;
+        }
+        .legal-box p:last-child {
+            margin-bottom: 0;
+        }
+        .legal-case-ref {
+            font-size: 13px;
+            color: var(--yellow);
+            font-weight: 700;
+            border-left: 3px solid var(--yellow);
+            padding-left: 14px;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        /* Responsivo */
+        @media (max-width: 900px) {
+            .benefit-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .questions-v li { padding: 18px 20px; gap: 16px; }
+        }
+        @media (max-width: 640px) {
+            .page-hero { padding: 36px 0 44px; }
+            .warning-box { padding: 20px 22px; }
+            .benefit-cards { grid-template-columns: 1fr; }
+            .threshold-list li { padding: 20px 20px; gap: 16px; }
+            .t-num { flex-basis: 42px; height: 42px; font-size: 16px; }
+            .legal-box { padding: 26px 22px; }
+            .questions-v li { flex-direction: row; }
+        }
+    </style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" aria-label="Constitucionalizar — início"><img class="logo" src="assets/images/logo/logo-256.webp" width="88" height="88" alt="Associação Constitucionalizar"></a>
+<div class="header-actions">
+<details class="menu">
+<summary>MENU <span aria-hidden="true">☰</span></summary>
+<nav aria-label="Menu principal">
+<a href="index.html">Página inicial</a>
+<a href="index.html#historia">Nossa história</a>
+<a href="index.html#atuacao">Nossa atuação</a>
+<a href="index.html#associados">Por que precisamos de você</a>
+<a href="index.html#como-atuaremos">Como atuaremos</a>
+<a href="index.html#quem-somos">Quem somos</a>
+<a href="index.html#projetos">Nossos projetos</a>
+<a href="index.html#contato">Contato</a>
+</nav>
+</details>
+<a class="cta-button cta-primary" href="https://www.constitucionalizar.org.br/#section-planos" target="_blank" rel="noopener noreferrer">ASSOCIE-SE <span aria-hidden="true">↗</span></a>
+<a class="cta-button cta-secondary" href="https://loja.infinitepay.io/constitucionalizar" target="_blank" rel="noopener noreferrer">FAÇA UMA DOAÇÃO <span aria-hidden="true">↗</span></a>
+</div>
+</div>
+</header>
+
+<main id="conteudo">
+
+    <!-- ══ HERO ══════════════════════════════════════════════════════ -->
+    <section class="page-hero">
+        <div class="container">
+            <p class="page-hero-eyebrow">Associação Constitucionalizar</p>
+            <h1>Vantagens para Associados</h1>
+            <p>Mais do que descontos, uma luta por soluções definitivas!</p>
+        </div>
+    </section>
+
+    <!-- ══ AVISO IMPORTANTE ═══════════════════════════════════════════ -->
+    <section class="story-section">
+        <div class="container narrow">
+            <div class="warning-box">
+                <span class="warning-icon" aria-hidden="true">⚠️</span>
+                <p class="warning-main">Se você procura apenas vantagens individuais imediatas, talvez a Constitucionalizar não seja a associação ideal para você.</p>
+                <p class="warning-sub">Nossa principal luta é por soluções definitivas para todos os motorcampistas, campistas e turistas brasileiros. As vantagens complementares abaixo são conquistadas conforme nossa base cresce — e elas crescerão.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ MAIOR BENEFÍCIO ════════════════════════════════════════════ -->
+    <section class="main-benefit">
+        <div class="container">
+            <h2>Nosso maior benefício não é um desconto.<br>É a luta pelos nossos direitos!</h2>
+            <p>Cada associado fortalece nossa base jurídica e financia as ações que vão mudar a vida de todos que amam viajar com liberdade pelo Brasil.</p>
+        </div>
+    </section>
+
+    <!-- ══ TRÊS PERGUNTAS JURÍDICAS ═══════════════════════════════════ -->
+    <section class="questions-v" id="questoes">
+        <div class="container">
+            <h2>Três perguntas que levaremos ao Poder Judiciário</h2>
+            <ol>
+                <li>
+                    <span class="q-num" aria-hidden="true">01</span>
+                    <div class="q-body">
+                        <h3>Direito de Ir e Vir</h3>
+                        <p>Motorcampistas, campistas e turistas têm direito de ir e vir no Brasil, ou só têm o dever de pagar taxas, impostos e multas?</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="q-num" aria-hidden="true">02</span>
+                    <div class="q-body">
+                        <h3>Acesso às Praias</h3>
+                        <p>O acesso às praias é livre e franco, como prevê a Lei nº 7.661/1988, ou pode ser condicionado ao pagamento de taxas e à imposição de barreiras indiretas?</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="q-num" aria-hidden="true">03</span>
+                    <div class="q-body">
+                        <h3>Ponderação de Direitos</h3>
+                        <p>A autonomia municipal pode aniquilar direitos e princípios assegurados pela Constituição em uma análise de ponderação?</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ══ BENEFÍCIOS COMPLEMENTARES ═════════════════════════════════ -->
+    <section class="story-section" id="beneficios">
+        <div class="container">
+            <p class="eyebrow">Benefícios complementares <span></span></p>
+            <h2>A partir de 1.400 associados</h2>
+
+            <div class="benefits-intro">
+                <strong>Por que a partir de 1.400?</strong> Precisamos de uma base mínima para ter poder de negociação com parceiros e sustentabilidade financeira para manter um escritório jurídico multidisciplinar. Entenda melhor na seção abaixo.
+            </div>
+
+            <!-- Espaço reservado para imagem/infográfico dos benefícios -->
+            <div class="image-placeholder" style="min-height:280px;margin-bottom:32px">
+                <span aria-hidden="true">🖼️</span>
+                <small>Espaço para imagem dos benefícios complementares</small>
+            </div>
+
+            <div class="benefit-cards">
+
+                <div class="benefit-card">
+                    <span class="benefit-card-icon" aria-hidden="true">🛡️</span>
+                    <h3>Seguros</h3>
+                    <p>Condições especiais em seguros para motorhomes, campistas e veículos recreativos. Proteção completa para sua viagem com custo reduzido para associados.</p>
+                    <span class="benefit-tag">Em breve</span>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-card-icon" aria-hidden="true">📡</span>
+                    <h3>Rastreadores</h3>
+                    <p>Descontos exclusivos em rastreadores veiculares para proteger seu motorhome ou trailer, onde quer que você esteja.</p>
+                    <span class="benefit-tag">Em breve</span>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-card-icon" aria-hidden="true">🛒</span>
+                    <h3>Produtos</h3>
+                    <p>Parcerias com fornecedores de equipamentos, acessórios e materiais para motorhomes e campistas. Tudo o que você precisa, com condições especiais.</p>
+                    <span class="benefit-tag">Em breve</span>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-card-icon" aria-hidden="true">🔧</span>
+                    <h3>Serviços</h3>
+                    <p>Rede de prestadores credenciados: mecânicos especializados, técnicos em climatização, elétrica veicular e muito mais para motorhomistas.</p>
+                    <span class="benefit-tag">Em breve</span>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-card-icon" aria-hidden="true">🗺️</span>
+                    <h3>Viaje 100 Limites</h3>
+                    <p>Projeto especial de parcerias em viagens e roteiros para os associados. Descubra o Brasil com o apoio de uma comunidade unida pela mesma causa.</p>
+                    <span class="benefit-tag">Projeto em desenvolvimento</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ POR QUE 1.400 ASSOCIADOS ══════════════════════════════════ -->
+    <section class="story-section" id="por-que-1400">
+        <div class="container">
+            <p class="eyebrow">Entenda a estrutura <span></span></p>
+            <h2>Por que os benefícios complementares começam com 1.400 associados?</h2>
+
+            <ul class="threshold-list">
+                <li>
+                    <span class="t-num" aria-hidden="true">1</span>
+                    <div class="t-body">
+                        <h3>Sustentabilidade financeira</h3>
+                        <p>Com 1.400 associados contribuindo R$ 30,00/mês, geramos R$ 42.000,00 mensais — valor necessário para manter um escritório jurídico multidisciplinar com advogados, pesquisadores e equipe de apoio dedicados às causas coletivas.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="t-num" aria-hidden="true">2</span>
+                    <div class="t-body">
+                        <h3>Poder de negociação com parceiros</h3>
+                        <p>Seguradoras, fabricantes de rastreadores e fornecedores de produtos negociam condições especiais apenas quando existe uma base consolidada de consumidores. Abaixo desse número, os descontos oferecidos não compensam a estrutura de uma parceria formal.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="t-num" aria-hidden="true">3</span>
+                    <div class="t-body">
+                        <h3>Representatividade jurídica real</h3>
+                        <p>Ações coletivas de amplo alcance — como as que pretendemos levar aos Tribunais Superiores — exigem demonstração de representatividade. Quanto maior a nossa base, maior o peso político e jurídico das nossas ações perante o Poder Judiciário.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ══ ESCRITÓRIO MULTIDISCIPLINAR ═══════════════════════════════ -->
+    <section class="story-section" id="escritorio">
+        <div class="container">
+            <div class="split">
+                <div class="section-copy">
+                    <p class="eyebrow">Estrutura jurídica <span></span></p>
+                    <h2>Por que um escritório jurídico multidisciplinar?</h2>
+                    <p>Não basta ter um bom advogado. A luta pelo direito de ir e vir exige especialistas em direito constitucional, ambiental, administrativo, tributário e urbanístico — todos trabalhando de forma coordenada.</p>
+                    <p>O STF reconheceu, por meio do <strong>RE 1.101.937 — Tema 1.075</strong>, que a questão da liberdade de circulação de motorhomes envolve múltiplas dimensões constitucionais. Isso exige uma equipe capaz de construir argumentos sólidos em frentes diferentes ao mesmo tempo.</p>
+
+                    <div class="legal-box">
+                        <h3>Por que não apenas voluntários?</h3>
+                        <p>O trabalho voluntário é precioso, mas não é suficiente para sustentar ações de longa duração perante os tribunais superiores. A burocracia processual, os prazos rígidos e a complexidade técnica exigem dedicação exclusiva e contínua.</p>
+                        <p>Com um escritório próprio, mantemos controle total sobre a estratégia jurídica e garantimos que nenhum processo seja abandonado por falta de recursos ou de comprometimento.</p>
+                        <p class="legal-case-ref">STF — RE 1.101.937 — Tema 1.075<br>Repercussão Geral reconhecida</p>
+                    </div>
+                </div>
+
+                <!-- Espaço reservado para foto ou infográfico do escritório -->
+                <div class="image-placeholder">
+                    <span aria-hidden="true">⚖️</span>
+                    <small>Espaço para imagem do escritório jurídico</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ CTA BAND ═══════════════════════════════════════════════════ -->
+    <section class="cta-band">
+        <div class="container">
+            <div>
+                <h2>Faça parte dessa luta</h2>
+                <p>Por R$ 30,00 por mês você financia ações reais por direitos reais.</p>
+            </div>
+            <div class="button-group">
+                <a href="https://www.constitucionalizar.org.br/#section-planos" class="cta-button cta-primary" target="_blank" rel="noopener noreferrer">ASSOCIAR-SE AGORA <span aria-hidden="true">↗</span></a>
+                <a href="index.html" class="cta-button cta-secondary">VER PÁGINA PRINCIPAL</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ ACESSE TAMBÉM ══════════════════════════════════════════════ -->
+    <section class="related-section">
+        <div class="container">
+            <h2>Acesse também</h2>
+            <div class="related-links">
+                <button type="button" disabled data-link-slot="cada-200-associados">O que faremos a cada 200 associados</button>
+                <button type="button" disabled data-link-slot="associometro">Associômetro</button>
+                <button type="button" disabled data-link-slot="cidades-restricoes">Cidades que restringem motorhomes</button>
+                <button type="button" disabled data-link-slot="decisoes">Vote e participe das decisões</button>
+                <button type="button" disabled data-link-slot="biblioteca">Biblioteca da cidadania</button>
+                <button type="button" disabled data-link-slot="videoteca">Videoteca da cidadania</button>
+                <button type="button" disabled data-link-slot="transparencia">Transparência financeira</button>
+                <button type="button" disabled data-link-slot="planejamento">Planejamento e gestão</button>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer id="contato">
+<div class="footer-motto">
+<div class="container"><strong>A defesa de um direito fortalece todos os direitos.</strong>
+<p>A injustiça contra um cidadão afeta toda a sociedade. Defender um cidadão é proteger toda a sociedade.</p>
+</div>
+</div>
+<div class="container footer-inner">
+<div><strong>Associação Constitucionalizar</strong>
+<p>Pelo Direito de Ir e Vir</p>
+<p>CNPJ: 66.183.479/0001-57</p>
+</div>
+<div class="footer-contact"><a href="https://wa.me/551430420622" target="_blank" rel="noopener noreferrer">WhatsApp: (14) 3042-0622</a><a href="mailto:contato@constitucionalizar.org.br">contato@constitucionalizar.org.br</a><a href="https://www.constitucionalizar.org.br" target="_blank" rel="noopener noreferrer">constitucionalizar.org.br</a></div>
+<div class="footer-social"><strong>Acompanhe nossas redes sociais</strong><div class="social-icons" aria-label="Redes sociais">
+<button class="social-icon youtube" type="button" disabled data-link-slot="youtube" aria-label="YouTube — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="5" width="30" height="22" rx="7" fill="currentColor"/><path d="m13 11 9 5-9 5z" fill="#fff"/></svg></button>
+<button class="social-icon facebook" type="button" disabled data-link-slot="facebook" aria-label="Facebook — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="currentColor"/><path d="M18 30V18h4l.6-5H18v-2c0-1.5.5-2.5 2.5-2.5H23V4.2c-.8-.1-2-.2-3.6-.2-3.7 0-6.4 2.3-6.4 6.5V13H9v5h4v12z" fill="#fff"/></svg></button>
+<button class="social-icon instagram" type="button" disabled data-link-slot="instagram" aria-label="Instagram — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="instagram-gradient" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ffca41"/><stop offset=".5" stop-color="#ee2776"/><stop offset="1" stop-color="#773ce6"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="8" fill="url(#instagram-gradient)"/><rect x="7" y="7" width="18" height="18" rx="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="16" cy="16" r="4.5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="22" cy="10" r="1.5" fill="#fff"/></svg></button>
+<a class="social-icon whatsapp" href="https://wa.me/551430420622" target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="7" fill="currentColor"/><path d="M8 25l1.4-5A10 10 0 1 1 13 24z" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M12 10c-3 2 2 10 7 11 2 0 3-3 2-3l-3-1-1 1c-2-1-4-3-4-4l1-1z" fill="#fff"/></svg></a>
+</div><a class="social-hub" href="https://bio.bob.app.br/constitucionalizar-org" target="_blank" rel="noopener noreferrer">Todas as redes ↗</a></div>
+<img src="assets/images/logo/logo-256.webp" alt="Constitucionalizar" width="88" height="88" loading="lazy">
+</div>
+</footer>
+
+<script src="script.js?v=8"></script>
+</body>
+</html>

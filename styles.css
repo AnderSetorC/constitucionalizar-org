@@ -222,6 +222,8 @@ h1,h2,h3,p,a{overflow-wrap:anywhere}
 .footer-inner .social-hub{font-size:12px;margin-top:10px}
 @media(max-width:1000px){.footer-inner{grid-template-columns:1fr 1fr}.footer-inner>img{justify-self:end}}
 @media(max-width:640px){.footer-inner{display:flex;align-items:center}.social-icons{justify-content:center}.related-links button{min-height:58px}}
+.related-links a.related-link-active{display:block;background:#fff;border:1px solid var(--green);border-radius:8px;padding:20px 16px;text-align:left;font-size:12px;line-height:1.5;font-weight:800;text-transform:uppercase;color:var(--green);min-height:64px;overflow-wrap:anywhere;text-decoration:none}
+.related-links a.related-link-active:hover{background:var(--green);color:#fff}
 .thanks-box{margin-top:24px;padding:22px 28px;background:#fffbe6;border-left:4px solid var(--yellow);border-radius:6px}
 .thanks-box p{margin:0;font-size:15px;line-height:1.65}
 .thanks-box a{color:var(--green);font-weight:750;text-decoration:none;border-bottom:2px solid var(--yellow)}
