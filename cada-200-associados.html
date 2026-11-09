@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O que a Associação Constitucionalizar fará a cada 200 associados: etapas de crescimento, projetos e transparência no uso dos recursos.">
+    <meta name="keywords" content="200 associados, constitucionalizar, etapas, planejamento, transparência, projetos">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="O que faremos a cada 200 associados — Associação Constitucionalizar">
+    <meta property="og:description" content="Cada novo grupo de 200 associados representa mais recursos para transformar nossos projetos em ações concretas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.constitucionalizar.org.br/cada-200-associados">
+    <title>O que faremos a cada 200 associados — Associação Constitucionalizar</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="48x48" href="assets/favicon/favicon-48.png">
+    <link rel="stylesheet" href="styles.css?v=8">
+    <style>
+        /* ── Estilos específicos: cada-200-associados.html ── */
+
+        /* Hero da página interna */
+        .page-hero {
+            background: var(--green);
+            color: #fff;
+            padding: 52px 0 60px;
+            text-align: center;
+        }
+        .page-hero-eyebrow {
+            font-size: 13px;
+            font-weight: 750;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 16px;
+        }
+        .page-hero h1 {
+            color: #fff;
+            font-size: clamp(30px, 4.6vw, 56px);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin: 0 0 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        .page-hero p {
+            font-size: clamp(16px, 1.9vw, 21px);
+            color: #ffffffcc;
+            max-width: 760px;
+            margin: 0 auto;
+            font-weight: 600;
+        }
+
+        /* Nota: cada bloco de 200 */
+        .stage-math {
+            background: #fff8e1;
+            border-left: 6px solid #e6a400;
+            border-radius: 8px;
+            padding: 24px 30px;
+            margin-bottom: 44px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        .stage-math strong { color: var(--green); }
+
+        /* Cabeçalho das colunas */
+        .stages-head {
+            display: grid;
+            grid-template-columns: 240px 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .col-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            border-radius: 8px;
+            color: #fff;
+        }
+        .col-head .col-ico {
+            font-size: 22px;
+            flex: 0 0 auto;
+        }
+        .col-head h3 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .col-head small {
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0;
+            text-transform: none;
+            opacity: .85;
+        }
+        .col-head-blue { background: #1a56db; }
+        .col-head-green { background: var(--green); }
+        .col-head-orange { background: #e07b00; }
+
+        /* Etapa */
+        .stage {
+            display: grid;
+            grid-template-columns: 240px 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+        }
+        .stage > div {
+            border-radius: 8px;
+            padding: 18px 20px;
+        }
+        .stage-num {
+            background: #1a56db;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .stage-num .n {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 46px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #ffffff2e;
+            font-size: 22px;
+            font-weight: 850;
+        }
+        .stage-num .range {
+            font-size: 15px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+        .stage-num .valor {
+            font-size: 14px;
+            font-weight: 700;
+            opacity: .9;
+        }
+        .stage-inst {
+            background: #eef5ee;
+            border: 1px solid #d5e5d5;
+        }
+        .stage-inst ul, .stage-fin ul {
+            list-style: disc;
+            margin: 0;
+            padding: 0 0 0 18px;
+            font-size: 14px;
+            line-height: 1.65;
+            color: var(--ink);
+        }
+        .stage-inst li + li, .stage-fin li + li { margin-top: 6px; }
+        .stage-fin {
+            background: #fff6e3;
+            border: 1px solid #f0dfb5;
+        }
+
+        /* Etapa atual: destaque */
+        .stage-current .stage-num { background: #046a38; }
+        .stage-current .stage-inst { border-color: var(--green); box-shadow: 0 0 0 2px var(--green); }
+        .stage-current .stage-fin { border-color: var(--green); box-shadow: 0 0 0 2px var(--green); }
+        .here-badge {
+            display: inline-block;
+            margin-top: 8px;
+            background: var(--yellow);
+            color: var(--deep);
+            font-size: 13px;
+            font-weight: 850;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 20px;
+        }
+
+        /* E depois dos 2.000 */
+        .beyond {
+            background: var(--deep);
+            color: #fff;
+            border-radius: 10px;
+            padding: 40px 44px;
+            margin-top: 44px;
+        }
+        .beyond h2 { color: var(--yellow); margin-bottom: 16px; }
+        .beyond h2 .big { font-size: 1.4em; }
+        .beyond p {
+            font-size: 16px;
+            line-height: 1.75;
+            color: #ffffffcc;
+            margin-bottom: 14px;
+        }
+        .beyond p strong { color: var(--yellow); }
+        .beyond-projects {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 28px;
+        }
+        .beyond-project {
+            background: #ffffff12;
+            border: 1px solid #ffffff2e;
+            border-radius: 8px;
+            padding: 22px;
+            text-align: center;
+        }
+        .beyond-project .bp-ico { font-size: 32px; display: block; margin-bottom: 10px; }
+        .beyond-project h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--yellow);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .beyond-project p {
+            margin: 8px 0 0;
+            font-size: 13px;
+            color: #ffffffa6;
+        }
+
+        /* Responsivo */
+        @media (max-width: 900px) {
+            .stages-head { display: none; }
+            .stage { grid-template-columns: 1fr; }
+            .stage-num { padding: 16px 20px; }
+            .beyond-projects { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .page-hero { padding: 36px 0 44px; }
+            .stage-math { padding: 18px 20px; font-size: 15px; }
+            .beyond { padding: 28px 22px; }
+        }
+    </style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" aria-label="Constitucionalizar — início"><img class="logo" src="assets/images/logo/logo-256.webp" width="88" height="88" alt="Associação Constitucionalizar"></a>
+<div class="header-actions">
+<details class="menu">
+<summary>MENU <span aria-hidden="true">☰</span></summary>
+<nav aria-label="Menu principal">
+<a href="index.html">Página inicial</a>
+<a href="index.html#historia">Nossa história</a>
+<a href="index.html#atuacao">Nossa atuação</a>
+<a href="index.html#associados">Por que precisamos de você</a>
+<a href="index.html#como-atuaremos">Como atuaremos</a>
+<a href="index.html#quem-somos">Quem somos</a>
+<a href="index.html#projetos">Nossos projetos</a>
+<a href="index.html#contato">Contato</a>
+</nav>
+</details>
+<a class="cta-button cta-primary" href="https://www.constitucionalizar.org.br/#section-planos" target="_blank" rel="noopener noreferrer">ASSOCIE-SE <span aria-hidden="true">↗</span></a>
+<a class="cta-button cta-secondary" href="https://loja.infinitepay.io/constitucionalizar" target="_blank" rel="noopener noreferrer">FAÇA UMA DOAÇÃO <span aria-hidden="true">↗</span></a>
+</div>
+</div>
+</header>
+
+<main id="conteudo">
+
+    <!-- ══ HERO ══════════════════════════════════════════════════════ -->
+    <section class="page-hero">
+        <div class="container">
+            <p class="page-hero-eyebrow">Associação Constitucionalizar</p>
+            <h1>O que faremos a cada 200 associados?</h1>
+            <p>Cada novo grupo de 200 associados representa mais recursos para transformar nossos projetos em ações concretas, em defesa do campismo, do direito de ir e vir, do direito de propriedade e da cidadania.</p>
+        </div>
+    </section>
+
+    <!-- Voltar para home -->
+    <div class="back-nav">
+        <div class="container">
+            <a href="index.html" class="back-link">Voltar para a página inicial</a>
+        </div>
+    </div>
+
+    <!-- ══ ETAPAS ═════════════════════════════════════════════════════ -->
+    <section class="story-section" id="etapas">
+        <div class="container">
+            <p class="eyebrow">Nosso compromisso etapa por etapa <span></span></p>
+            <h2>10 etapas até 2.000 associados</h2>
+
+            <div class="stage-math">
+                Cada bloco de <strong>200 associados</strong> contribui com <strong>R$ 30,00/mês</strong> cada — ou seja, <strong>R$ 6.000,00 mensais</strong> de novos recursos por etapa. Abaixo, o que faremos com cada nova etapa alcançada.
+            </div>
+
+            <!-- Espaço reservado para o infográfico original -->
+            <div class="image-placeholder" style="min-height:280px;margin-bottom:40px">
+                <span aria-hidden="true">🖼️</span>
+                <small>Espaço para o infográfico original das etapas</small>
+            </div>
+
+            <!-- Cabeçalho das colunas -->
+            <div class="stages-head" aria-hidden="true">
+                <div class="col-head col-head-blue">
+                    <span class="col-ico">👥</span>
+                    <h3>Associados<small>Quantidade e valor arrecadado em cada etapa</small></h3>
+                </div>
+                <div class="col-head col-head-green">
+                    <span class="col-ico">🏛️</span>
+                    <h3>Institucional<small>Projetos e atividades</small></h3>
+                </div>
+                <div class="col-head col-head-orange">
+                    <span class="col-ico">🪙</span>
+                    <h3>Financeiro<small>Reservas e pagamentos</small></h3>
+                </div>
+            </div>
+
+            <!-- ── ETAPA 1 ── -->
+            <div class="stage stage-current" id="etapa-1">
+                <div class="stage-num">
+                    <span class="n">1</span>
+                    <div>
+                        <div class="range">0 a 200 associados</div>
+                        <div class="valor">R$ 6.000,00</div>
+                        <span class="here-badge">📍 Estamos aqui!</span>
+                    </div>
+                </div>
+                <div class="stage-inst">
+                    <ul>
+                        <li>Atuação extrajudicial</li>
+                        <li>Pílulas da Constituição (quinzenal em PDF)</li>
+                        <li>Finalizar gradeamento dos mapas do Projeto Viaje 100 Limites (alteração do Mapa do Turismo)</li>
+                        <li>Iniciar tentativa de parceria com CADASTUR – Mapa Dinâmico do Turismo (caso não consiga apoio público, execução própria)</li>
+                        <li>Iniciar tentativa de mobilização social e posterior parceria com o IPEA – Mapa do Bem (caso não consiga apoio público, execução própria)</li>
+                        <li>Finalização da elaboração do Regimento Interno</li>
+                        <li>Iniciar Pílulas da Constituição em vídeo (Magrão — a partir de 100 associados)</li>
+                    </ul>
+                </div>
+                <div class="stage-fin">
+                    <ul>
+                        <li>Reserva para pagamento de despesas administrativas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── ETAPA 2 ── -->
+            <div class="stage" id="etapa-2">
+                <div class="stage-num">
+                    <span class="n">2</span>
+                    <div>
+                        <div class="range">201 a 400 associados</div>
+                        <div class="valor">R$ 6.000,00</div>
+                    </div>
+                </div>
+                <div class="stage-inst">
+                    <ul>
+                        <li>Continuidade das atividades já iniciadas.</li>
+                    </ul>
+                </div>
+                <div class="stage-fin">
+                    <ul>
+                        <li>Reserva para pagamento de despesas jurídicas (Ações Coletivas).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── ETAPA 3 ── -->
+            <div class="stage" id="etapa-3">
+                <div class="stage-num">
+                    <span class="n">3</span>
+                    <div>
+                        <div class="range">401 a 600 associados</div>
+                        <div class="valor">R$ 6.000,00</div>
+                    </div>
+                </div>
+                <div class="stage-inst">
+                    <ul>
+                        <li>Continuidade das atividades já iniciadas.</li>
+                        <li>Assinatura do contrato com escritório de advocacia – Ações Coletivas.</li>
+                    </ul>
+                </div>
+                <div class="stage-fin">
+                    <ul>
+                        <li>Início pagamento – Escritório jurídico – Ações Coletivas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── ETAPA 4 ── -->
+            <div class="stage" id="etapa-4">
+                <div class="stage-num">
+                    <span class="n">4</span>
+                    <div>
+                        <div class="range">601 a 800 associados</div>
+                        <div class="valor">R$ 6.000,00</div>
+                    </div>
+                </div>
+                <div class="stage-inst">
+                    <ul>
+                        <li>Continuidade das atividades já iniciadas.</li>
+                    </ul>
+                </div>
+                <div class="stage-fin">
+                    <ul>
+                        <li>Reserva para pagamento/subsídio de despesas jurídicas (Ações Individuais relacionadas ao direito de ir e vir, documentação de motorhome e afins).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── ETAPA 5 ── -->
+            <div class="stage" id="etapa-5">
+                <div class="stage-num">
+                    <span class="n">5</span>
+                    <div>
+                        <div class="range">801 a 1.000 associados</div>
+                        <div class="valor">R$ 6.000,00</div>
+                    </div>
+                </div>
+                <div class="stage-inst">
+                    <ul>
+                        <li>Continuidade das atividades já iniciadas.</li>
+                    </ul>
+                </div>
+                <div class="stage-fin">
+                    <ul>
+                        <li>Assinatura do contrato com escritório de advocacia (Ações Individuais relacionadas ao direito de ir e vir, documentação de motorhome e afins).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── ETAPA 6 ── -->
+            <div class="stage" id="etapa-6">
+                <div class="stage-num">
+                    <span class="n">6</span>
+                    <div>
+                        <div class="range">1.001 a 1.200 associados</div>
+                        <div class="valor">R$ 6.000,00</div>
+                    </div>
+                </div>
+                <div class="stage-inst">
+                    <ul>
+                        <li>Continuidade das atividades já iniciadas.</li>
+                    </ul>
+                </div>
+                <div class="stage-fin">
+                    <ul>
+                        <li>Reserva para pagamento de 3 secretárias – R$ 2.000,00 cada uma (jornada de 4 horas).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── ETAPA 7 ── -->
+            <div class="stage" id="etapa-7">
+                <div class="stage-num">
+                    <span class="n">7</span>
+                    <div>
+                        <div class="range">1.201 a 1.400 associados</div>
+                        <div class="valor">R$ 6.000,00</div>
+                    </div>
+                </div>
+                <div class="stage-inst">
+                    <ul>
+                        <li>Continuidade das atividades já iniciadas.</li>
+                        <li>Contratar 3 secretárias (jornada de 4 horas).</li>
+                        <li>Secretária 1: busca por descontos em seguros, rastreadores, produtos e serviços.</li>
+                        <li>Envio gratuito do nosso Adesivo Institucional aos associados (e venda para não associados, para subsidiar as atividades da Associação).</li>
+                        <li>Guinness Book – planejamento para maior camping simultâneo em todos os Estados do Brasil (próximo de 28 de agosto).</li>
+                        <li>Demandas administrativas diversas.</li>
+                        <li>Secretárias 2 e 3: início do Projeto Viaje 100 Limites (contatos com Conselhos Municipais de Turismo).</li>
+                    </ul>
+                </div>
+                <div class="stage-fin">
+                    <ul>
+                        <li>Pagamento de Secretária 1, 2 e 3 (R$ 2.000,00 cada uma).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── ETAPA 8 ── -->
+            <div class="stage" id="etapa-8">
+                <div class="stage-num">
+                    <span class="n">8</span>
+                    <div>
+                        <div class="range">1.401 a 1.600 associados</div>
+                        <div class="valor">R$ 6.000,00</div>
+                    </div>
+                </div>
+                <div class="stage-inst">
+                    <ul>
+                        <li>Continuidade das atividades já iniciadas.</li>
+                    </ul>
+                </div>
+                <div class="stage-fin">
+                    <ul>
+                        <li>Aumento de jornada das secretárias para 8 horas – R$ 4.000,00 cada uma (total). Sem reserva. Se precisar, poderemos voltar para 4 horas (com 30 dias de antecedência).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── ETAPA 9 ── -->
+            <div class="stage" id="etapa-9">
+                <div class="stage-num">
+                    <span class="n">9</span>
+                    <div>
+                        <div class="range">1.601 a 1.800 associados</div>
+                        <div class="valor">R$ 6.000,00</div>
+                    </div>
+                </div>
+                <div class="stage-inst">
+                    <ul>
+                        <li>Continuidade das atividades já iniciadas.</li>
+                    </ul>
+                </div>
+                <div class="stage-fin">
+                    <ul>
+                        <li>Início do pagamento – Diretoria (1 salário-mínimo para cada uma). Sem reserva. Caso não tenha o valor, não receberemos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── ETAPA 10 ── -->
+            <div class="stage" id="etapa-10">
+                <div class="stage-num">
+                    <span class="n">10</span>
+                    <div>
+                        <div class="range">1.801 a 2.000 associados</div>
+                        <div class="valor">R$ 6.000,00</div>
+                    </div>
+                </div>
+                <div class="stage-inst">
+                    <ul>
+                        <li>Continuidade das atividades já iniciadas.</li>
+                    </ul>
+                </div>
+                <div class="stage-fin">
+                    <ul>
+                        <li>Continuidade do pagamento – Diretoria (1 salário-mínimo para cada uma). Sem reserva. Caso não tenha o valor, não receberemos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ── E DEPOIS DOS 2.000 ── -->
+            <div class="beyond">
+                <h2>E depois dos <span class="big">2.000 associados?</span></h2>
+                <p>Se crescermos além de 2.000 associados e se não tivermos apoio institucional ou governamental, iremos usar o dinheiro para <strong>execução própria dos projetos</strong>:</p>
+                <div class="beyond-projects">
+                    <div class="beyond-project">
+                        <span class="bp-ico" aria-hidden="true">🗺️</span>
+                        <h3>Mapa Dinâmico do Turismo</h3>
+                        <p>Cadastro e geolocalização de pontos de apoio ao turismo</p>
+                    </div>
+                    <div class="beyond-project">
+                        <span class="bp-ico" aria-hidden="true">⛰️</span>
+                        <h3>Viaje 100 Limites</h3>
+                        <p>Um camping público a cada 100 km</p>
+                    </div>
+                    <div class="beyond-project">
+                        <span class="bp-ico" aria-hidden="true">❤️</span>
+                        <h3>Mapa do Bem</h3>
+                        <p>Conectando solidariedade</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══ CTA BAND ═══════════════════════════════════════════════════ -->
+    <section class="cta-band">
+        <div class="container">
+            <div>
+                <h2>Ajude-nos a avançar de etapa</h2>
+                <p>Por R$ 30,00 por mês você financia ações reais por direitos reais.</p>
+            </div>
+            <div class="button-group">
+                <a href="https://www.constitucionalizar.org.br/#section-planos" class="cta-button cta-primary" target="_blank" rel="noopener noreferrer">ASSOCIAR-SE AGORA <span aria-hidden="true">↗</span></a>
+                <a href="index.html" class="cta-button cta-secondary">VER PÁGINA PRINCIPAL</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ ACESSE TAMBÉM ══════════════════════════════════════════════ -->
+    <section class="related-section">
+        <div class="container">
+            <h2>Acesse também</h2>
+            <div class="related-links">
+                <button type="button" disabled data-link-slot="associometro">Associômetro</button>
+                <button type="button" disabled data-link-slot="cidades-restricoes">Cidades que restringem motorhomes</button>
+                <a href="vantagens.html" class="related-link-active">Vantagens para associados</a>
+                <button type="button" disabled data-link-slot="decisoes">Vote e participe das decisões</button>
+                <button type="button" disabled data-link-slot="biblioteca">Biblioteca da cidadania</button>
+                <a href="videoteca.html" class="related-link-active">Videoteca da cidadania</a>
+                <button type="button" disabled data-link-slot="transparencia">Transparência financeira</button>
+                <a href="planejamento.html" class="related-link-active">Planejamento e gestão</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer id="contato">
+<div class="footer-motto">
+<div class="container"><strong>A defesa de um direito fortalece todos os direitos.</strong>
+<p>A injustiça contra um cidadão afeta toda a sociedade. Defender um cidadão é proteger toda a sociedade.</p>
+</div>
+</div>
+<div class="container footer-inner">
+<div><strong>Associação Constitucionalizar</strong>
+<p>Pelo Direito de Ir e Vir</p>
+<p>CNPJ: 66.183.479/0001-57</p>
+</div>
+<div class="footer-contact"><a href="https://wa.me/551430420622" target="_blank" rel="noopener noreferrer">WhatsApp: (14) 3042-0622</a><a href="mailto:contato@constitucionalizar.org.br">contato@constitucionalizar.org.br</a><a href="https://www.constitucionalizar.org.br" target="_blank" rel="noopener noreferrer">constitucionalizar.org.br</a></div>
+<div class="footer-social"><strong>Acompanhe nossas redes sociais</strong><div class="social-icons" aria-label="Redes sociais">
+<button class="social-icon youtube" type="button" disabled data-link-slot="youtube" aria-label="YouTube — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="5" width="30" height="22" rx="7" fill="currentColor"/><path d="m13 11 9 5-9 5z" fill="#fff"/></svg></button>
+<button class="social-icon facebook" type="button" disabled data-link-slot="facebook" aria-label="Facebook — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="currentColor"/><path d="M18 30V18h4l.6-5H18v-2c0-1.5.5-2.5 2.5-2.5H23V4.2c-.8-.1-2-.2-3.6-.2-3.7 0-6.4 2.3-6.4 6.5V13H9v5h4v12z" fill="#fff"/></svg></button>
+<button class="social-icon instagram" type="button" disabled data-link-slot="instagram" aria-label="Instagram — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="instagram-gradient" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ffca41"/><stop offset=".5" stop-color="#ee2776"/><stop offset="1" stop-color="#773ce6"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="8" fill="url(#instagram-gradient)"/><rect x="7" y="7" width="18" height="18" rx="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="16" cy="16" r="4.5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="22" cy="10" r="1.5" fill="#fff"/></svg></button>
+<a class="social-icon whatsapp" href="https://wa.me/551430420622" target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="7" fill="currentColor"/><path d="M8 25l1.4-5A10 10 0 1 1 13 24z" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M12 10c-3 2 2 10 7 11 2 0 3-3 2-3l-3-1-1 1c-2-1-4-3-4-4l1-1z" fill="#fff"/></svg></a>
+</div><a class="social-hub" href="https://bio.bob.app.br/constitucionalizar-org" target="_blank" rel="noopener noreferrer">Todas as redes ↗</a></div>
+<img src="assets/images/logo/logo-256.webp" alt="Constitucionalizar" width="88" height="88" loading="lazy">
+</div>
+</footer>
+
+<script src="script.js?v=8"></script>
+</body>
+</html>
