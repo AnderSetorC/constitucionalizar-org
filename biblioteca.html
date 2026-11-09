@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Biblioteca da Cidadania: livros e materiais gratuitos para download sobre cidadania, direitos e Constituição.">
+    <meta name="keywords" content="biblioteca, cidadania, livros, download, constituição, quarto de despejo, carolina maria de jesus">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Biblioteca da Cidadania — Associação Constitucionalizar">
+    <meta property="og:description" content="Livros e materiais gratuitos para download. Conhecimento é o primeiro passo da cidadania.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.constitucionalizar.org.br/biblioteca">
+    <title>Biblioteca da Cidadania — Associação Constitucionalizar</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="48x48" href="assets/favicon/favicon-48.png">
+    <link rel="stylesheet" href="styles.css?v=8">
+    <style>
+        /* ── Estilos específicos: biblioteca.html ── */
+
+        /* Hero da página interna */
+        .page-hero {
+            background: var(--green);
+            color: #fff;
+            padding: 52px 0 60px;
+            text-align: center;
+        }
+        .page-hero-eyebrow {
+            font-size: 13px;
+            font-weight: 750;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 16px;
+        }
+        .page-hero h1 {
+            color: #fff;
+            font-size: clamp(30px, 4.6vw, 56px);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin: 0 0 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        .page-hero p {
+            font-size: clamp(16px, 1.9vw, 21px);
+            color: #ffffffcc;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 600;
+        }
+
+        /* Card de livro */
+        .book-card {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 36px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 36px;
+            margin-bottom: 24px;
+            align-items: start;
+        }
+        .book-card:last-of-type { margin-bottom: 0; }
+        .book-cover {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 12px 32px #003d2b26;
+            border: 1px solid var(--line);
+        }
+        .book-cover img { width: 100%; height: auto; display: block; }
+        .book-body { min-width: 0; }
+        .book-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--green);
+            background: #e8f2e4;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        .book-body h3 {
+            font-size: clamp(20px, 2.4vw, 28px);
+            margin: 0 0 6px;
+            color: var(--ink);
+            line-height: 1.25;
+        }
+        .book-author {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--muted);
+            margin: 0 0 16px;
+        }
+        .book-body > p {
+            font-size: 15px;
+            line-height: 1.75;
+            color: var(--muted);
+            margin: 0 0 14px;
+        }
+        .book-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--yellow);
+            color: var(--deep);
+            font-size: 14px;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            padding: 14px 26px;
+            border-radius: 5px;
+            transition: transform .2s, filter .2s;
+        }
+        .btn-download:hover { transform: translateY(-2px); filter: brightness(.96); }
+        .book-meta {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 14px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 900px) {
+            .book-card { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
+            .book-cover { max-width: 280px; }
+        }
+        @media (max-width: 640px) {
+            .page-hero { padding: 36px 0 44px; }
+            .book-card { padding: 22px 20px; }
+            .btn-download { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" aria-label="Constitucionalizar — início"><img class="logo" src="assets/images/logo/logo-256.webp" width="88" height="88" alt="Associação Constitucionalizar"></a>
+<div class="header-actions">
+<details class="menu">
+<summary>MENU <span aria-hidden="true">☰</span></summary>
+<nav aria-label="Menu principal">
+<a href="index.html">Página inicial</a>
+<a href="index.html#historia">Nossa história</a>
+<a href="index.html#atuacao">Nossa atuação</a>
+<a href="index.html#associados">Por que precisamos de você</a>
+<a href="index.html#como-atuaremos">Como atuaremos</a>
+<a href="index.html#quem-somos">Quem somos</a>
+<a href="index.html#projetos">Nossos projetos</a>
+<a href="index.html#contato">Contato</a>
+</nav>
+</details>
+<a class="cta-button cta-primary" href="https://www.constitucionalizar.org.br/#section-planos" target="_blank" rel="noopener noreferrer">ASSOCIE-SE <span aria-hidden="true">↗</span></a>
+<a class="cta-button cta-secondary" href="https://loja.infinitepay.io/constitucionalizar" target="_blank" rel="noopener noreferrer">FAÇA UMA DOAÇÃO <span aria-hidden="true">↗</span></a>
+</div>
+</div>
+</header>
+
+<main id="conteudo">
+
+    <!-- ══ HERO ══════════════════════════════════════════════════════ -->
+    <section class="page-hero">
+        <div class="container">
+            <p class="page-hero-eyebrow">Associação Constitucionalizar</p>
+            <h1>Biblioteca da Cidadania</h1>
+            <p>Conhecimento é o primeiro passo da cidadania. Baixe gratuitamente.</p>
+        </div>
+    </section>
+
+    <!-- Voltar para home -->
+    <div class="back-nav">
+        <div class="container">
+            <a href="index.html" class="back-link">Voltar para a página inicial</a>
+        </div>
+    </div>
+
+    <!-- ══ ACERVO ═════════════════════════════════════════════════════ -->
+    <section class="story-section" id="acervo">
+        <div class="container">
+            <p class="eyebrow">Acervo gratuito <span></span></p>
+            <h2>Livros para baixar</h2>
+
+            <!-- ── LIVRO 1: Constituição ── -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="assets/images/biblioteca/constituicao.png" alt="Capa da Constituição da República Federativa do Brasil — Senado Federal" loading="lazy">
+                </div>
+                <div class="book-body">
+                    <span class="book-tag">Direito Constitucional</span>
+                    <h3>Constituição da República Federativa do Brasil</h3>
+                    <p class="book-author">Senado Federal</p>
+                    <p>Texto constitucional promulgado em 5 de outubro de 1988, com as alterações determinadas pelas Emendas Constitucionais de Revisão nº 1 a 6/94, pelas Emendas Constitucionais nº 1/92 a 91/2016 e pelo Decreto Legislativo nº 186/2008.</p>
+                    <p>Conhecer a Constituição é o primeiro passo para defender seus direitos. Este é o documento-base de toda a nossa luta pelo direito de ir e vir.</p>
+                    <div class="book-actions">
+                        <a class="btn-download" href="https://www2.senado.leg.br/bdsf/bitstream/handle/id/518231/CF88_Livro_EC91_2016.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar PDF</a>
+                    </div>
+                    <p class="book-meta">Fonte: Senado Federal · Formato PDF</p>
+                </div>
+            </div>
+
+            <!-- ── LIVRO 2: Quarto de Despejo ── -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="assets/images/biblioteca/quarto-despejo.png" alt="Capa do livro Quarto de Despejo — Carolina Maria de Jesus" loading="lazy">
+                </div>
+                <div class="book-body">
+                    <span class="book-tag">Literatura Brasileira</span>
+                    <h3>Quarto de Despejo: Diário de uma Favelada</h3>
+                    <p class="book-author">Carolina Maria de Jesus</p>
+                    <p>Mais conhecido como Quarto de Despejo, é um livro autobiográfico da escritora Carolina Maria de Jesus. Um retrato contundente da desigualdade social no Brasil, escrito por quem viveu na pele a exclusão que a nossa Constituição promete combater.</p>
+                    <p>Uma leitura essencial para entender por que a defesa dos direitos de todos — sem exceção — é a razão de existir da Constitucionalizar.</p>
+                    <div class="book-actions">
+                        <a class="btn-download" href="https://dpid.cidadaopg.sp.gov.br/pde/arquivos/1623677495235~Quarto%20de%20Despejo%20-%20Maria%20Carolina%20de%20Jesus.pdf.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar PDF</a>
+                    </div>
+                    <p class="book-meta">Fonte: domínio público · Formato PDF</p>
+                </div>
+            </div>
+
+            <!-- Espaço para novos livros -->
+            <div class="image-placeholder" style="min-height:160px;margin-top:32px">
+                <span aria-hidden="true">📚</span>
+                <small>Espaço reservado para novos livros e materiais</small>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══ CTA BAND ═══════════════════════════════════════════════════ -->
+    <section class="cta-band">
+        <div class="container">
+            <div>
+                <h2>Conhecimento que vira ação</h2>
+                <p>Por R$ 30,00 por mês você financia a luta pelos direitos que estes livros defendem.</p>
+            </div>
+            <div class="button-group">
+                <a href="https://www.constitucionalizar.org.br/#section-planos" class="cta-button cta-primary" target="_blank" rel="noopener noreferrer">ASSOCIAR-SE AGORA <span aria-hidden="true">↗</span></a>
+                <a href="index.html" class="cta-button cta-secondary">VER PÁGINA PRINCIPAL</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ ACESSE TAMBÉM ══════════════════════════════════════════════ -->
+    <section class="related-section">
+        <div class="container">
+            <h2>Acesse também</h2>
+            <div class="related-links">
+                <a href="cada-200-associados.html" class="related-link-active">O que faremos a cada 200 associados</a>
+                <button type="button" disabled data-link-slot="associometro">Associômetro</button>
+                <button type="button" disabled data-link-slot="cidades-restricoes">Cidades que restringem motorhomes</button>
+                <a href="vantagens.html" class="related-link-active">Vantagens para associados</a>
+                <button type="button" disabled data-link-slot="decisoes">Vote e participe das decisões</button>
+                <a href="videoteca.html" class="related-link-active">Videoteca da cidadania</a>
+                <button type="button" disabled data-link-slot="transparencia">Transparência financeira</button>
+                <a href="planejamento.html" class="related-link-active">Planejamento e gestão</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer id="contato">
+<div class="footer-motto">
+<div class="container"><strong>A defesa de um direito fortalece todos os direitos.</strong>
+<p>A injustiça contra um cidadão afeta toda a sociedade. Defender um cidadão é proteger toda a sociedade.</p>
+</div>
+</div>
+<div class="container footer-inner">
+<div><strong>Associação Constitucionalizar</strong>
+<p>Pelo Direito de Ir e Vir</p>
+<p>CNPJ: 66.183.479/0001-57</p>
+</div>
+<div class="footer-contact"><a href="https://wa.me/551430420622" target="_blank" rel="noopener noreferrer">WhatsApp: (14) 3042-0622</a><a href="mailto:contato@constitucionalizar.org.br">contato@constitucionalizar.org.br</a><a href="https://www.constitucionalizar.org.br" target="_blank" rel="noopener noreferrer">constitucionalizar.org.br</a></div>
+<div class="footer-social"><strong>Acompanhe nossas redes sociais</strong><div class="social-icons" aria-label="Redes sociais">
+<button class="social-icon youtube" type="button" disabled data-link-slot="youtube" aria-label="YouTube — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="5" width="30" height="22" rx="7" fill="currentColor"/><path d="m13 11 9 5-9 5z" fill="#fff"/></svg></button>
+<button class="social-icon facebook" type="button" disabled data-link-slot="facebook" aria-label="Facebook — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="currentColor"/><path d="M18 30V18h4l.6-5H18v-2c0-1.5.5-2.5 2.5-2.5H23V4.2c-.8-.1-2-.2-3.6-.2-3.7 0-6.4 2.3-6.4 6.5V13H9v5h4v12z" fill="#fff"/></svg></button>
+<button class="social-icon instagram" type="button" disabled data-link-slot="instagram" aria-label="Instagram — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="instagram-gradient" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ffca41"/><stop offset=".5" stop-color="#ee2776"/><stop offset="1" stop-color="#773ce6"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="8" fill="url(#instagram-gradient)"/><rect x="7" y="7" width="18" height="18" rx="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="16" cy="16" r="4.5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="22" cy="10" r="1.5" fill="#fff"/></svg></button>
+<a class="social-icon whatsapp" href="https://wa.me/551430420622" target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="7" fill="currentColor"/><path d="M8 25l1.4-5A10 10 0 1 1 13 24z" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M12 10c-3 2 2 10 7 11 2 0 3-3 2-3l-3-1-1 1c-2-1-4-3-4-4l1-1z" fill="#fff"/></svg></a>
+</div><a class="social-hub" href="https://bio.bob.app.br/constitucionalizar-org" target="_blank" rel="noopener noreferrer">Todas as redes ↗</a></div>
+<img src="assets/images/logo/logo-256.webp" alt="Constitucionalizar" width="88" height="88" loading="lazy">
+</div>
+</footer>
+
+<script src="script.js?v=8"></script>
+</body>
+</html>
