@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Levantamento da Associação Constitucionalizar: cidades brasileiras que restringem a circulação e o estacionamento de motorhomes, com normas, penalidades e legislação para download.">
+    <meta name="keywords" content="motorhomes, restrições, cidades, legislação municipal, direito de ir e vir, constitucionalizar">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Cidades que restringem motorhomes — Associação Constitucionalizar">
+    <meta property="og:description" content="Veja quais cidades restringem motorhomes, quais são as normas e penalidades, e baixe a legislação de cada uma.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.constitucionalizar.org.br/cidades-restricoes">
+    <title>Cidades que restringem motorhomes — Associação Constitucionalizar</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="48x48" href="assets/favicon/favicon-48.png">
+    <link rel="stylesheet" href="styles.css?v=8">
+    <style>
+        /* ── Estilos específicos: cidades-restricoes.html ── */
+
+        /* Hero da página interna */
+        .page-hero {
+            background: var(--green);
+            color: #fff;
+            padding: 52px 0 60px;
+            text-align: center;
+        }
+        .page-hero-eyebrow {
+            font-size: 13px;
+            font-weight: 750;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 16px;
+        }
+        .page-hero h1 {
+            color: #fff;
+            font-size: clamp(30px, 4.6vw, 56px);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin: 0 0 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        .page-hero p {
+            font-size: clamp(16px, 1.9vw, 21px);
+            color: #ffffffcc;
+            max-width: 760px;
+            margin: 0 auto;
+            font-weight: 600;
+        }
+
+        /* Aviso */
+        .cities-notice {
+            background: #fff8e1;
+            border-left: 6px solid #e6a400;
+            border-radius: 8px;
+            padding: 24px 30px;
+            margin-bottom: 44px;
+            font-size: 15px;
+            line-height: 1.75;
+            color: var(--ink);
+        }
+        .cities-notice strong { color: #6b4400; }
+        .cities-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 44px;
+        }
+        .stat-box {
+            background: var(--deep);
+            color: #fff;
+            border-radius: 10px;
+            padding: 24px;
+            text-align: center;
+        }
+        .stat-box .stat-num {
+            display: block;
+            font-size: clamp(30px, 3.4vw, 44px);
+            font-weight: 900;
+            color: var(--yellow);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-box .stat-label {
+            font-size: 12px;
+            font-weight: 750;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffffffb3;
+        }
+
+        /* Agrupamento por estado */
+        .state-group { margin-bottom: 40px; }
+        .state-group:last-of-type { margin-bottom: 0; }
+        .state-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+        .state-title .uf-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 54px;
+            height: 38px;
+            padding: 0 12px;
+            background: var(--green);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 850;
+            border-radius: 6px;
+        }
+        .state-title h3 {
+            margin: 0;
+            font-size: 22px;
+            color: var(--ink);
+        }
+
+        /* Card de cidade */
+        .city-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 26px 28px;
+            margin-bottom: 14px;
+        }
+        .city-top {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .city-top h4 {
+            margin: 0;
+            font-size: 19px;
+            color: var(--ink);
+        }
+        .city-norma {
+            margin: 2px 0 0;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--muted);
+        }
+        .city-badge {
+            margin-left: auto;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .8px;
+            text-transform: uppercase;
+            color: var(--green);
+            background: #e8f2e4;
+            padding: 5px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .city-badge.revogada {
+            color: #a82424;
+            background: #fbe9e9;
+        }
+        .city-summary {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--ink);
+            margin: 12px 0 0;
+        }
+        .city-details { margin-top: 14px; }
+        .city-details summary {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: .6px;
+            list-style: none;
+        }
+        .city-details summary::-webkit-details-marker { display: none; }
+        .city-details summary::before {
+            content: '+';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--green);
+            border-radius: 50%;
+            font-size: 14px;
+            line-height: 1;
+        }
+        .city-details[open] summary::before { content: '–'; }
+        .city-details summary:hover { text-decoration: underline; text-underline-offset: 4px; }
+        .city-full {
+            margin-top: 16px;
+            border-top: 1px solid var(--line);
+            padding-top: 16px;
+        }
+        .city-full h5 {
+            margin: 0 0 6px;
+            font-size: 13px;
+            font-weight: 850;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--green);
+        }
+        .city-full p {
+            font-size: 14px;
+            line-height: 1.75;
+            color: var(--muted);
+            margin: 0 0 14px;
+        }
+        .city-dl {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--yellow);
+            color: var(--deep);
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            padding: 12px 22px;
+            border-radius: 5px;
+            transition: transform .2s, filter .2s;
+        }
+        .btn-download:hover { transform: translateY(-2px); filter: brightness(.96); }
+
+        /* Responsivo */
+        @media (max-width: 640px) {
+            .page-hero { padding: 36px 0 44px; }
+            .cities-stats { grid-template-columns: 1fr; }
+            .city-card { padding: 20px; }
+            .city-badge { margin-left: 0; }
+            .btn-download { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" aria-label="Constitucionalizar — início"><img class="logo" src="assets/images/logo/logo-256.webp" width="88" height="88" alt="Associação Constitucionalizar"></a>
+<div class="header-actions">
+<details class="menu">
+<summary>MENU <span aria-hidden="true">☰</span></summary>
+<nav aria-label="Menu principal">
+<a href="index.html">Página inicial</a>
+<a href="index.html#historia">Nossa história</a>
+<a href="index.html#atuacao">Nossa atuação</a>
+<a href="index.html#associados">Por que precisamos de você</a>
+<a href="index.html#como-atuaremos">Como atuaremos</a>
+<a href="index.html#quem-somos">Quem somos</a>
+<a href="index.html#projetos">Nossos projetos</a>
+<a href="index.html#contato">Contato</a>
+</nav>
+</details>
+<a class="cta-button cta-primary" href="https://www.constitucionalizar.org.br/#section-planos" target="_blank" rel="noopener noreferrer">ASSOCIE-SE <span aria-hidden="true">↗</span></a>
+<a class="cta-button cta-secondary" href="https://loja.infinitepay.io/constitucionalizar" target="_blank" rel="noopener noreferrer">FAÇA UMA DOAÇÃO <span aria-hidden="true">↗</span></a>
+</div>
+</div>
+</header>
+
+<main id="conteudo">
+
+    <!-- ══ HERO ══════════════════════════════════════════════════════ -->
+    <section class="page-hero">
+        <div class="container">
+            <p class="page-hero-eyebrow">Associação Constitucionalizar</p>
+            <h1>Cidades que restringem motorhomes</h1>
+            <p>Levantamento das normas municipais que limitam a circulação e o estacionamento de motorhomes no Brasil.</p>
+        </div>
+    </section>
+
+    <!-- Voltar para home -->
+    <div class="back-nav">
+        <div class="container">
+            <a href="index.html" class="back-link">Voltar para a página inicial</a>
+        </div>
+    </div>
+
+    <!-- ══ LEVANTAMENTO ═══════════════════════════════════════════════ -->
+    <section class="story-section" id="levantamento">
+        <div class="container">
+            <p class="eyebrow">Nosso levantamento <span></span></p>
+            <h2>Conheça as restrições</h2>
+
+            <div class="cities-notice">
+                <strong>Atenção, viajante:</strong> este é um levantamento feito pela Associação Constitucionalizar. As leis municipais podem mudar a qualquer momento — confirme sempre a norma vigente junto à prefeitura antes de viajar. Clique em cada cidade para ver a restrição completa, as penalidades e baixar a legislação em PDF.
+            </div>
+
+            <div class="cities-stats">
+                <div class="stat-box">
+                    <span class="stat-num">17</span>
+                    <span class="stat-label">Cidades mapeadas</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">9</span>
+                    <span class="stat-label">Estados</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">20</span>
+                    <span class="stat-label">Normas para download</span>
+                </div>
+            </div>
+
+            <!-- ── ALAGOAS ── -->
+            <div class="state-group">
+                <div class="state-title"><span class="uf-badge">AL</span><h3>Alagoas</h3></div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Maragogi</h4><p class="city-norma">Portaria nº 678/2025</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">Proíbe a circulação, o pernoite e o estacionamento de veículos com características de casa móvel nas vias públicas do perímetro urbano.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>Art. 4º — Fica proibida a circulação, pernoite e estacionamento de veículos com características de casa móvel nas vias públicas dentro do perímetro urbano do Município, entendendo-se como veículos de casa móvel o motorhome.</p>
+                            <h5>Penalidade</h5>
+                            <p>Art. 5º — Multa diária de 100 UFIRs, aplicada progressivamente a cada dia de reincidência; o veículo que permanecer por mais de 3 dias será guinchado.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/maragogi.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- ── BAHIA ── -->
+            <div class="state-group">
+                <div class="state-title"><span class="uf-badge">BA</span><h3>Bahia</h3></div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Itacaré</h4><p class="city-norma">Decreto nº 967/2022</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">Proíbe a parada e o estacionamento de motorhomes fora de estacionamentos criados especificamente para esse fim.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>Art. 5º — Fica terminantemente proibida a parada e o estacionamento de veículos tipo motorhome e similares fora do espaço destinado a estacionamentos privados e/ou públicos, a serem previamente criados para esse fim.</p>
+                            <h5>Penalidade</h5>
+                            <p>Art. 7º — Remoção do veículo estacionado em local proibido, com despesas de guincho e pátio por conta do proprietário, além das penalidades do Código de Trânsito Brasileiro.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/itacare.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Mucugê</h4><p class="city-norma">Lei Municipal nº 631/2023</p></div>
+                        <span class="city-badge">Oferta turística complementar</span>
+                    </div>
+                    <p class="city-summary">Proíbe o estacionamento de motorhomes e trailers nas vias públicas do perímetro urbano, em razão do conjunto arquitetônico tombado pelo Iphan.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>Art. 1º — Fica proibido o estacionamento, em vias públicas do perímetro urbano de Mucugê, de veículos tipo motorhomes e qualquer tipo de trailers, tendo em vista o conjunto arquitetônico e paisagístico do Município ser tombado pelo Iphan.</p>
+                            <h5>Penalidade</h5>
+                            <p>Art. 4º — Multa de 100 UFIRs por dia, duplicada progressivamente nas reincidências; o veículo que permanecer por mais de 2 dias será guinchado.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/mucuge.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- ── ESPÍRITO SANTO ── -->
+            <div class="state-group">
+                <div class="state-title"><span class="uf-badge">ES</span><h3>Espírito Santo</h3></div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Guarapari</h4><p class="city-norma">Lei Municipal nº 5.111/2025 e Decreto nº 645/2025</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">Exige parada em barreira de fiscalização, pagamento de taxas e autorização municipal; proíbe estacionar em vias públicas ou áreas não autorizadas — inclusive o transporte de mantimentos e equipamentos domésticos.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>É proibido o estacionamento de motorhomes e demais veículos de destinação turística nas vias públicas ou em área privada não autorizada. Os veículos devem parar na barreira de fiscalização, pagar as taxas de embarque e desembarque e portar autorização municipal. É proibida ainda a entrada de veículos que transportem mantimentos, fogões, botijões de gás, geladeiras, ar-condicionado portátil e outros itens inflamáveis ou incompatíveis com a finalidade turística.</p>
+                            <h5>Penalidade</h5>
+                            <p>Advertência por escrito, multa, remoção do veículo ao pátio municipal (despesas por conta do infrator) e apreensão dos produtos transportados irregularmente.</p>
+                            <div class="city-dl">
+                                <a class="btn-download" href="assets/pdfs/cidades/guarapari-lei.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar lei (PDF)</a>
+                                <a class="btn-download" href="assets/pdfs/cidades/guarapari-decreto.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar decreto (PDF)</a>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- ── MINAS GERAIS ── -->
+            <div class="state-group">
+                <div class="state-title"><span class="uf-badge">MG</span><h3>Minas Gerais</h3></div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>São Tomé das Letras</h4><p class="city-norma">Lei nº 1.836/2026 (revogou a Lei nº 1.662/2023)</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">A lei anterior foi revogada. A norma atual proíbe a parada e o estacionamento de veículos com mais de 2,20 m de largura nas vias públicas do perímetro urbano, com exceções.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>Art. 2º — Proibida a parada e o estacionamento de veículos de médio e grande porte (largura superior a 2,20 m, ônibus, micro-ônibus e caminhões) em todas as vias públicas do perímetro urbano, exceto no eixo viário entre o portal de entrada da cidade e o Centro de Múltiplos Eventos. É vedada ainda a circulação de veículos com mais de 9 m de comprimento no perímetro urbano, salvo exceções (carga e descarga, emergência, saúde, hospedagem).</p>
+                            <h5>Penalidade</h5>
+                            <p>Art. 6º — Penalidades do Código de Trânsito Brasileiro, com atuação preventiva e orientadora da fiscalização municipal; em caso de recusa, acionamento da autoridade de trânsito para autuação.</p>
+                            <div class="city-dl">
+                                <a class="btn-download" href="assets/pdfs/cidades/sao-tome-das-letras-atual.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar lei vigente (PDF)</a>
+                                <a class="btn-download" href="assets/pdfs/cidades/sao-tome-das-letras-revogada.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar lei revogada (PDF)</a>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- ── PARANÁ ── -->
+            <div class="state-group">
+                <div class="state-title"><span class="uf-badge">PR</span><h3>Paraná</h3></div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Guaratuba</h4><p class="city-norma">Lei nº 1.823/2019</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">Exige cadastramento prévio, selo de identificação e pagamento de taxas; proíbe o estacionamento em vias, praças e locais públicos não autorizados.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>Motorhomes, trailers e demais veículos de grande porte vindos de outros municípios precisam de cadastro e Selo de Identificação de Veículo de Turismo, com pagamento de taxas (motorhomes pagam 50% dos valores de ônibus). É proibido estacionar em vias públicas, praças ou locais não autorizados pela Secretaria de Urbanismo.</p>
+                            <h5>Penalidade</h5>
+                            <p>Bloqueio com grampos nos pneus e liberação somente após pagamento de multa de 30 UFM.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/guaratuba.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- ── RIO DE JANEIRO ── -->
+            <div class="state-group">
+                <div class="state-title"><span class="uf-badge">RJ</span><h3>Rio de Janeiro</h3></div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Saquarema</h4><p class="city-norma">Decreto nº 2.885/2024</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">Permanência permitida somente em local designado pelo Município, mediante taxa de R$ 1.000 por 24 horas, limitada a 7 dias.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>Local de permanência designado: área contígua ao acostamento da Rua Coronel João Catarino, bairro do Areal. Taxa de R$ 1.000 por veículo a cada 24 horas ou fração, com permanência máxima de 7 dias.</p>
+                            <h5>Penalidade</h5>
+                            <p>Veículos estacionados irregularmente ficam sujeitos a remoção, apreensão e multa de R$ 7.000.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/saquarema.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- ── RIO GRANDE DO SUL ── -->
+            <div class="state-group">
+                <div class="state-title"><span class="uf-badge">RS</span><h3>Rio Grande do Sul</h3></div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Capão da Canoa</h4><p class="city-norma">Lei Municipal nº 3.900/2024</p></div>
+                        <span class="city-badge">ADI em análise</span>
+                    </div>
+                    <p class="city-summary">Proíbe barracas, trailers e motorhomes na beira-mar, na faixa de areia e nas áreas centrais entre a Avenida Paraguassú e a Beira-Mar.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>Proíbe a instalação de barracas de acampamento, estruturas de camping, estacionamento de trailers e motorhomes na beira-mar e faixa de areia, frente de residências e frente de ruas nas áreas centrais do Município.</p>
+                            <h5>Penalidade</h5>
+                            <p>Multa diária de 3 PTMs em caso de não retirada após notificação, dobrada em caso de reincidência. A norma é objeto da Ação Direta de Inconstitucionalidade nº 5208390-40.2024.8.21.7000/RS.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/capao-da-canoa.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Gramado</h4><p class="city-norma">Código de Posturas (LC nº 1/2018), alterado pelo PLC nº 3/2024</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">Na Zona Azul, permanência máxima de 10 minutos; nos demais locais públicos do perímetro urbano, até 2 horas.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>Art. 154-A — É proibido o estacionamento de motorhomes, trailers-casas e veículos utilizados como moradia nas vias da Zona Azul por período superior a 10 minutos. Nas praças e demais locais públicos não abrangidos pela Zona Azul, a permanência máxima é de 2 horas.</p>
+                            <h5>Penalidade</h5>
+                            <p>Excesso na Zona Azul: pena média. Permanência irregular: remoção e apreensão do veículo (pena grave). Reincidência ou impossibilidade de remoção: pena gravíssima, aplicada por dia, sem prejuízo do CTB.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/gramado.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Torres</h4><p class="city-norma">Lei nº 5.461/2024</p></div>
+                        <span class="city-badge">Cadastro obrigatório</span>
+                    </div>
+                    <p class="city-summary">Exige cadastramento e pagamento de taxa; proíbe o estacionamento em vias e praças, salvo em eventos promovidos ou autorizados pelo Município.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>Motorhomes, trailers e demais veículos de grande porte vindos de outros municípios ficam condicionados a cadastramento para identificação de Veículo de Turismo e pagamento de taxa. É proibido estacionar em vias públicas, praças ou outros locais públicos.</p>
+                            <h5>Penalidade</h5>
+                            <p>Bloqueio com grampos nos pneus e liberação somente após pagamento de multa de 3 UFM.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/torres.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- ── SANTA CATARINA ── -->
+            <div class="state-group">
+                <div class="state-title"><span class="uf-badge">SC</span><h3>Santa Catarina</h3></div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Balneário Camboriú</h4><p class="city-norma">Lei nº 1.416/1994</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">Exige reserva prévia e selo de identificação; proíbe o estacionamento em vias e praças não expressamente autorizadas.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>A circulação e o estacionamento de motorhomes, trailers e veículos de grande porte ficam condicionados à prévia reserva na Secretaria de Turismo, que fornece o Selo de Identificação. É proibido estacionar em vias públicas, praças ou locais não autorizados pelo Poder Executivo.</p>
+                            <h5>Penalidade</h5>
+                            <p>Multa de 2 UFM, sem prejuízo da remoção do veículo para depósitos municipais e das penalidades de trânsito.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/balneario-camboriu.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Florianópolis</h4><p class="city-norma">Lei nº 10.194/2017 e Decreto nº 28.722/2025</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">Exige cadastramento com SIVETUR e rota definida até o estacionamento; proíbe estacionar fora dos locais delimitados pelo Município.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>Motorhomes, trailers, vans e micro-ônibus precisam de cadastramento e Selo de Identificação de Veículo de Turismo (SIVETUR), recebendo rota definida até o estacionamento — é vedada a circulação fora da rota e a comercialização de passeios durante a estadia. É proibido estacionar em vias, praças e locais não delimitados pelo Poder Executivo.</p>
+                            <h5>Penalidade</h5>
+                            <p>Taxa SIVETUR por visita e por pernoite (valores por categoria de veículo), além das sanções da legislação em vigor em caso de descumprimento.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/florianopolis.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Governador Celso Ramos</h4><p class="city-norma">Lei nº 1.955/2025</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">Proíbe o estacionamento de motorhomes e similares em vias, praças, praias e dunas — permitido somente em locais licenciados pelo Poder Público.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>Art. 5º — Fica proibido o estacionamento de motorhomes, trailers e veículos similares nas vias públicas, praças, praias, dunas e outros locais não delimitados pelo Poder Executivo. O estacionamento só é permitido em locais licenciados pelo Poder Público.</p>
+                            <h5>Penalidade</h5>
+                            <p>Multa de 10 UFM.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/governador-celso-ramos.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Porto Belo</h4><p class="city-norma">Lei nº 3.140/2022 e Decreto nº 3.687/2023</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">Exige Selo de Permanência com taxa de 8 UFM por 24h, em área pública designada (máx. 10 veículos, 4 dias por quinzena).</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>É proibido estacionar motorhomes e trailers em vias e praças não autorizadas por mais de 2 horas. A permanência em local público exige o Selo de Permanência, válido para a área na Rua do CTG (máx. 10 veículos), com taxa de 8 UFM por período de 24h e estadia máxima de 4 dias por quinzena.</p>
+                            <h5>Penalidade</h5>
+                            <p>Estacionar sem o selo em local autorizado: multa de 100 UFM, além das penalidades do CTB.</p>
+                            <div class="city-dl">
+                                <a class="btn-download" href="assets/pdfs/cidades/porto-belo-lei.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar lei (PDF)</a>
+                                <a class="btn-download" href="assets/pdfs/cidades/porto-belo-decreto.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar decreto (PDF)</a>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- ── SÃO PAULO ── -->
+            <div class="state-group">
+                <div class="state-title"><span class="uf-badge">SP</span><h3>São Paulo</h3></div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Ilhabela</h4><p class="city-norma">Lei nº 164/2002 e Decreto nº 8.468/2021</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">Ingresso permitido somente com cadastro e autorização solicitada com 72h de antecedência; estacionamento em pátio pago.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>O ingresso e a permanência de trailers e veículos equiparados exigem cadastro e pedido de permissão junto à Secretaria de Turismo com antecedência mínima de 72 horas. O estacionamento é restrito ao pátio da Barra Velha (ou locais delimitados), mediante preço público.</p>
+                            <h5>Penalidade</h5>
+                            <p>Multa de 10 vezes o valor do preço público (R$ 300/dia para vans, peruas e trailers), sem prejuízo da remoção ao depósito municipal.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/ilha-bela.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Rifaina</h4><p class="city-norma">Lei nº 1.679/2014</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">Exige registro nos órgãos de turismo e limita a 15 veículos por dia, com uso obrigatório do Terminal de Turismo e Estacionamento Municipal.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>O trânsito de ônibus de fretamento e veículos especiais (trailers, micro-ônibus, vans adaptadas) exige registro no DNER, DER e Embratur. A Secretaria de Turismo pode alterar quantidade e período de permanência, observado o limite de 15 veículos por dia.</p>
+                            <h5>Penalidade</h5>
+                            <p>Multa de 100 UFESP (dobrada na reincidência), remoção ao pátio municipal e suspensão da operação da empresa por 90 dias.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/rifaina.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="city-card">
+                    <div class="city-top">
+                        <div><h4>Santos</h4><p class="city-norma">Lei Complementar nº 1.146/2021</p></div>
+                        <span class="city-badge">Município turístico</span>
+                    </div>
+                    <p class="city-summary">Cadastro obrigatório para o turismo de um dia; vedado o estacionamento em vias públicas e a circulação entre 0h e 7h.</p>
+                    <details class="city-details">
+                        <summary>Ver restrição completa e penalidades</summary>
+                        <div class="city-full">
+                            <h5>Restrição</h5>
+                            <p>O acesso à cidade por motorhomes, trailers e veículos com mais de 10 pessoas exige cadastro (P.E.T.). É vedado o estacionamento desses veículos nas vias e logradouros públicos, bem como a circulação entre 0h e 7h, inclusive para embarque e desembarque.</p>
+                            <h5>Penalidade</h5>
+                            <p>Multa de R$ 2.000, dobrada na reincidência, sem prejuízo do CTB e do Código de Posturas.</p>
+                            <div class="city-dl"><a class="btn-download" href="assets/pdfs/cidades/santos.pdf" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⬇</span> Baixar legislação (PDF)</a></div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Espaço para novas cidades -->
+            <div class="image-placeholder" style="min-height:160px;margin-top:32px">
+                <span aria-hidden="true">📍</span>
+                <small>Conhece outra cidade com restrição? Avise-nos para ampliarmos este levantamento</small>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══ CTA BAND ═══════════════════════════════════════════════════ -->
+    <section class="cta-band">
+        <div class="container">
+            <div>
+                <h2>Vamos mudar essa realidade</h2>
+                <p>Por R$ 30,00 por mês você financia a luta judicial contra restrições inconstitucionais.</p>
+            </div>
+            <div class="button-group">
+                <a href="https://www.constitucionalizar.org.br/#section-planos" class="cta-button cta-primary" target="_blank" rel="noopener noreferrer">ASSOCIAR-SE AGORA <span aria-hidden="true">↗</span></a>
+                <a href="index.html" class="cta-button cta-secondary">VER PÁGINA PRINCIPAL</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ ACESSE TAMBÉM ══════════════════════════════════════════════ -->
+    <section class="related-section">
+        <div class="container">
+            <h2>Acesse também</h2>
+            <div class="related-links">
+                <a href="cada-200-associados.html" class="related-link-active">O que faremos a cada 200 associados</a>
+                <button type="button" disabled data-link-slot="associometro">Associômetro</button>
+                <a href="vantagens.html" class="related-link-active">Vantagens para associados</a>
+                <button type="button" disabled data-link-slot="decisoes">Vote e participe das decisões</button>
+                <a href="biblioteca.html" class="related-link-active">Biblioteca da cidadania</a>
+                <a href="videoteca.html" class="related-link-active">Videoteca da cidadania</a>
+                <button type="button" disabled data-link-slot="transparencia">Transparência financeira</button>
+                <a href="planejamento.html" class="related-link-active">Planejamento e gestão</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer id="contato">
+<div class="footer-motto">
+<div class="container"><strong>A defesa de um direito fortalece todos os direitos.</strong>
+<p>A injustiça contra um cidadão afeta toda a sociedade. Defender um cidadão é proteger toda a sociedade.</p>
+</div>
+</div>
+<div class="container footer-inner">
+<div><strong>Associação Constitucionalizar</strong>
+<p>Pelo Direito de Ir e Vir</p>
+<p>CNPJ: 66.183.479/0001-57</p>
+</div>
+<div class="footer-contact"><a href="https://wa.me/551430420622" target="_blank" rel="noopener noreferrer">WhatsApp: (14) 3042-0622</a><a href="mailto:contato@constitucionalizar.org.br">contato@constitucionalizar.org.br</a><a href="https://www.constitucionalizar.org.br" target="_blank" rel="noopener noreferrer">constitucionalizar.org.br</a></div>
+<div class="footer-social"><strong>Acompanhe nossas redes sociais</strong><div class="social-icons" aria-label="Redes sociais">
+<button class="social-icon youtube" type="button" disabled data-link-slot="youtube" aria-label="YouTube — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="5" width="30" height="22" rx="7" fill="currentColor"/><path d="m13 11 9 5-9 5z" fill="#fff"/></svg></button>
+<button class="social-icon facebook" type="button" disabled data-link-slot="facebook" aria-label="Facebook — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="currentColor"/><path d="M18 30V18h4l.6-5H18v-2c0-1.5.5-2.5 2.5-2.5H23V4.2c-.8-.1-2-.2-3.6-.2-3.7 0-6.4 2.3-6.4 6.5V13H9v5h4v12z" fill="#fff"/></svg></button>
+<button class="social-icon instagram" type="button" disabled data-link-slot="instagram" aria-label="Instagram — link em breve"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="instagram-gradient" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ffca41"/><stop offset=".5" stop-color="#ee2776"/><stop offset="1" stop-color="#773ce6"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="8" fill="url(#instagram-gradient)"/><rect x="7" y="7" width="18" height="18" rx="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="16" cy="16" r="4.5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="22" cy="10" r="1.5" fill="#fff"/></svg></button>
+<a class="social-icon whatsapp" href="https://wa.me/551430420622" target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="7" fill="currentColor"/><path d="M8 25l1.4-5A10 10 0 1 1 13 24z" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M12 10c-3 2 2 10 7 11 2 0 3-3 2-3l-3-1-1 1c-2-1-4-3-4-4l1-1z" fill="#fff"/></svg></a>
+</div><a class="social-hub" href="https://bio.bob.app.br/constitucionalizar-org" target="_blank" rel="noopener noreferrer">Todas as redes ↗</a></div>
+<img src="assets/images/logo/logo-256.webp" alt="Constitucionalizar" width="88" height="88" loading="lazy">
+</div>
+</footer>
+
+<script src="script.js?v=8"></script>
+</body>
+</html>
